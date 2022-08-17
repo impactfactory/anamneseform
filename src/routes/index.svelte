@@ -31,6 +31,7 @@
 					id: '2',
 					label: 'Wie häufig haben Sie Herzrasen?',
 					type: 'select',
+					hasfreeanswer: '1',
 					value: orgParams.get('2') || '',
 					options: [
 						{
@@ -55,6 +56,7 @@
 							value: 'sehr selten'
 						},
 						{
+							freeanswer: '1',
 							value: 'anderes:'
 						}
 					]
@@ -157,6 +159,7 @@
 						},
 						{
 							id: 'e',
+							freeanswer: '1',
 							label: 'anderes',
 							value: 'anderes:'
 						}
@@ -191,11 +194,12 @@
 					radios: [
 						{
 							id: 'a',
-							value: 'ja'
+							value: 'nein'
 						},
 						{
 							id: 'b',
-							value: 'nein'
+							freeanswer: '1',
+							value: 'ja'
 						}
 					]
 				},
@@ -208,11 +212,12 @@
 					radios: [
 						{
 							id: 'a',
-							value: 'ja'
+							value: 'nein'
 						},
 						{
 							id: 'b',
-							value: 'nein'
+							freeanswer: '1',
+							value: 'ja'
 						}
 					]
 				},
@@ -221,6 +226,7 @@
 					label: 'Wurde dieses Herzrasen schon einmal behandelt?',
 					type: 'checkboxgroup',
 					name: 'group11',
+					freeanswer: '1',
 					value: orgParams.get('11') || '',
 					boxes: [
 						{
@@ -269,6 +275,7 @@
 						},
 						{
 							id: 'e',
+							freeanswer: '1',
 							label: 'anderes',
 							value: 'anderes'
 						}
