@@ -1,0 +1,129 @@
+<script lang="ts">
+	export let fields = [] as any[];
+
+	// Timestamp erzeugen
+	var unixdate = Date.now();
+	let timestamp = new Date(unixdate);
+
+	// radios
+	let ja = 'ja';
+	let nein = 'nein';
+	let vielleicht = 'vielleicht';
+</script>
+
+<h1>Anamnese Formular</h1>
+<form class="row py-4" action="/api/send" method="GET">
+	{#each fields as field}
+		{#if field.type === 'text'}
+			<div class="form-floating mb-3">
+				<input
+					class="form-control {field.class}"
+					id={field.id}
+					type="text"
+					placeholder={field.label}
+					bind:value={field.value}
+				/>
+				<label class="form-label {field.class}" for={field.id}>{field.label}</label>
+				<div class="form-text  {field.class}">{field.description}</div>
+			</div>
+
+			<!-- 
+			<div class="chapter  {field.class}">
+				<h2>{field.label}</h2>
+			</div>
+			<div class="form-check">
+				<input
+					class="form-check-input"
+					type="radio"
+					id={field.id}
+					bind:checked={field.defaultstate}
+				/>
+				<label class="form-check-label" for="for{field.id}"> ja </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" id={field.id} bind:checked={field.value} />
+				<label class="form-check-label" for="for{field.id}"> nein </label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" id={field.id} bind:checked={field.value} />
+				<label class="form-check-label" for="for{field.id}"> vielleicht </label>
+			</div>
+			-->
+		{:else if field.type === 'checkbox'}
+			<div class="form-check mb-3">
+				<input
+					class="form-check-input {field.class}"
+					id={field.id}
+					type="checkbox"
+					bind:checked={field.defaultstate}
+				/>
+				<label class="form-check-label {field.class}" for="">{field.label}</label>
+				<div class="form-text  {field.class}">{field.description}</div>
+			</div>
+		{:else if field.type === 'radio'}
+			<div class="col-8">
+				<h2>{field.label}</h2>
+			</div>
+			<div class="col-4">
+				<div class="form-check form-check-inline">
+					<label class="form-check-label" for="{field.id}a">
+						<input
+							class="form-check-input"
+							type="radio"
+							name={field.name}
+							id="{field.id}a"
+							bind:value={ja}
+						/>
+						ja</label
+					>
+				</div>
+				<div class="form-check form-check-inline">
+					<label class="form-check-label" for="{field.id}b">
+						<input
+							class="form-check-input"
+							type="radio"
+							name={field.name}
+							id="{field.id}b"
+							bind:value={nein}
+						/>
+						nein</label
+					>
+				</div>
+				<div class="form-check form-check-inline">
+					<label class="form-check-label" for="{field.id}c">
+						<input
+							class="form-check-input"
+							type="radio"
+							name={field.name}
+							id="{field.id}c"
+							bind:value={vielleicht}
+						/>
+						vielleicht</label
+					>
+				</div>
+			</div>
+		{:else if field.type === 'textarea'}
+			<div class="form-floating mb-3">
+				<textarea
+					class="form-control {field.class}"
+					id={field.id}
+					bind:value={field.text}
+					cols={field.cols}
+					rows={field.rows}
+					placeholder={field.label}
+				/>
+				<label class="form-label {field.class}" for={field.id}>{field.label}</label>
+				<div class="form-text  {field.class}">
+					{field.description} <span>{field.text.length}/ {field.max}</span>
+				</div>
+			</div>
+		{/if}
+	{/each}
+	<input id="100" type="hidden" value={timestamp} />
+</form>
+
+<style>
+	h2 {
+		display: inline;
+	}
+</style>

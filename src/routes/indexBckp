@@ -1,0 +1,113 @@
+<script>
+	// könnte man die Feld-Definition der Übersicht halber auslagern und hier importieren?
+	// Was ist ein Type? z.B. Page? Svelte oder js spezifisch? oder Browser-API? Was im Vergelich mit einem Interface?
+	// warum heisst die const orgParams so? warum ein $ vornedran?--- sei ein store
+	// eigentlich ist eine Komponente eine Klasse oder?
+
+	// importieren von sogenannten svelte modulen, die wiederum types als objekte haben (?)
+	import { goto } from '$app/navigation';
+	import { browser } from '$app/env';
+	import { page } from '$app/stores';
+
+	// importieren unserer Komponenten
+	import Forms from '$lib/Forms.svelte';
+	import ExportButton from '$lib/ExportButton.svelte';
+
+	// liefere IMMER die url plus die searchParams(warum kann ich die unten dann überschreiben?)
+	const orgParams = $page.url.searchParams;
+
+	// definition der formular-objekte und ihrer keys und values damit die Klasse das formular baut
+	// wäre cool wären die key:value-Zeilen in einem "ungefährlichen" dokument ausgelagert
+	// wie werden die radios gemacht? bind:group verhält sich sehr seltsam...
+
+	let fields = [
+		{
+			id: '1',
+			label: 'Haben Sie Herzrasen?',
+			name: 'herzrasen',
+			type: 'radio',
+			value: orgParams.get('1') || ''
+		},
+		{
+			id: '6',
+			label: 'wie schnell denn?',
+			type: 'text',
+			description: 'Sagen sie ja oder nein',
+			value: orgParams.get('6') || ''
+		},
+		{
+			id: '2',
+			label: 'Haben Sie Herzstolpern?',
+			name: 'herzstolpern',
+			type: 'radio',
+			value: orgParams.get('2') || '' //
+		},
+		{
+			id: '3',
+			label: 'Haben Sie ungewöhnlich starken Herzschlag?',
+			name: 'herzklopfen',
+			type: 'radio',
+			value: orgParams.get('3') || '' //
+		},
+		{
+			id: '4',
+			label: 'Haben Sie unregelmässigen Herzschlag?',
+			name: 'rhythmusstoerung',
+			type: 'radio',
+			value: orgParams.get('4') || '' //
+		},
+		{
+			id: '5',
+			label: 'Haben Sie etwas anderes?',
+			name: 'anderes',
+			type: 'radio',
+			value: orgParams.get('5') || '' //
+		},
+		{
+			id: '7',
+			label: 'Frage 2',
+			type: 'text',
+			description: '',
+			value: orgParams.get('7') || ''
+		},
+		{
+			id: '8',
+			label: 'Frage 3',
+			type: 'checkbox',
+			description: 'Hier sollte ne Checkbox sein obendran',
+			value: orgParams.get('8') || '',
+			defaultstate: 'checked'
+		},
+		{
+			id: '9',
+			label: 'Beschreiben Sie genau was',
+			type: 'textarea',
+			description: 'Hier sollte ne Textarea sein obendran',
+			value: orgParams.get('9') || '',
+			defaultstate: '',
+			cols: '30',
+			rows: '3',
+			text: '',
+			max: '100'
+		}
+	];
+
+	// reactives statement, baut die url aus den formularfeldern, wenn wir im browser sind. focussiert und bleibt oben im bild
+	$: {
+		const params = new URLSearchParams();
+		fields.forEach((field) => {
+			params.set(field.id, field.value);
+		});
+		if (browser) {
+			goto(`?${params}`, { keepfocus: true, noscroll: true });
+		}
+	}
+
+	// zeichenzählendes Textarea
+	let text = '';
+	const max = 50;
+</script>
+
+<Forms bind:fields />
+
+<ExportButton />
