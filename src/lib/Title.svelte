@@ -2,7 +2,7 @@
 	export let title: string;
 </script>
 
-<h1 class="text-xl">
+<h1 class="text-3xl font-semibold pb-10">
 	{title}
 </h1>
 

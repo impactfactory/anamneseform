@@ -1,25 +1,4 @@
-- wollen wir ein git repository starten?
-  wie?
-  gerne terminal only zeigen
-- verliere die ganze Zeit Code, an was kann das liegen? Kann man einrichten, dass man beim Programm schliessen gewarnt wird,
-  dass man noch abspeichern muss?
-
-- soll html-inputs in Forms.svelte als Komponenten anlegen, damits übersichtlicher ist? wenn ja, wie? variable undefined....
-
-- g9bt es die Möglichkeit, die Formulardefintionen aus dem index rauszunehmen und ein übersichtliches quasi config File zu haben?
-
-- wie initialisiere ich eine bind-variable, wenn die inputs dynamisch erzeugt werden am besten?
-  manuell verstehe ich, dynamisch habe ich das nich geschafft
-  forReach forEch dann window[] hat nicht funktioniert
-- flussdiagramm was svelte überhaupt macht möglich?
-
-- wie publishe ich eine app eigentlich? hab dazu keine funktionierende anleitung gefunden
-
-- ux: wie präsentiert man ein solch langes formular am besten? kapitel für kapitel?
-
 - wie blende ich am besten ein textarea ein wenn eine spezifische option selected ist
-  mit css geht meines wissen nach noch nicht (:has() noch nicht unterstützt)
-  Geht javascript direkt in der condition in einer componente? st eigenlich typische :bind-Sache....
 
 ABLAUF
 
