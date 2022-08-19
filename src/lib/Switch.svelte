@@ -1,11 +1,10 @@
 <script lang="ts">
 	export let enabled = false;
-	export let title = '';
-	//export let type = 'checkbox' as 'checkbox' | 'radio'; wird nicht benötigt
+	export let label = '';
 </script>
 
 <div class="flex justify-between pt-4">
-	<h2 class="font-semibold text-xl ">{title}</h2>
+	<h2 class="font-semibold text-xl ">{label}</h2>
 
 	<div class="relative z-0 inline-flex shadow-sm rounded-md">
 		<button

@@ -43,3 +43,5 @@
 	</select>
 	<div id="fillme{question.id}" class="pt-4" />
 </div>
+
+{selected}

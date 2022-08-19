@@ -1,10 +1,17 @@
 <script lang="ts">
-	export let chapters = [] as any[];
+	import Palpitation from '$lib/templates/Palpitation.svelte';
+
+	export let chapter = [] as any[];
+	//export let questions = [] as any[];
+	//export let selected;
 </script>
 
-{#each chapters as chapter}
-	{chapter.label},
-{/each}
+Template ist {chapter.component}. Frage ist {chapter.label}
+
+<svelte:component this={chapter.component} />
+
+<br />
+<br />
 
 <!--
 forEach chapter

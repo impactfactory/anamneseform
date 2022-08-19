@@ -19,7 +19,13 @@
 	</p>
 
 	<div class="pt-4">
-		<div id="foo"><RenderedText {chapters} /></div>
+		<div id="foo">
+			{#each chapters as chapter}
+				{#if chapter.enabled}
+					<RenderedText {chapter} />
+				{/if}
+			{/each}
+		</div>
 
 		<!-- Trigger -->
 		<button class="btn" data-clipboard-target="#foo">
