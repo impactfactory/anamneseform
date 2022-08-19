@@ -1,6 +1,23 @@
 <script lang="ts">
 	export let question = [] as any[];
 	let selected = false;
+	let id = question.id;
+	let i = 1;
+
+	function addTextarea() {
+		i = i + 1;
+		if (i % 2 == 0) {
+			let textarea = document.getElementById('fillme' + id);
+			textarea.innerHTML =
+				'<textarea class="textarea textarea-bordered w-full" placeholder="' +
+				question.freetextplaceholder +
+				'"></textarea>';
+		}
+		if (i % 2 == 1) {
+			let textarea = document.getElementById('fillme' + id);
+			textarea.innerHTML = '';
+		}
+	}
 </script>
 
 <fieldset class="checkboxgroup block max-w-sm">
@@ -15,7 +32,7 @@
 						id="{question.id}{box.id}"
 						name="{question.id}{box.id}"
 						bind:group={question.name}
-						on:click={() => (selected = true)}
+						on:click={addTextarea}
 						value={box.value}
 					/>
 				{:else}
@@ -25,7 +42,6 @@
 						id="{question.id}{box.id}"
 						name="{question.id}{box.id}"
 						bind:group={question.name}
-						on:click={() => (selected = false)}
 						value={box.value}
 					/>
 				{/if}
@@ -33,11 +49,5 @@
 			</label>
 		</div>
 	{/each}
-	{#if selected}
-		<textarea
-			class="textarea textarea-bordered max-w-full"
-			placeholder="Bitte beschreiben Sie..."
-			id={question.id}
-		/>
-	{/if}
+	<div id="fillme{question.id}" />
 </fieldset>

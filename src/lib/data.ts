@@ -9,7 +9,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					id: '2',
 					label: 'Wie häufig haben Sie Herzrasen?',
 					type: 'select',
-					hasfreeanswer: '1',
+					freetextplaceholder: 'Bitte beschreiben Sie in welchem Muster es auftritt.',
 					value: orgParams.get('2') || '',
 					options: [
 						{
@@ -43,6 +43,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					id: '3',
 					label: 'Wie lange hält das Herzrasen an?',
 					type: 'select',
+					freetextplaceholder: 'Bitte beschreiben Sie die Dauer.',
 					value: orgParams.get('3') || '',
 					options: [
 						{
@@ -64,6 +65,7 @@ export function getChapters(orgParams: URLSearchParams) {
 							value: 'mal nur kurz für Minuten mal Stunden'
 						},
 						{
+							freeanswer: '1',
 							value: 'anderes:'
 						}
 					]
@@ -72,6 +74,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					id: '5',
 					label: 'Wie beginnt das Herzrasen?',
 					type: 'select',
+					freetextplaceholder: 'Bitte beschreiben Sie genau, wie es beginnt',
 					value: orgParams.get('5') || '',
 					options: [
 						{
@@ -84,6 +87,7 @@ export function getChapters(orgParams: URLSearchParams) {
 							value: 'weiss nicht genau'
 						},
 						{
+							freeanswer: '1',
 							value: 'anderes'
 						}
 					]
@@ -92,6 +96,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					id: '6',
 					label: 'Wie hört das Herzrasen auf?',
 					type: 'select',
+					freetextplaceholder: 'Bitte beschreiben Sie genau, wie es aufhört.',
 					value: orgParams.get('6') || '',
 					options: [
 						{
@@ -104,6 +109,7 @@ export function getChapters(orgParams: URLSearchParams) {
 							value: 'weiss nicht genau'
 						},
 						{
+							freeanswer: '1',
 							value: 'anderes'
 						}
 					]
@@ -112,6 +118,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					id: '7',
 					label: 'Haben sie begleitende Symptome in dieser Zeit?',
 					type: 'checkboxgroup',
+					freetextplaceholder: 'Bitte beschreiben Sie die Symptome, welche Sie erfahren.',
 					name: 'group7',
 					value: orgParams.get('6') || '',
 					boxes: [
@@ -147,6 +154,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					id: '8',
 					label: 'Seit wann kennen Sie dieses Herzrasen?',
 					type: 'select',
+					freetextplaceholder: 'Bitte beschreiben Sie seit wann.',
 					value: orgParams.get('8') || '',
 					options: [
 						{
@@ -159,6 +167,7 @@ export function getChapters(orgParams: URLSearchParams) {
 							value: 'ich hatte es früher, dann lange nicht'
 						},
 						{
+							freeanswer: '1',
 							value: 'anderes'
 						}
 					]
@@ -168,6 +177,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Können Sie das Herzrasen durch etwas auslösen?',
 					type: 'radiogroup',
 					name: 'group9',
+					freetextplaceholder: 'Bitte beschreiben Sie, wie Sie es auslösen können.',
 					value: orgParams.get('9') || '',
 					radios: [
 						{
@@ -186,6 +196,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Können Sie das Herzrasen durch etwas beenden?',
 					type: 'radiogroup',
 					name: 'group10',
+					freetextplaceholder: 'Bitte beschreiben Sie, wie Sie es beenden können.',
 					value: orgParams.get('10') || '',
 					radios: [
 						{
@@ -214,12 +225,12 @@ export function getChapters(orgParams: URLSearchParams) {
 						},
 						{
 							id: 'b',
-							label: 'Medikamente',
+							label: 'ja, mit Medikamenten',
 							value: 'Medikamente'
 						},
 						{
 							id: 'c',
-							label: 'Herzkatheter',
+							label: 'ja, mit einem Herzkatheter',
 							value: 'Herzkatheter'
 						}
 					]
