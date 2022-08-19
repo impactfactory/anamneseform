@@ -3,8 +3,8 @@
 
 	import { getChapters } from '$lib/data'; // oder im Form importiert?
 	import Title from '$lib/Title.svelte';
-	import Switch from '$lib/Switch.svelte'; // oder direkt im Form eingebaut?
 	import Forms from '$lib/Forms.svelte';
+	import CopyText from '$lib/CopyText.svelte';
 
 	let chapters = getChapters($page.url.searchParams);
 </script>
@@ -17,13 +17,4 @@
 
 <Forms {chapters} />
 
-<!-- Plan
-
-- Titel
-- Formular
-- - Chapters
-- - - Questions
-- - - - Inputs
-- Action-Buttons
-
--->
+<CopyText />
