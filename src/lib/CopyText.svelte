@@ -1,33 +1,29 @@
 <script lang="ts">
-	export let text: string;
+	//import { onMount } from 'svelte';
+	import RenderedText from '$lib/RenderedText.svelte';
 
-	function copyText() {
-		/* Select text area by id*/
-		var Text = document.getElementById('textbox');
+	//import ClipboardJS from '$lib/clipboard.js';
 
-		/* Select the text inside text area. */
-		Text.select();
+	export let chapters = [] as any[];
+	//export let text: string;
 
-		/* Copy selected text into clipboard */
-		navigator.clipboard.writeText(Text.value);
-
-		/* Set the copied text as text for 
-	  div with id clipboard */
-		document.getElementById('clipboard').innerHTML = Text.value;
-	}
+	//new ClipboardJS('.btn');
 </script>
+
+<hr />
 
 <div class="pt-4">
 	<p>
 		Bitte kopieren Sie folgenden Text. Gehen Sie zur verschlüsslten Mail-Kommunikation mit HIN,
-		welche unsere Praxis begonnen hat und schicken Sie uns Ihren Bericht, danke!
+		welche unsere Praxis mit Ihnen begonnen hat und schicken Sie uns Ihren Bericht, danke!
 	</p>
 
-	<textarea id="textbox" class="textarea textarea-bordered pt-4" />
+	<div class="pt-4">
+		<div id="foo"><RenderedText {chapters} /></div>
 
-	<button class="btn" on:click={copyText}>Copy</button>
-
-	<h1>Copied Text:</h1>
-	<br />
-	<span id="clipboard" />
+		<!-- Trigger -->
+		<button class="btn" data-clipboard-target="#foo">
+			<img src="assets/clippy.svg" alt="Copy to clipboard" />
+		</button>
+	</div>
 </div>

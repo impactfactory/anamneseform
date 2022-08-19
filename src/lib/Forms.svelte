@@ -31,6 +31,4 @@
 			<Questions {chapter} />
 		{/if}
 	{/each}
-
-	<ExportButton />
 </form>

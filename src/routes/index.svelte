@@ -17,4 +17,4 @@
 
 <Forms {chapters} />
 
-<CopyText />
+<CopyText {chapters} />
