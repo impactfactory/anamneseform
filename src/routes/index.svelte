@@ -21,11 +21,15 @@
 
 <Title title="Anamnese-Formular" />
 
-<p class="prose">
+<p class="prose pb-8">
 	Bitte füllen Sie dieses Formular vor Ihrem ersten Besuch aus. Wir freuen uns Sie bald zu sehen.
 </p>
 
+<hr />
+
 <Forms {chapters} bind:freeanswertext />
+
+<hr />
 
 <CopyText {freeanswertext} />
 

@@ -21,4 +21,9 @@
 		{/if}
 	{/each}
 </div>
-freeanswertext aus Question.svelte: {freeanswertext}<br />
+
+<!--
+
+<pre>freeanswertext aus Question.svelte: {freeanswertext}<br /></pre>
+
+-->

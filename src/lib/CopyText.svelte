@@ -13,7 +13,7 @@
 
 <hr />
 
-<div class="pt-4">
+<div class="py-4">
 	<p>
 		Bitte kopieren Sie folgenden Text. Gehen Sie zur verschlüsslten Mail-Kommunikation mit HIN,
 		welche unsere Praxis mit Ihnen begonnen hat und schicken Sie uns Ihren Bericht, danke!
@@ -35,4 +35,4 @@
 	</div>
 </div>
 
-freeanswertext aus CopyText.svelte: {freeanswertext}<br />
+<pre>freeanswertext aus CopyText.svelte: {freeanswertext}<br /></pre>

@@ -1,24 +1,52 @@
 <script lang="ts">
-	export let enabled = false;
+	export let enabled = 'false';
 	export let label = '';
 </script>
 
-<div class="flex justify-between pt-4">
-	<h2 class="font-semibold text-xl ">{label}</h2>
+<div class="flex justify-start items-center py-4">
+	<h2 class="font-semibold text-2xl pr-4 w-4/5">{label}</h2>
+	<!--
+	<div class="form-control inline-block w-4/5">
+		<label for="no">
+			<input
+				type="radio"
+				class="radio radio-md"
+				class:active={!enabled}
+				value="nein"
+				name="no"
+				on:click={() => (enabled = false)}
+			/>
+			<span class="label-text">Nein</span>
+		</label>
+		<label for="yes">
+			<input
+				type="radio"
+				class="radio radio-md"
+				class:active={enabled}
+				value="ja"
+				name="yes"
+				on:click={() => (enabled = true)}
+			/>
+			<span class="label-text">Ja</span>
+		</label>
+	</div>
+</div>
 
-	<div class="relative z-0 inline-flex shadow-sm rounded-md">
+-->
+
+	<div class="relative z-0 inline-flex shadow-sm rounded-md w-1/5">
 		<button
 			on:click={() => (enabled = false)}
 			type="button"
 			class:active={!enabled}
-			class="w-16 shadow-lg xl:w-24 relative inline-flex items-center justify-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+			class="w-16 shadow-lg xl:w-24 relative inline-flex items-center justify-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
 			>Nein</button
 		>
 		<button
 			on:click={() => (enabled = true)}
 			class:active={enabled}
 			type="button"
-			class="w-16 shadow-lg xl:w-24 -ml-px relative inline-flex items-center justify-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+			class="w-16 shadow-lg xl:w-24 -ml-px relative inline-flex items-center justify-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
 			>Ja</button
 		>
 	</div>
@@ -26,6 +54,6 @@
 
 <style lang="postcss">
 	.active {
-		@apply bg-gray-500 text-white shadow-none;
+		@apply bg-gray-500 text-white shadow-none border-none;
 	}
 </style>

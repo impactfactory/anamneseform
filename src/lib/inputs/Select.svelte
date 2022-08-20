@@ -11,11 +11,11 @@
 	export let placeholder = question.freetextplaceholder;
 </script>
 
-<div class="form-control w-full max-w-xs">
-	<label for={question.id} class="label">
+<div class="form-control w-full">
+	<label for={question.id} class="label font-semibold">
 		<span class="label-text">{question.label}</span>
 	</label>
-	<select id={question.id} class="select select-bordered" bind:value={selected}>
+	<select id={question.id} class="select select-bordered select-sm w-100" bind:value={selected}>
 		<option disabled selected value="empty">Bitte wählen Sie...</option>
 		{#each question.options as option}
 			{#if option.freeanswer}
@@ -27,26 +27,19 @@
 			{/if}
 		{/each}
 	</select>
-	<div id="fillme{question.id}" class="pt-4" />
 </div>
 
-<br />
-
-<br />
-
-selected = {selected}
-
 {#if selected === 'freetext'}
-	<!--
-		<textarea
-		name="freetext{id}"
-		class="textarea textarea-bordered w-full"
-		bind:value={freeanswertext}
-		{placeholder}
-	/>
-	-->
-
 	<TextArea bind:freeanswertext {id} {placeholder} />
 {/if}
 
-freeanswertext aus select.svelte: {freeanswertext}
+<!-- 
+<pre>selected = {selected}<br />
+	freeanswertext aus select.svelte: {freeanswertext}
+</pre>
+-->
+<style>
+	.select {
+		font-weight: 400;
+	}
+</style>

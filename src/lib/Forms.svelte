@@ -6,15 +6,14 @@
 	export let freeanswertext = '';
 </script>
 
-<form class="pt-10" action="/api/send" method="POST">
+<form class="pt-4 pb-4" action="/api/send" method="POST">
 	{#each chapters as chapter}
-		<div>
-			<Switch bind:enabled={chapter.enabled} label={chapter.label} />
-		</div>
+		<Switch bind:enabled={chapter.enabled} label={chapter.label} />
+
 		{#if chapter.enabled}
 			<Questions {chapter} bind:freeanswertext />
 		{/if}
 	{/each}
-</form>
 
-freeanswertext aus Form.svelte: {freeanswertext}<br />
+	<pre>freeanswertext aus Form.svelte: {freeanswertext}<br /></pre>
+</form>

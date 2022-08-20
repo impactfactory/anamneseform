@@ -1,7 +1,11 @@
 <script lang="ts">
+	import TextArea from '$lib/inputs/TextArea.svelte';
 	export let question = [] as any[];
+	export let id = question.id;
+	export let placeholder = question.freetextplaceholder;
 	let selected = false;
-	let id = question.id;
+	let freetext = '';
+
 	let i = 1;
 
 	function addTextarea() {
@@ -21,7 +25,7 @@
 </script>
 
 <fieldset class="checkboxgroup block max-w-sm">
-	<legend class="pt-4 pb-2">{question.label}</legend>
+	<legend class="pt-4 pb-2 font-semibold">{question.label}</legend>
 	{#each question.boxes as box}
 		<div class="form-control">
 			<label class="label cursor-pointer" for="{question.id}{box.id}">
@@ -32,8 +36,8 @@
 						id="{question.id}{box.id}"
 						name="{question.id}{box.id}"
 						bind:group={question.name}
-						on:click={addTextarea}
-						value={box.value}
+						bind:value={selected}
+						value="freetext"
 					/>
 				{:else}
 					<input
@@ -49,5 +53,8 @@
 			</label>
 		</div>
 	{/each}
-	<div id="fillme{question.id}" />
+	<!-- <div id="fillme{question.id}" /> -->
+	{#if selected === 'freetext'}
+		<TextArea bind:freeanswertext {id} {placeholder} />
+	{/if}
 </fieldset>

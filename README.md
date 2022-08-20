@@ -3,6 +3,8 @@
 - wie binde ich copyclipboard.js ein?
 - wie geht svelte:component (ssr-fehler)
 
+- layout.svelte: wie kann es mir die klasse ins body setzen, damit ich die focus-ringe wegkriege, wenn ich nicht via tastaur navigiere?
+
 ABLAUF
 
 ---

@@ -9,12 +9,13 @@
 
 <textarea
 	name="freetext{id}"
-	class="textarea textarea-bordered"
+	class="textarea textarea-bordered w-full mt-4 focus"
 	bind:value={freeanswertext}
 	{placeholder}
 />
 
-<p>
-	Freeanswertext aus TextArea.svelte: {freeanswertext}<br />
+<!-- 
+<pre>Freeanswertext aus TextArea.svelte: {freeanswertext}
 	Placeholder aus TextArea.svelte: {placeholder}<br />
-</p>
+</pre>
+-->
