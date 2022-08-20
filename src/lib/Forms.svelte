@@ -3,6 +3,7 @@
 	import Questions from '$lib/Questions.svelte';
 
 	export let chapters = [] as any[];
+	export let freeanswertext = '';
 </script>
 
 <form class="pt-10" action="/api/send" method="POST">
@@ -11,7 +12,9 @@
 			<Switch bind:enabled={chapter.enabled} label={chapter.label} />
 		</div>
 		{#if chapter.enabled}
-			<Questions {chapter} />
+			<Questions {chapter} bind:freeanswertext />
 		{/if}
 	{/each}
 </form>
+
+freeanswertext aus Form.svelte: {freeanswertext}<br />

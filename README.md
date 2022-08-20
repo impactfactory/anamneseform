@@ -1,4 +1,7 @@
-- wie blende ich am besten ein textarea ein wenn eine spezifische option selected ist
+- die variable freetext aus select.svelte ist nun zwar überall verfügbar, aber aus jeder wiederholten einbdung von select auch mehrmals gleich. wie mache ich, dass eine komponente bei einer neuerlichen einbindung auch einen eigenen wert hat?
+
+- wie binde ich copyclipboard.js ein?
+- wie geht svelte:component (ssr-fehler)
 
 ABLAUF
 

@@ -8,7 +8,11 @@
 
 Template ist {chapter.component}. Frage ist {chapter.label}
 
+<!-- ....is not a valid SSR component...  
 <svelte:component this={chapter.component} />
+-->
+
+<Palpitation />
 
 <br />
 <br />

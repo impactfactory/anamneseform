@@ -5,6 +5,7 @@
 	import Select from '$lib/inputs/Select.svelte';
 
 	export let chapter = [] as any[];
+	export let freeanswertext = '';
 </script>
 
 <div transition:slide>
@@ -16,7 +17,8 @@
 			<CheckBoxGroup {question} />
 		{/if}
 		{#if question.type == 'select'}
-			<Select {question} />
+			<Select {question} bind:freeanswertext />
 		{/if}
 	{/each}
 </div>
+freeanswertext aus Question.svelte: {freeanswertext}<br />

@@ -8,6 +8,7 @@
 	//export let text: string;
 
 	//new ClipboardJS('.btn');
+	export let freeanswertext: string;
 </script>
 
 <hr />
@@ -33,3 +34,5 @@
 		</button>
 	</div>
 </div>
+
+freeanswertext aus CopyText.svelte: {freeanswertext}<br />
