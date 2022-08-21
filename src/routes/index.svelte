@@ -7,6 +7,7 @@
 	import CopyText from '$lib/CopyText.svelte';
 
 	export let freeanswertext;
+	export let selected = 'empty';
 
 	let chapters = getChapters($page.url.searchParams);
 </script>
@@ -15,6 +16,7 @@
 <pre>
 	<br />
 	Testfläche<br />
+	select value index.svelte: {selected}
 	freeanswertext aus index.svelte: {freeanswertext}<br />
 	<br /></pre>
 <hr />
@@ -27,7 +29,7 @@
 
 <hr />
 
-<Forms {chapters} bind:freeanswertext />
+<Forms {chapters} bind:freeanswertext bind:selected />
 
 <hr />
 

@@ -9,8 +9,8 @@
 	export let placeholder = question.freetextplaceholder;
 </script>
 
-<fieldset class="radiogroup">
-	<legend class="pt-4 pb-2 font-semibold">{question.label}</legend>
+<fieldset class="radiogroup w-full">
+	<legend class="pb-2 pt-3 text-sm font-semibold">{question.label}</legend>
 	{#each question.radios as radio}
 		<div class="form-control">
 			{#if radio.freeanswer == '1'}

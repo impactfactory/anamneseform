@@ -9,7 +9,7 @@
 
 <textarea
 	name="freetext{id}"
-	class="textarea textarea-bordered w-full mt-4 focus"
+	class="textarea textarea-bordered w-full mt-3 focus"
 	bind:value={freeanswertext}
 	{placeholder}
 />

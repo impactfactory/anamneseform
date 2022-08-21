@@ -242,6 +242,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Wie fühlen Sie den Herzschlag?',
 					type: 'checkboxgroup',
 					name: 'group12',
+					freetextplaceholder: 'Bitte beschreiben Sie.',
 					value: orgParams.get('12') || '',
 					boxes: [
 						{
@@ -267,6 +268,7 @@ export function getChapters(orgParams: URLSearchParams) {
 						{
 							id: 'e',
 							freeanswer: '1',
+
 							label: 'anderes',
 							value: 'anderes'
 						}

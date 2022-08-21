@@ -6,6 +6,7 @@
 
 	export let chapter = [] as any[];
 	export let freeanswertext = '';
+	export let selected = 'empty';
 </script>
 
 <div transition:slide>
@@ -17,7 +18,7 @@
 			<CheckBoxGroup {question} />
 		{/if}
 		{#if question.type == 'select'}
-			<Select {question} bind:freeanswertext />
+			<Select {question} bind:freeanswertext bind:selected />
 		{/if}
 	{/each}
 </div>

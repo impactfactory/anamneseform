@@ -1,11 +1,15 @@
-- die variable freetext aus select.svelte ist nun zwar überall verfügbar, aber aus jeder wiederholten einbdung von select auch mehrmals gleich. wie mache ich, dass eine komponente bei einer neuerlichen einbindung auch einen eigenen wert hat?
+- die variable freetext aus select.svelte ist nun zwar überall verfügbar, aber aus jeder wiederholten einbindung von select auch nur eine statt mehrere gleich. wie mache ich, dass eine komponente bei einer neuerlichen einbindung auch einen eigenen wert hat?
+
+- Wahrscheinlich dasselbe Problem dann beim Fliesstext, der geschrieben werden soll. Wie kriege die Antworten des Users in den Fliesstext?
+
+- Es macht wohl am ehsten Sinn, wäre ein "Satz-Template" ein Attribut einer Frage. So bliebe es maximal dynamisch. Aber wie kriegt man Platzhalter in einem Frage-Attribut für die Values weiterer Frage-Attribute, die ja aber gar nicht im Frageobjekt gespeichert sind, sondern irgendwo im Svelte-Loop?
 
 - wie binde ich copyclipboard.js ein?
 - wie geht svelte:component (ssr-fehler)
 
-- layout.svelte: wie kann es mir die klasse ins body setzen, damit ich die focus-ringe wegkriege, wenn ich nicht via tastaur navigiere?
+- layout.svelte: wie kann es mir die klasse ins body setzen, damit ich die focus-ringe wegkriege, wenn ich NICHT via tastatur navigiere?
 
-ABLAUF
+Möglicher ABLAUF
 
 ---
 
@@ -14,25 +18,16 @@ ABLAUF
   wo die Patienten-ID als Curamed als readonly bereits drin ist
   kann auch unverschlüsselt sein
 - Patient bekommt diesen Link und füllt das Formular aus
-- Patient klickt Button und der Link wird in die Zwischenablage gelegt
-  oder Patient copy pasted den Link
-  (oder kriegt ein PDF, das mit uns bekanntem Pw verschlüsselt ist und er ungeschützt verschicken kann)
+- Patient kopiert erzeugten Text unten in seine Zwischenablage
 
 - - - Patient unterbricht Prozess und speichert sich Link zur späteren Bearbeitung ab(?)
       Patient klickt gespeicherten Link und macht mit Bearbeitung weiter
       System warnt, dass der alte gespeicherte Link nicht mehr gültig ist und bei weiterem Unterbruch ein neuer abgespeichert werden muss
       Patient klickt gespeicherten Link und macht mit Bearbeitung weiter
 
-- Patient schickt Link/PDF per HIN-Kommunikation zurück an Mpa
-- Mpa schickt Link/PDF kurz vor Praxis-Termin an Arzt (oder kopiert diesen in Agenda rein)
-- LÜCKE . . . .
-- Arzt bekommt Link zu einem fertigen Text, den er in einen zu erstellenden Bericht kopieren kann (am besten wohl als .txt oder .rtf)
-  Text muss Absätze, Fett-Auszeichnungen, ev. Listen und Überschriften ermöglichen
+- Patient schickt Text per HIN-Kommunikation zurück an Mpa
+- Mpa kopiert Text ins Filemaker, oder schickt ihn dem Arzt oder erzeugt ein PDF und legt dieses in Curamed ab (????)
 
   BEDENKEN
 
-  ***
-
-  x Ein einfacher Sende-Button statt Copy Paste des Links wäre bedeutend kundenfreundlicher... auch weil
-  x wenn eine Mail aus irgendeinem Grund nicht ankommt (z.B. dem HIN-Filter oder Bedienungsfehler), gehen die Daten verloren
-  x Das Formular ist echt riesig. Schritt für Schritt mit Fortschrittsanzeige wäre wohl freundlicher
+  x wenn eine Mail aus irgendeinem Grund nicht ankommt (z.B. dem HIN-Filter oder Bedienungsfehler), gehen die Daten verloren.

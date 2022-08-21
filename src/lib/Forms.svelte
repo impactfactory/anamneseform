@@ -4,6 +4,7 @@
 
 	export let chapters = [] as any[];
 	export let freeanswertext = '';
+	export let selected = 'empty';
 </script>
 
 <form class="pt-4 pb-4" action="/api/send" method="POST">
@@ -11,7 +12,7 @@
 		<Switch bind:enabled={chapter.enabled} label={chapter.label} />
 
 		{#if chapter.enabled}
-			<Questions {chapter} bind:freeanswertext />
+			<Questions {chapter} bind:freeanswertext bind:selected />
 		{/if}
 	{/each}
 
