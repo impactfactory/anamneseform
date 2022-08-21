@@ -1,3 +1,6 @@
+FRAGEN AN SASCHA
+- - -
+
 - die variable freetext aus select.svelte ist nun zwar überall verfügbar, aber aus jeder wiederholten einbindung von select auch nur eine statt mehrere gleich. wie mache ich, dass eine komponente bei einer neuerlichen einbindung auch einen eigenen wert hat?
 
 - Wahrscheinlich dasselbe Problem dann beim Fliesstext, der geschrieben werden soll. Wie kriege die Antworten des Users in den Fliesstext?
@@ -9,9 +12,8 @@
 
 - layout.svelte: wie kann es mir die klasse ins body setzen, damit ich die focus-ringe wegkriege, wenn ich NICHT via tastatur navigiere?
 
-Möglicher ABLAUF
-
----
+MÖGLICHER ABLAUF
+- - -
 
 - Mpa bekommt neue Anmeldung, definiert Termin
 - Mpa oder automatisches Terminmail schickt Patienten einen Link zum Formular,
