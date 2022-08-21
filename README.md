@@ -12,6 +12,7 @@ FRAGEN AN SASCHA
 
 - layout.svelte: wie kann es mir die klasse ins body setzen, damit ich die focus-ringe wegkriege, wenn ich NICHT via tastatur navigiere?
 
+
 MÖGLICHER ABLAUF
 - - -
 
@@ -30,6 +31,8 @@ MÖGLICHER ABLAUF
 - Patient schickt Text per HIN-Kommunikation zurück an Mpa
 - Mpa kopiert Text ins Filemaker, oder schickt ihn dem Arzt oder erzeugt ein PDF und legt dieses in Curamed ab (????)
 
+
   BEDENKEN
+  - - - 
 
   x wenn eine Mail aus irgendeinem Grund nicht ankommt (z.B. dem HIN-Filter oder Bedienungsfehler), gehen die Daten verloren.
