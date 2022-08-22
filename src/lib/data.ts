@@ -2,9 +2,10 @@ export function getChapters(orgParams: URLSearchParams) {
 	return [
 		{
 			number: '1',
+			name: 'Herzrasen',
 			label: 'Haben Sie Herzrasen?',
 			name: 'herzrasen',
-			enabled: true,
+			enabled: false,
 			component: 'Palpitation',
 			questions: [
 				{
@@ -278,6 +279,7 @@ export function getChapters(orgParams: URLSearchParams) {
 		},
 		{
 			number: '2',
+			name: 'Herzstolpern',
 			label: 'Haben Sie Herzstolpern?',
 			name: 'herzstolpern',
 			enabled: false,
@@ -320,6 +322,7 @@ export function getChapters(orgParams: URLSearchParams) {
 		},
 		{
 			number: '3',
+			name:'Stärke',
 			label: 'Haben Sie ungewöhnlich starken Herzschlag?',
 			name: 'herzklopfen',
 			enabled: false,
@@ -362,6 +365,7 @@ export function getChapters(orgParams: URLSearchParams) {
 		},
 		{
 			number: '4',
+			name: 'Frequenz',
 			label: 'Haben Sie unregelmässigen Herzschlag?',
 			name: 'rhythmus',
 			enabled: false,
@@ -404,6 +408,7 @@ export function getChapters(orgParams: URLSearchParams) {
 		},
 		{
 			number: '5',
+			name: 'anderes',
 			label: 'Haben Sie etwas anderes?',
 			name: 'anderes',
 			enabled: false,
