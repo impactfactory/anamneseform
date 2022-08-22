@@ -5,34 +5,6 @@
 
 <div class="flex justify-start items-center py-4">
 	<h2 class="font-semibold text-2xl pr-4 w-4/5">{label}</h2>
-	<!--
-	<div class="form-control inline-block w-4/5">
-		<label for="no">
-			<input
-				type="radio"
-				class="radio radio-md"
-				class:active={!enabled}
-				value="nein"
-				name="no"
-				on:click={() => (enabled = false)}
-			/>
-			<span class="label-text">Nein</span>
-		</label>
-		<label for="yes">
-			<input
-				type="radio"
-				class="radio radio-md"
-				class:active={enabled}
-				value="ja"
-				name="yes"
-				on:click={() => (enabled = true)}
-			/>
-			<span class="label-text">Ja</span>
-		</label>
-	</div>
-</div>
-
--->
 
 	<div class="relative z-0 inline-flex shadow-sm rounded-md w-1/5">
 		<button
