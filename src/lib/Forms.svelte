@@ -2,24 +2,19 @@
 	import { slide } from 'svelte/transition';
 	import Switch from '$lib/Switch.svelte';
 	import Questions from '$lib/Questions.svelte';
-	import ProgressBar from './ProgressBar.svelte';
-	import StepsButtons from './buttons/ForwardButtonButton.svelte';
-	import RenderTextButton from './buttons/RenderTextButton.svelte';
+	import ProgressBar from '$lib/ProgressBar.svelte';
+	import StepsButtons from '$lib/StepsButtons.svelte';
 
 	export let chapters = [] as any[];
-	//export let freeanswertext = '';
 	export let selected = 'empty';
-	export let currentActive;
-	export let progressBar;
 
 	let step: number = '1';
-	//const numberOfChapters = chapters.length;
 </script>
 
 <ProgressBar {chapters} bind:step />
 
-<form class="pt-4 pb-4" action="" method="POST">
-	{#each chapters as chapter, i}
+<form class="pt-4 pb-4">
+	{#each chapters as chapter}
 		{#if step == chapter.number}
 			<div transition:slide>
 				<Switch
@@ -30,7 +25,7 @@
 				/>
 				{#if chapter.enabled}
 					<Questions {chapter} />
-					<StepsButtons bind:step />
+					<StepsButtons number={chapter.number} length={chapters.length} bind:step />
 				{/if}
 			</div>
 		{/if}

@@ -1,8 +1,8 @@
 <script lang="ts">
-	export let enabled = '';
-	export let label = '';
+	export let enabled: boolean = 'false';
+	export let label: string;
 	export let step: number;
-	export let number;
+	export let number: number;
 </script>
 
 <div class="flex justify-start items-center py-4">

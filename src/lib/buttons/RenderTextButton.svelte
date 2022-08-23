@@ -1,6 +1,7 @@
 <script lang="ts">
+	function RenderText() {
+		//put all the date through chapter templates and print them here
+	}
 </script>
 
-<div class="py-3">
-	<button class="btn" on:click={() => {}}> Zusammenfassung erstellen </button>
-</div>
+<button class="btn" href="/api/send"> Zusammenfassung erstellen </button>

@@ -11,12 +11,7 @@
 				on:click={() => {
 					step = chapter.number;
 				}}
-			>
-				{chapter.number}
-			</li>
+			/>
 		{/each}
 	</ul>
 </div>
-
-<style>
-</style>

@@ -12,6 +12,7 @@
 	let chapters = getChapters($page.url.searchParams);
 </script>
 
+<!-- 
 <hr />
 <pre>
 	<br />
@@ -20,6 +21,7 @@
 	freeanswertext aus index.svelte: {freeanswertext}<br />
 	<br /></pre>
 <hr />
+-->
 
 <Title title="Anamnese-Formular" />
 

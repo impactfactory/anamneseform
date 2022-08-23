@@ -5,8 +5,8 @@
 <button
 	class="btn"
 	on:click={() => {
-		step--;
+		step++;
 	}}
 >
-	rückwärts
+	vorwärts
 </button>
