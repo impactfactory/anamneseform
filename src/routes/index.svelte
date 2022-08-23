@@ -1,27 +1,14 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-
 	import { getChapters } from '$lib/data';
 	import Title from '$lib/Title.svelte';
 	import Forms from '$lib/Forms.svelte';
 	import CopyText from '$lib/CopyText.svelte';
 
-	export let freeanswertext;
+	export let freeanswertext = '';
 	export let selected = 'empty';
 
-	let chapters = getChapters($page.url.searchParams);
+	let chapters = getChapters();
 </script>
-
-<!-- 
-<hr />
-<pre>
-	<br />
-	Testfläche<br />
-	select value index.svelte: {selected}
-	freeanswertext aus index.svelte: {freeanswertext}<br />
-	<br /></pre>
-<hr />
--->
 
 <Title title="Anamnese-Formular" />
 
@@ -32,8 +19,6 @@
 <hr />
 
 <Forms {chapters} bind:freeanswertext bind:selected />
-
-<hr />
 
 <!--
 Flow:
