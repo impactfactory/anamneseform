@@ -22,10 +22,4 @@
 </main>
 
 <style>
-	body:not(.user-is-tabbing) button:focus,
-	body:not(.user-is-tabbing) input:focus,
-	body:not(.user-is-tabbing) select:focus,
-	body:not(.user-is-tabbing) textarea:focus {
-		outline: 0 !important; /* greift nicht :( */
-	}
 </style>

@@ -35,8 +35,6 @@
 
 <hr />
 
-<CopyText {freeanswertext} />
-
 <!--
 Flow:
 
