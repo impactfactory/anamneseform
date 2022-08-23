@@ -9,7 +9,7 @@
 		<button
 			class="btn"
 			on:click={() => {
-				step = step - 1;
+				step--;
 			}}
 		>
 			rückwärts
@@ -18,7 +18,7 @@
 		<button
 			class="btn"
 			on:click={() => {
-				step = step + 1;
+				step++;
 			}}
 		>
 			vorwärts
