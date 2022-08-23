@@ -410,7 +410,6 @@ export function getChapters(orgParams: URLSearchParams) {
 			number: '5',
 			name: 'anderes',
 			label: 'Haben Sie etwas anderes?',
-			name: 'anderes',
 			enabled: false,
 			questions: []
 		}

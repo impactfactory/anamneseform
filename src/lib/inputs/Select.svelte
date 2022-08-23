@@ -1,12 +1,10 @@
 <script lang="ts">
-	//import { select_multiple_value } from 'svelte/internal';
+	import { select_multiple_value } from 'svelte/internal'; // was ist das?
 	import TextArea from '$lib/inputs/TextArea.svelte';
 
 	export let question = [] as any[];
-
-	export let selected = 'empty';
-	let freetext = '';
-	export let freeanswertext;
+	let selected = 'empty';
+	//export let freeanswertext;
 	export let id = question.id;
 	export let placeholder = question.freetextplaceholder;
 </script>
@@ -31,11 +29,11 @@
 	</div>
 
 	{#if selected === 'freetext'}
-		<TextArea bind:freeanswertext {id} {placeholder} />
+		<TextArea {id} {placeholder} />
 	{/if}
 </fieldset>
 
-<!-- 
+<!-- für Debugging
 <pre>selected = {selected}<br />
 	freeanswertext aus select.svelte: {freeanswertext}
 </pre>
