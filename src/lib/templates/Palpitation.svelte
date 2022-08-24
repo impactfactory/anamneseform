@@ -1,4 +1,6 @@
 <script lang="ts">
+	let x = [];
+	x = ["'Das Herzrasen tritt' + {frequenz} + 'auf'", 'zwei'];
 </script>
 
-<p>et viola wir sind im Herzrasen</p>
+<p>{x[0]}</p>

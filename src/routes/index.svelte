@@ -4,7 +4,6 @@
 	import { getChapters } from '$lib/data';
 	import Title from '$lib/Title.svelte';
 	import Forms from '$lib/Forms.svelte';
-	import CopyText from '$lib/CopyText.svelte';
 
 	export let freeanswertext;
 	export let selected = 'empty';
