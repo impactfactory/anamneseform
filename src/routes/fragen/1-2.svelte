@@ -5,6 +5,7 @@
 	import { answers } from '$lib/stores';
 
 	let chapterName: string = 'Herzrasen';
+	let percentage: number = 30;
 	let prevPage: string = '1-1';
 	let nextPage: string = '1-3';
 	let symptoms = ['Schwindel', 'Brustenge', 'Brustschmerzen', 'Luftprobleme'];
@@ -12,7 +13,7 @@
 
 <Exit />
 
-<YouAreHere {chapterName} />
+<YouAreHere {chapterName} {percentage} />
 
 <br />
 

@@ -6,13 +6,14 @@
 	import YouAreHere from '$lib/YouAreHere.svelte';
 
 	let chapterName: string = 'Herzrasen';
+	let percentage: number = 20;
 	let prevPage: string = '1-0';
 	let nextPage: string = '1-2';
 </script>
 
 <Exit />
 
-<YouAreHere {chapterName} />
+<YouAreHere {chapterName} {percentage} />
 
 <div>
 	<label>Wie häufig haben sie Herzrasen?</label>

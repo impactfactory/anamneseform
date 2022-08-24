@@ -5,13 +5,14 @@
 	import { answers } from '$lib/stores';
 
 	let chapterName: string = 'Herzrasen';
+	let percentage: number = 50;
 	let prevPage: string = '1-3';
 	let nextPage: string = '2-0';
 </script>
 
 <Exit />
 
-<YouAreHere {chapterName} />
+<YouAreHere {chapterName} {percentage} />
 
 <div>
 	<label>Wie hört das Herzrasen auf?</label>

@@ -2,6 +2,6 @@
 	import '../tailwind.css';
 </script>
 
-<main class="p-4">
+<div class="p-4 max-w-prose">
 	<slot />
-</main>
+</div>

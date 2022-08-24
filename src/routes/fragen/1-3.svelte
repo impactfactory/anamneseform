@@ -6,6 +6,7 @@
 	import { text } from 'svelte/internal';
 
 	let chapterName: string = 'Herzrasen';
+	let percentage: number = 40;
 	let prevPage: string = '1-2';
 	let nextPage: string = '1-4';
 	let treatments = ['ja (medikamentös)', 'ja (mit Herzkatheter)', 'keine'];
@@ -19,7 +20,7 @@
 
 <Exit />
 
-<YouAreHere {chapterName} />
+<YouAreHere {chapterName} {percentage} />
 
 <fieldset class="radiogroup w-full">
 	<legend class="pb-2 pt-3 text-sm font-semibold"

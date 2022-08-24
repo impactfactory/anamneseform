@@ -1,4 +1,5 @@
 <script lang="ts">
+	let percentage: number = 1;
 </script>
 
 <h1>Haben Sie Herzrasen?</h1>
