@@ -1,4 +1,4 @@
-export function getChapters(orgParams: URLSearchParams) {
+export function getChapters() {
 	return [
 		{
 			number: '1',
@@ -12,7 +12,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Wie häufig haben Sie Herzrasen?',
 					type: 'select',
 					freetextplaceholder: 'Bitte beschreiben Sie in welchem Muster es auftritt.',
-					value: orgParams.get('2') || '',
+					value: '',
 					options: [
 						{
 							value: 'mehrmals täglich'
@@ -46,7 +46,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Wie lange hält das Herzrasen an?',
 					type: 'select',
 					freetextplaceholder: 'Bitte beschreiben Sie die Dauer.',
-					value: orgParams.get('3') || '',
+					value: '',
 					options: [
 						{
 							value: 'nur Sekunden'
@@ -77,7 +77,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Wie beginnt das Herzrasen?',
 					type: 'select',
 					freetextplaceholder: 'Bitte beschreiben Sie genau, wie es beginnt',
-					value: orgParams.get('5') || '',
+					value: '',
 					options: [
 						{
 							value: 'plötzlich'
@@ -99,7 +99,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Wie hört das Herzrasen auf?',
 					type: 'select',
 					freetextplaceholder: 'Bitte beschreiben Sie genau, wie es aufhört.',
-					value: orgParams.get('6') || '',
+					value: '',
 					options: [
 						{
 							value: 'plötzlich'
@@ -122,7 +122,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					type: 'checkboxgroup',
 					freetextplaceholder: 'Bitte beschreiben Sie die Symptome, welche Sie erfahren.',
 					name: 'group7',
-					value: orgParams.get('6') || '',
+					value: '',
 					boxes: [
 						{
 							id: 'a',
@@ -157,7 +157,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Seit wann kennen Sie dieses Herzrasen?',
 					type: 'select',
 					freetextplaceholder: 'Bitte beschreiben Sie seit wann.',
-					value: orgParams.get('8') || '',
+					value: '',
 					options: [
 						{
 							value: 'schon Jahre'
@@ -180,7 +180,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					type: 'radiogroup',
 					name: 'group9',
 					freetextplaceholder: 'Bitte beschreiben Sie, wie Sie es auslösen können.',
-					value: orgParams.get('9') || '',
+					value: '',
 					radios: [
 						{
 							id: 'a',
@@ -199,7 +199,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					type: 'radiogroup',
 					name: 'group10',
 					freetextplaceholder: 'Bitte beschreiben Sie, wie Sie es beenden können.',
-					value: orgParams.get('10') || '',
+					value: '',
 					radios: [
 						{
 							id: 'a',
@@ -218,7 +218,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					type: 'checkboxgroup',
 					name: 'group11',
 					freeanswer: '1',
-					value: orgParams.get('11') || '',
+					value: '',
 					boxes: [
 						{
 							id: 'a',
@@ -243,7 +243,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					type: 'checkboxgroup',
 					name: 'group12',
 					freetextplaceholder: 'Bitte beschreiben Sie.',
-					value: orgParams.get('12') || '',
+					value: '',
 					boxes: [
 						{
 							id: 'a',
@@ -287,21 +287,21 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'wie schnell denn?',
 					type: 'text',
 					description: 'Sagen sie ja oder nein',
-					value: orgParams.get('6') || ''
+					value: ''
 				},
 				{
 					id: '7',
 					label: 'Frage 2',
 					type: 'text',
 					description: '',
-					value: orgParams.get('7') || ''
+					value: ''
 				},
 				{
 					id: '8',
 					label: 'Frage 3',
 					type: 'checkbox',
 					description: 'Hier checken bitte',
-					value: orgParams.get('8') || '',
+					value: '',
 					defaultstate: 'checked'
 				},
 				{
@@ -309,7 +309,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Beschreiben Sie was oben noch fehlt',
 					type: 'textarea',
 					description: 'Hier sollte ne Textarea sein obendran',
-					value: orgParams.get('9') || '',
+					value: '',
 					defaultstate: '',
 					cols: '30',
 					rows: '3',
@@ -320,7 +320,7 @@ export function getChapters(orgParams: URLSearchParams) {
 		},
 		{
 			number: '3',
-			name:'strongness',
+			name: 'strongness',
 			label: 'Haben Sie ungewöhnlich starken Herzschlag?',
 			enabled: false,
 			questions: [
@@ -329,21 +329,21 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'wie schnell denn?',
 					type: 'text',
 					description: 'Sagen sie ja oder nein',
-					value: orgParams.get('6') || ''
+					value: ''
 				},
 				{
 					id: '7',
 					label: 'Frage 2',
 					type: 'text',
 					description: '',
-					value: orgParams.get('7') || ''
+					value: ''
 				},
 				{
 					id: '8',
 					label: 'Frage 3',
 					type: 'checkbox',
 					description: 'Hier checken bitte',
-					value: orgParams.get('8') || '',
+					value: '',
 					defaultstate: 'checked'
 				},
 				{
@@ -351,7 +351,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Beschreiben Sie was oben noch fehlt',
 					type: 'textarea',
 					description: 'Hier sollte ne Textarea sein obendran',
-					value: orgParams.get('9') || '',
+					value: '',
 					defaultstate: '',
 					cols: '30',
 					rows: '3',
@@ -371,21 +371,21 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'wie schnell denn?',
 					type: 'text',
 					description: 'Sagen sie ja oder nein',
-					value: orgParams.get('6') || ''
+					value: ''
 				},
 				{
 					id: '7',
 					label: 'Frage 2',
 					type: 'text',
 					description: '',
-					value: orgParams.get('7') || ''
+					value: ''
 				},
 				{
 					id: '8',
 					label: 'Frage 3',
 					type: 'checkbox',
 					description: 'Hier checken bitte',
-					value: orgParams.get('8') || '',
+					value: '',
 					defaultstate: 'checked'
 				},
 				{
@@ -393,7 +393,7 @@ export function getChapters(orgParams: URLSearchParams) {
 					label: 'Beschreiben Sie was oben noch fehlt',
 					type: 'textarea',
 					description: 'Hier sollte ne Textarea sein obendran',
-					value: orgParams.get('9') || '',
+					value: '',
 					defaultstate: '',
 					cols: '30',
 					rows: '3',

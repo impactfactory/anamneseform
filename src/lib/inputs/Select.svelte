@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { select_multiple_value } from 'svelte/internal'; // was ist das?
 	import TextArea from '$lib/inputs/TextArea.svelte';
 
 	export let question = [] as any[];

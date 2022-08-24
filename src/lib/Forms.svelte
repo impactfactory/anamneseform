@@ -13,7 +13,7 @@
 
 <ProgressBar {chapters} bind:step />
 
-<form class="pt-4 pb-4">
+<div class="pt-4 pb-4">
 	{#each chapters as chapter}
 		{#if step == chapter.number}
 			<div transition:slide>
@@ -32,4 +32,4 @@
 	{/each}
 
 	<!-- <pre>freeanswertext aus Form.svelte: {freeanswertext}<br /></pre> -->
-</form>
+</div>
