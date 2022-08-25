@@ -1,9 +1,9 @@
 <script lang="ts">
-	export let ExitButton = true;
+	export let ExitButton = false;
 </script>
 
 <header class="py-4 w-full flex justify-between">
-	<h1 class="text-3xl">
+	<h1>
 		<a href="/" class="no-underline">Ihre Online-Anamnese</a>
 	</h1>
 	{#if ExitButton}

@@ -6,8 +6,8 @@
 
 	let chapterName: string = 'Herzrasen';
 	let percentage: number = 30;
-	let prevPage: string = '1-1';
-	let nextPage: string = '1-3';
+	let prevPage: string = '/fragen/1-1';
+	let nextPage: string = '/fragen/1-3';
 	let symptoms = ['Schwindel', 'Brustenge', 'Brustschmerzen', 'Luftprobleme'];
 </script>
 

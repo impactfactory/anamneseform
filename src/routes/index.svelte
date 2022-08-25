@@ -7,13 +7,13 @@
 <Exit {ExitButton} />
 
 <p>
-	Je detailierter unsere Ärzte wissen, welche Symptome Sie erfahren, desto besser und effizienter
-	können Sie Ihnen helfen.
+	<b>Willkommen!</b> Erstellen Sie mit unserer Online-Anamnese einen Text, den Sie unseren Ärzten zukommen
+	lassen können.
 </p>
 
 <p>
-	Erstellen Sie mit unserer Online-Anamnese einen Text, den Sie unseren Ärzten zukommen lassen
-	können.
+	Je detailierter unsere Ärzte wissen, welche Symptome Sie erfahren, desto besser und effizienter
+	können Sie Ihnen helfen.
 </p>
 
 <p>
@@ -21,4 +21,4 @@
 	Fragen stellen.
 </p>
 
-<a class="my-4 btn btn-sm btn-primary text-white" href="/fragen/1-0">Beginnen</a>
+<a class="my-4 btn btn-primary text-white" href="/fragen/1-0">Beginnen</a>

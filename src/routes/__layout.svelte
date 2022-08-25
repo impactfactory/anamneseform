@@ -2,7 +2,7 @@
 	import '../tailwind.css';
 </script>
 
-<div class="p-4 max-w-prose prose text-black">
+<div class="prose text-black">
 	<slot />
 </div>
 

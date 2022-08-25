@@ -3,12 +3,10 @@
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import YouAreHere from '$lib/YouAreHere.svelte';
 	import { answers } from '$lib/stores';
-	import { text } from 'svelte/internal';
 
 	let chapterName: string = 'Herzrasen';
-	let percentage: number = 40;
-	let prevPage: string = '1-2';
-	let nextPage: string = '2-0';
+	let prevPage: string = '/fragen/1-2';
+	let nextPage: string = '/fragen/2-0';
 	let treatments = ['ja (medikamentös)', 'ja (mit Herzkatheter)', 'keine'];
 	let pulses = [
 		'sehr schnell',
@@ -20,7 +18,7 @@
 
 <Exit />
 
-<YouAreHere {chapterName} {percentage} />
+<YouAreHere {chapterName} />
 
 <fieldset class="radiogroup w-full">
 	<legend class="pb-2 pt-3 text-sm font-semibold"
