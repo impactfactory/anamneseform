@@ -1,16 +1,18 @@
 <script lang="ts">
-	let percentage: number = 1;
+	import Exit from '$lib/Exit.svelte';
 </script>
 
-<h1>Haben Sie Herzrasen?</h1>
+<Exit />
+
+<h2>Haben Sie "Herzrasen"?</h2>
 
 <p>
-	<small>
-		"Herzrasen" bezeichnet die Erfahrung, dass das Herz ohne körperliche Anstrengung zu schnell
-		schlägt. Nicht selten wird Herzrasen von Symptomen wie Schwindelgefühl, Unruhe oder einem Druck
-		auf der Brust begleitet.
-	</small>
+	"Herzrasen" bezeichnet die Erfahrung, dass das Herz ohne körperliche Anstrengung zu schnell
+	schlägt. Nicht selten wird Herzrasen von Symptomen wie Schwindelgefühl, Unruhe oder einem Druck
+	auf der Brust begleitet.
 </p>
 
-<a class="btn" href="/fragen/1-1">Ja</a>
-<a class="btn" href="/fragen/2-0">Nein</a>
+<div class="flex gap-x-4">
+	<a class="btn btn-md btn-primary text-white" href="/fragen/1-1">ja</a>
+	<a class="btn btn-md btn-primary text-white" href="/fragen/2-0">nein</a>
+</div>

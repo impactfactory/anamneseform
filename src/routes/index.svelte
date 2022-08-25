@@ -1,21 +1,24 @@
-<h1 class="text-3xl">Ihre Anamnese</h1>
+<script>
+	import Exit from '$lib/Exit.svelte';
 
-<div class="prosa">
-	<p>
-		Je detailierter unsere Ärzte wissen, welche Symptome Sie erfahren, desto besser und effizienter
-		können Sie Ihnen helfen.
-	</p>
+	let ExitButton = false;
+</script>
 
-	<p>
-		Ihr Arzt wird diesen als Grundlage für Ihre erste Konsultation bei uns nutzen und Ihnen weitere
-		Fragen stellen.
-	</p>
+<Exit {ExitButton} />
 
-	<p>
-		Erstellen Sie mit diesem Formular einen Text, den Sie unseren Ärzten zukommen lassen können.
-	</p>
-</div>
+<p>
+	Je detailierter unsere Ärzte wissen, welche Symptome Sie erfahren, desto besser und effizienter
+	können Sie Ihnen helfen.
+</p>
 
-<div class="py-4">
-	<a class="btn" href="/fragen/1-0">Beginnen</a>
-</div>
+<p>
+	Erstellen Sie mit unserer Online-Anamnese einen Text, den Sie unseren Ärzten zukommen lassen
+	können.
+</p>
+
+<p>
+	Ihr Arzt wird diesen als Grundlage für Ihre erste Konsultation bei uns nutzen und Ihnen weitere
+	Fragen stellen.
+</p>
+
+<a class="my-4 btn btn-sm btn-primary text-white" href="/fragen/1-0">Beginnen</a>

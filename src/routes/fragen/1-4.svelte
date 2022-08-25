@@ -14,8 +14,9 @@
 
 <YouAreHere {chapterName} {percentage} />
 
-<div>
-	<label>Wie hört das Herzrasen auf?</label>
+<fieldset>
+	<div class="form-control w-full max-w-xs mt-4">
+		<label class="label">Wie hört das Herzrasen auf?</label>
 	<select class="select select-bordered" bind:value={$answers.answer1}>
 		<option value="">Bitte wählen Sie</option>
 		<option>mehrmals täglich</option>
@@ -29,17 +30,18 @@
 	</select>
 </div>
 {#if $answers.answer1 == 'custom'}
-	<div>
+	
 		<textarea
-			class="textarea textarea-bordered w-full"
+			class="textarea textarea-bordered w-full mt-4"
 			bind:value={$answers.answer2}
 			placeholder="Das Herzrasen tritt xxxx auf."
 		/>
-	</div>
+	
 {/if}
 
-<div>
-	<label>Haben sie begleitende Symptome in dieser Zeit?</label>
+<fieldset>
+	<div class="form-control w-full max-w-xs mt-4">
+		<label class="label">Haben sie begleitende Symptome in dieser Zeit?</label>
 	<select class="select select-bordered" bind:value={$answers.answer3}>
 		<option value="">Bitte wählen Sie</option>
 		<option>nur Sekunden</option>
@@ -52,14 +54,15 @@
 	</select>
 </div>
 {#if $answers.answer3 == 'custom'}
-	<div>
+	
 		<textarea
-			class="textarea textarea-bordered w-full"
+			class="textarea textarea-bordered w-full mt-4"
 			bind:value={$answers.answer4}
 			placeholder="Das Herzrasen dauert jeweils xx."
 		/>
-	</div>
+	
 {/if}
+</fieldset>
 
 <div>
 	<label>Seit wann kennen Sie dieses Herzrasen?</label>

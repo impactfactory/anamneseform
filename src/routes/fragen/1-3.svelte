@@ -8,7 +8,7 @@
 	let chapterName: string = 'Herzrasen';
 	let percentage: number = 40;
 	let prevPage: string = '1-2';
-	let nextPage: string = '1-4';
+	let nextPage: string = '2-0';
 	let treatments = ['ja (medikamentös)', 'ja (mit Herzkatheter)', 'keine'];
 	let pulses = [
 		'sehr schnell',

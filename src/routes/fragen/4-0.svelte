@@ -1,5 +1,14 @@
-<h1>4. Haben Sie unregelmässigen Herzschlag?</h1>
-<p>info: Herzklopfen ist... ist bla blub</p>
+<script lang="ts">
+	import Exit from '$lib/Exit.svelte';
+</script>
 
-<a class="btn" href="/fragen/5-0">Nein</a>
-<a class="btn" href="/fragen/4-1">Ja</a>
+<Exit />
+
+<h2>Haben Sie unregelmässigen Herzschlag?</h2>
+
+<p>"Herzrhythmus-Störungen" bezeichnet die Erfahrung, dass....</p>
+
+<div class="flex gap-x-4">
+	<a class="btn btn-md btn-primary text-white" href="/fragen/4-1">ja</a>
+	<a class="btn btn-md btn-primary text-white" href="/fragen/5-0">nein</a>
+</div>
