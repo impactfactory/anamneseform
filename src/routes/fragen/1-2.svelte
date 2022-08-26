@@ -15,30 +15,24 @@
 
 <YouAreHere {chapterName} {percentage} />
 
-<fieldset>
-	<div class="form-control w-full max-w-xs mt-4">
-		<label class="label">Wie hört das Herzrasen auf?</label>
-		<select class="select select-bordered" bind:value={$answers.answer1_2_1}>
-			<option value="">Bitte wählen Sie</option>
-			<option>plötzlich</option>
-			<option>langsam abklingend</option>
-			<option>weiss nicht genau</option>
-			<option value="custom">anderes</option>
-		</select>
-	</div>
-	{#if $answers.answer1_2_1 == 'custom'}
-		<textarea
-			class="textarea textarea-bordered w-full mt-4"
-			bind:value={$answers.answer1_2_2}
-			placeholder="Es hört xxxx auf."
-		/>
-	{/if}
-</fieldset>
+<div class="form-control selectgroup">
+	<label class="label">
+		<span class="label-text">Wie hört das Herzrasen auf?</span>
+	</label>
+	<select class="select" bind:value={$answers.answer1_2_1}>
+		<option value="" disabled>Bitte wählen Sie</option>
+		<option>plötzlich</option>
+		<option>langsam abklingend</option>
+		<option>weiss nicht genau</option>
+		<option value="custom">anderes</option>
+	</select>
+</div>
+{#if $answers.answer1_2_1 == 'custom'}
+	<textarea class="textarea" bind:value={$answers.answer1_2_2} placeholder="Es hört xxxx auf." />
+{/if}
 
-<fieldset class="checkboxgroup py-2 w-full">
-	<legend class="pt-4 pb-1 font-semibold text-sm"
-		>Haben sie begleitende Symptome in dieser Zeit?</legend
-	>
+<fieldset class="checkboxgroup">
+	<legend>Haben sie begleitende Symptome in dieser Zeit?</legend>
 	{#each symptoms as symptom}
 		<div class="form-control">
 			<label class="cursor-pointer">
@@ -66,31 +60,31 @@
 
 	{#if $answers.answer1_2_4}
 		<textarea
-			class="textarea textarea-bordered w-full mt-4"
+			class="textarea"
 			bind:value={$answers.answer1_2_5}
 			placeholder="Beschreiben Sie Ihre Symptome..."
 		/>
 	{/if}
 </fieldset>
 
-<fieldset>
-	<div class="form-control w-full max-w-xs mt-4">
-		<label class="label">Seit wann kennen Sie dieses Herzrasen?</label>
-		<select class="select select-bordered" bind:value={$answers.answer1_2_6}>
-			<option value="">Bitte wählen Sie</option>
-			<option>schon Jahre</option>
-			<option>erst seit Kurzem</option>
-			<option>ich hatte es früher, dann lange nicht</option>
-			<option value="custom">anderes</option>
-		</select>
-	</div>
-	{#if $answers.answer1_2_6 == 'custom'}
-		<textarea
-			class="textarea textarea-bordered w-full mt-4"
-			bind:value={$answers.answer1_2_7}
-			placeholder="Das Herzrasen dauert jeweils xx."
-		/>
-	{/if}
-</fieldset>
+<div class="form-control selectgroup">
+	<label class="label">
+		<span class="label-text">Seit wann kennen Sie dieses Herzrasen?</span>
+	</label>
+	<select class="select" bind:value={$answers.answer1_2_6}>
+		<option value="">Bitte wählen Sie</option>
+		<option>schon Jahre</option>
+		<option>erst seit Kurzem</option>
+		<option>ich hatte es früher, dann lange nicht</option>
+		<option value="custom">anderes</option>
+	</select>
+</div>
+{#if $answers.answer1_2_6 == 'custom'}
+	<textarea
+		class="textarea"
+		bind:value={$answers.answer1_2_7}
+		placeholder="Das Herzrasen dauert jeweils xx."
+	/>
+{/if}
 
 <StepsButtons {prevPage} {nextPage} />

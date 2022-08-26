@@ -15,22 +15,24 @@
 	spezifizieren, was Sie erfahren.
 </p>
 
-<div class="form-control items-center">
-	<label class="label cursor-pointer py-4 w-24">
-		<span class="label-text font-bold">ja</span>
-		<input type="radio" class="radio radio-lg" bind:group={$answers.answer5_0} value="5-1" />
-	</label>
-</div>
-<div class="form-control items-center">
-	<label class="label cursor-pointer py-4 w-24">
-		<span class="label-text font-bold">nein</span>
-		<input
-			type="radio"
-			class="radio radio-lg"
-			bind:group={$answers.answer5_0}
-			value="/zusammenfassung"
-		/>
-	</label>
-</div>
+<fieldset class="chapteropener">
+	<div class="form-control items-center">
+		<label class="label cursor-pointer py-4 w-24">
+			<span class="label-text">ja</span>
+			<input type="radio" class="radio radio-lg" bind:group={$answers.answer5_0} value="5-1" />
+		</label>
+	</div>
+	<div class="form-control items-center">
+		<label class="label cursor-pointer py-4 w-24">
+			<span class="label-text">nein</span>
+			<input
+				type="radio"
+				class="radio radio-lg"
+				bind:group={$answers.answer5_0}
+				value="/zusammenfassung"
+			/>
+		</label>
+	</div>
+</fieldset>
 
 <StepsButtons {prevPage} nextPage={$answers.answer5_0} />

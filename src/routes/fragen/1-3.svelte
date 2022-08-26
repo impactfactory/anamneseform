@@ -20,25 +20,23 @@
 
 <YouAreHere {chapterName} />
 
-<fieldset class="radiogroup w-full">
-	<legend class="pb-2 pt-3 text-sm font-semibold"
-		>Können Sie das Herzrasen durch etwas auslösen?</legend
-	>
+<fieldset class="radiogroup">
+	<legend>Können Sie das Herzrasen durch etwas auslösen?</legend>
 	<div class="form-control">
 		<label>
 			<input type="radio" class="radio radio-sm" bind:group={$answers.answer1_3_1} value="ja" />
-			<span class="label-text pl-4">ja</span>
+			<span class="label-text">ja</span>
 		</label>
 	</div>
 	<div class="form-control">
 		<label>
 			<input type="radio" class="radio radio-sm" bind:group={$answers.answer1_3_1} value="nein" />
-			<span class="label-text pl-4">nein</span>
+			<span class="label-text">nein</span>
 		</label>
 	</div>
 	{#if $answers.answer1_3_1 == 'ja'}
 		<textarea
-			class="textarea textarea-bordered w-full"
+			class="textarea"
 			bind:value={$answers.answer1_3_2}
 			placeholder="Bitte beschreiben Sie, wie Sie es auslösen können..."
 		/>
@@ -46,19 +44,17 @@
 </fieldset>
 
 <fieldset class="radiogroup w-full">
-	<legend class="pb-2 pt-3 text-sm font-semibold"
-		>Können Sie das Herzrasen durch etwas beenden?</legend
-	>
+	<legend>Können Sie das Herzrasen durch etwas beenden?</legend>
 	<div class="form-control">
 		<label>
 			<input type="radio" class="radio radio-sm" bind:group={$answers.answer1_3_3} value="ja" />
-			<span class="label-text pl-4">ja</span>
+			<span class="label-text">ja</span>
 		</label>
 	</div>
 	<div class="form-control">
 		<label>
 			<input type="radio" class="radio radio-sm" bind:group={$answers.answer1_3_3} value="nein" />
-			<span class="label-text pl-4">nein</span>
+			<span class="label-text">nein</span>
 		</label>
 	</div>
 	{#if $answers.answer1_3_3 == 'ja'}
@@ -70,10 +66,8 @@
 	{/if}
 </fieldset>
 
-<fieldset class="checkboxgroup py-2 w-full">
-	<legend class="pt-4 pb-1 font-semibold text-sm"
-		>Wurde dieses Herzrasen schon einmal behandelt?</legend
-	>
+<fieldset class="checkboxgroup">
+	<legend>Wurde dieses Herzrasen schon einmal behandelt?</legend>
 	{#each treatments as treatment}
 		<div class="form-control">
 			<label class="cursor-pointer">
@@ -83,14 +77,14 @@
 					value={treatment}
 					bind:group={$answers.answer1_3_5}
 				/>
-				<span class="label-text ml-4">{treatment}</span>
+				<span class="label-text">{treatment}</span>
 			</label>
 		</div>
 	{/each}
 </fieldset>
 
-<fieldset class="checkboxgroup py-2 w-full">
-	<legend class="pt-4 pb-1 font-semibold text-sm">Wie fühlen Sie den Herzschlag?</legend>
+<fieldset class="checkboxgroup">
+	<legend>Wie fühlen Sie den Herzschlag?</legend>
 	{#each pulses as pulse}
 		<div class="form-control">
 			<label class="cursor-pointer">
@@ -100,19 +94,19 @@
 					value={pulse}
 					bind:group={$answers.answer1_3_6}
 				/>
-				<span class="label-text ml-4">{pulse}</span>
+				<span class="label-text">{pulse}</span>
 			</label>
 		</div>
 	{/each}
 	<div class="form-control">
 		<label class="cursor-pointer">
 			<input type="checkbox" class=" checkbox checkbox-sm" bind:checked={$answers.answer1_3_7} />
-			<span class="label-text ml-4">anderes</span>
+			<span class="label-text">anderes</span>
 		</label>
 	</div>
 	{#if $answers.answer1_3_7}
 		<textarea
-			class="textarea textarea-bordered w-full"
+			class="textarea"
 			bind:value={$answers.answer1_3_8}
 			placeholder="Bitte beschreiben Sie..."
 		/>

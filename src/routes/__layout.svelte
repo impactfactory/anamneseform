@@ -24,17 +24,107 @@
 	<slot />
 </div>
 
-<style lang="postcss">
-	/*
-	label {
-		@apply block;
+<style>
+	:root {
+		--bodycolor: #333;
+		--bordercolor: #bbb;
+		--inputbg: #fff;
 	}
 
-	.btn {
-		@apply btn-primary;
+	:global(p) {
+		color: var(--bodycolor);
 	}
 
-	option {
-		fon-weight: 400 !important;
-	}*/
+	:global(.selectgroup) {
+		margin-top: 0.75rem;
+	}
+
+	:global(.selectgroup select) {
+		background: var(--inputbg) !important;
+		color: var(--bodycolor);
+		border-color: var(--bordercolor) !important;
+		font-weight: normal !important;
+	}
+
+	:global(.selectgroup .label-text) {
+		font-weight: bold;
+	}
+
+	:global([type='checkbox']),
+	:global([type='radio']) {
+		background: var(--inputbg);
+		border-color: var(--bordercolor) !important;
+	}
+
+	:global(textarea) {
+		background: var(--inputbg) !important;
+		border-color: var(--bordercolor) !important;
+		margin-top: 0.75rem;
+		width: 100%;
+	}
+
+	:global(.checkboxgroup),
+	:global(.radiogroup) {
+		margin-top: 1.25rem;
+	}
+
+	:global(.checkboxgroup legend),
+	:global(.radiogroup legend) {
+		color: var(--bodycolor);
+		font-size: 18px;
+		font-weight: bold;
+		padding-bottom: 0.5rem;
+	}
+
+	:global(.checkboxgroup .label-text),
+	:global(.radiogroup .label-text) {
+		margin-left: 2rem;
+	}
+
+	:global(.checkboxgroup .label-text),
+	:global(.radiogroup .label-text) {
+		margin-left: 2rem;
+	}
+
+	:global(.chapteropener) {
+		font-weight: bold;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--bodycolor: #ededed;
+			--bordercolor: #ededed;
+			--inputbg: #ededed;
+		}
+
+		:global(p),
+		:global(li) {
+			color: var(--bodycolor);
+		}
+		:global(.selectgroup select) {
+			background: var(--inputbg) !important;
+			border-color: var(--bordercolor);
+			color: #333;
+		}
+
+		:global(.selectgroup .label-text) {
+			color: var(--bodycolor);
+		}
+
+		:global([type='checkbox']),
+		:global([type='radio']) {
+			background: var(--inputbg);
+			border-color: var(--bordercolor) !important;
+		}
+
+		:global(textarea) {
+			background: var(--inputbg) !important;
+			border-color: var(--bordercolor) !important;
+		}
+
+		:global(.checkboxgroup legend),
+		:global(.radiogroup legend) {
+			color: var(--bodycolor);
+		}
+	}
 </style>
