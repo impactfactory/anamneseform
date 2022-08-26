@@ -20,7 +20,7 @@
 	});
 </script>
 
-<div class="prose">
+<div class="prose pb-32">
 	<slot />
 </div>
 
@@ -31,7 +31,8 @@
 		--inputbg: #fff;
 	}
 
-	:global(p) {
+	:global(p),
+	:global(ul) {
 		color: var(--bodycolor);
 	}
 

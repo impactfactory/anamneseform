@@ -20,8 +20,7 @@
 
 <Exit />
 
-<h2 class="font-medium">Ihre Zusammenfassung</h2>
-<p>Herzlichen Dank! Wir haben unten eine Zusammenfassung Ihrer Angaben generiert.</p>
+<h2 class="font-medium">Herzlichen Dank! Ihre Zusammenfassung:</h2>
 
 <ol>
 	<li>Korrigieren und ergänzen Sie nach Belieben.</li>
@@ -29,7 +28,7 @@
 	<li>Fügen Sie diesen in die verschlüsselte HIN-Kommunikation mit uns ein</li>
 </ol>
 
-<div id="txt" class="bg-slate-100 border rounded-md my-4 p-4 w-full" contenteditable>
+<div id="txt" class="bg-white border rounded-md my-4 p-4 w-full" contenteditable>
 	<Template1_1 />
 	<Template1_2 />
 	<Template1_3 />

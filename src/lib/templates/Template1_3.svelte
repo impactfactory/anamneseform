@@ -10,7 +10,7 @@
 {#if $answers.answer1_3_3 == 'nein'}
 	Es ist keine Möglichkeit, das Herzrasen zu beenden, bekannt.&nbsp;
 {:else if $answers.answer1_3_3.length}
-	So kann das Herzrasen beendet werden: {$answers.answer1_3_4}&nbsp;
+	So kann das Herzrasen beendet werden: {$answers.answer1_3_4}.&nbsp;
 {/if}
 
 {#if $answers.answer1_3_5.length}

@@ -2,8 +2,8 @@
 	export let ExitButton = false;
 </script>
 
-<header class="py-4 w-full flex justify-between">
-	<h1>
+<header class="pt-4 w-full flex justify-between">
+	<h1 class="mb-1">
 		<a href="/" class="no-underline">Ihre Online-Anamnese</a>
 	</h1>
 	{#if ExitButton}
