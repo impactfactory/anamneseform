@@ -85,4 +85,4 @@
 	{/if}
 </section>
 
-<StepsButtons {prevPage} {nextPage} />
+<StepsButtons {prevPage} nextPage={$answers.answer1_0} />
