@@ -3,33 +3,33 @@
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import YouAreHere from '$lib/YouAreHere.svelte';
 	import { answers } from '$lib/stores';
+	import SelectGroup from '$lib/inputs/SelectGroup.svelte';
 
 	let chapterName: string = 'Herzrasen';
-	let percentage: number = 30;
 	let prevPage: string = '/fragen/1-1';
 	let nextPage: string = '/fragen/1-3';
 	let symptoms = ['Schwindel', 'Brustenge', 'Brustschmerzen', 'Luftprobleme'];
+
+	let label: string;
+	let options: string[];
+	let placeholder: string;
+	let value1: string;
+	let value2: string;
+	let name: string;
 </script>
 
 <Exit />
 
-<YouAreHere {chapterName} {percentage} />
+<YouAreHere {chapterName} />
 
-<div class="form-control selectgroup">
-	<label class="label">
-		<span class="label-text">Wie hört das Herzrasen auf?</span>
-	</label>
-	<select class="select" bind:value={$answers.answer1_2_1}>
-		<option value="" disabled>Bitte wählen Sie</option>
-		<option>plötzlich</option>
-		<option>langsam abklingend</option>
-		<option>weiss nicht genau</option>
-		<option value="custom">anderes</option>
-	</select>
-</div>
-{#if $answers.answer1_2_1 == 'custom'}
-	<textarea class="textarea" bind:value={$answers.answer1_2_2} placeholder="Es hört xxxx auf." />
-{/if}
+<SelectGroup
+	name="1"
+	label="Wie hört das Herzrasen auf?"
+	options={['plötzlich', 'langsam abklingend', 'weiss nicht genau']}
+	placeholder="Es hört ... auf."
+	bind:value1={$answers.answer1_2_1}
+	bind:value2={$answers.answer1_2_2}
+/>
 
 <fieldset class="checkboxgroup">
 	<legend>Haben sie begleitende Symptome in dieser Zeit?</legend>
