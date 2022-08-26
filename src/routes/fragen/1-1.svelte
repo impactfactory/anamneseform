@@ -8,12 +8,14 @@
 	let chapterName: string = 'Herzrasen';
 	let prevPage: string = '/fragen/1-0';
 	let nextPage: string = '/fragen/1-2';
-	let label: string;
-	let options: string[];
-	let placeholder: string;
-	let value1: string;
-	let value2: string;
-	let name: string;
+
+	let selectLabel: string;
+	let selectOptions: string[];
+	let selectPlaceholder: string;
+	let selectValue: string;
+	let selectCustomText: string;
+	let selectName: string;
+	let selectHasCustom: boolean;
 </script>
 
 <Exit />
@@ -21,9 +23,26 @@
 <YouAreHere {chapterName} />
 
 <SelectGroup
-	name="1"
-	label="Wie häufig haben sie Herzrasen?"
-	options={[
+	selectName="1"
+	selectLabel="Wie häufig haben Sie Herzrasen?"
+	selectOptions={[
+		'mehrmals täglich',
+		'einmal täglich',
+		'alle paar Monate',
+		'sehr unterschiedlich',
+		'mal häufig, dann lange Zeit nichts',
+		'sehr selten'
+	]}
+	selectPlaceholder="Beschreiben Sie wie häufig..."
+	bind:selectValue={$answers.answer1_1_1}
+	bind:selectCustomText={$answers.answer1_1_2}
+	selectHasCustom={true}
+/>
+
+<SelectGroup
+	selectName="2"
+	selectLabel="Wie lange hält das Herzrasen an?"
+	selectOptions={[
 		'nur Sekunden',
 		'ca. eine halbe Minute',
 		'ca. 1-2 Minuten',
@@ -31,27 +50,20 @@
 		'mehrere Stunden',
 		'mal nur kurz für Minuten mal Stunden'
 	]}
-	placeholder="Hier ist ein Test-Platzhalter"
-	bind:value1={$answers.answer1_1_1}
-	bind:value2={$answers.answer1_1_2}
+	selectPlaceholder="Das Herzrasen dauert jeweils xx."
+	bind:selectValue={$answers.answer1_1_3}
+	bind:selectCustomText={$answers.answer1_1_4}
+	selectHasCustom={true}
 />
 
 <SelectGroup
-	name="2"
-	label="Wie lange hält das Herzrasen an?"
-	options={['mehrmals täglich', 'einmal täglich', 'alle paar Monate']}
-	placeholder="Das Herzrasen dauert jeweils xx."
-	bind:value1={$answers.answer1_1_3}
-	bind:value2={$answers.answer1_1_4}
-/>
-
-<SelectGroup
-	name="3"
-	label="Wie beginnt das Herzrasen?"
-	options={['plötzlich', 'langsam anklingend', 'weiss nicht genau']}
-	placeholder="Das Herzrasen beginnt jeweils xx."
-	bind:value1={$answers.answer1_1_5}
-	bind:value2={$answers.answer1_1_6}
+	selectName="3"
+	selectLabel="Wie beginnt das Herzrasen?"
+	selectOptions={['plötzlich', 'langsam anklingend', 'weiss nicht genau']}
+	selectPlaceholder="Das Herzrasen beginnt jeweils xx."
+	bind:selectValue={$answers.answer1_1_5}
+	bind:selectCustomText={$answers.answer1_1_6}
+	selectHasCustom={true}
 />
 
 <StepsButtons {prevPage} {nextPage} />

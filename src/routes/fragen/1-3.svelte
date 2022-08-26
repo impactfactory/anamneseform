@@ -3,114 +3,57 @@
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import YouAreHere from '$lib/YouAreHere.svelte';
 	import { answers } from '$lib/stores';
+	import RadioGroup from '$lib/inputs/RadioGroup.svelte';
+	import CheckboxGroup from '$lib/inputs/CheckboxGroup.svelte';
 
 	let chapterName: string = 'Herzrasen';
 	let prevPage: string = '/fragen/1-2';
 	let nextPage: string = '/fragen/2-0';
-	let treatments = ['ja (medikamentös)', 'ja (mit Herzkatheter)', 'keine'];
-	let pulses = [
-		'sehr schnell',
-		'mässig schnell',
-		'regelmässig aufeinander folgend',
-		'unregelmässig'
-	];
+
+	let radioLabel: string;
+	let radioGroup: string;
+	let radioCustomText: string;
+	let radioPlaceholder: string;
+
+	let checkboxLabel: string;
+	let checkboxGroup: string;
+	let boxes: string[];
+	let checkboxCustomText: string;
+	let checkboxHasCustom: boolean;
 </script>
 
 <Exit />
 
 <YouAreHere {chapterName} />
 
-<fieldset class="radiogroup">
-	<legend>Können Sie das Herzrasen durch etwas auslösen?</legend>
-	<div class="form-control">
-		<label>
-			<input type="radio" class="radio radio-sm" bind:group={$answers.answer1_3_1} value="ja" />
-			<span class="label-text">ja</span>
-		</label>
-	</div>
-	<div class="form-control">
-		<label>
-			<input type="radio" class="radio radio-sm" bind:group={$answers.answer1_3_1} value="nein" />
-			<span class="label-text">nein</span>
-		</label>
-	</div>
-	{#if $answers.answer1_3_1 == 'ja'}
-		<textarea
-			class="textarea"
-			bind:value={$answers.answer1_3_2}
-			placeholder="Bitte beschreiben Sie, wie Sie es auslösen können..."
-		/>
-	{/if}
-</fieldset>
+<RadioGroup
+	radioLabel="Können Sie das Herzrasen durch etwas auslösen?"
+	bind:radioGroup={$answers.answer1_3_1}
+	bind:radioCustomText={$answers.answer1_3_2}
+	radioPlaceholder="Bitte beschreiben Sie, wie Sie es auslösen können..."
+/>
 
-<fieldset class="radiogroup w-full">
-	<legend>Können Sie das Herzrasen durch etwas beenden?</legend>
-	<div class="form-control">
-		<label>
-			<input type="radio" class="radio radio-sm" bind:group={$answers.answer1_3_3} value="ja" />
-			<span class="label-text">ja</span>
-		</label>
-	</div>
-	<div class="form-control">
-		<label>
-			<input type="radio" class="radio radio-sm" bind:group={$answers.answer1_3_3} value="nein" />
-			<span class="label-text">nein</span>
-		</label>
-	</div>
-	{#if $answers.answer1_3_3 == 'ja'}
-		<textarea
-			class="textarea textarea-bordered w-full"
-			bind:value={$answers.answer1_3_4}
-			placeholder="Bitte beschreiben Sie, wie Sie es beenden können..."
-		/>
-	{/if}
-</fieldset>
+<RadioGroup
+	radioLabel="Können Sie das Herzrasen durch etwas beenden?"
+	bind:radioGroup={$answers.answer1_3_3}
+	bind:radioCustomText={$answers.answer1_3_4}
+	radioPlaceholder="Bitte beschreiben Sie, wie Sie es beenden können..."
+/>
 
-<fieldset class="checkboxgroup">
-	<legend>Wurde dieses Herzrasen schon einmal behandelt?</legend>
-	{#each treatments as treatment}
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value={treatment}
-					bind:group={$answers.answer1_3_5}
-				/>
-				<span class="label-text">{treatment}</span>
-			</label>
-		</div>
-	{/each}
-</fieldset>
+<CheckboxGroup
+	checkboxLabel="Wurde dieses Herzrasen schon einmal behandelt?"
+	boxes={['ja (medikamentös)', 'ja (mit Herzkatheter)', 'nein (keine)']}
+	bind:checkboxGroup={$answers.answer1_3_5}
+	bind:checkboxCustomText={$answers.answer1_3_6}
+/>
 
-<fieldset class="checkboxgroup">
-	<legend>Wie fühlen Sie den Herzschlag?</legend>
-	{#each pulses as pulse}
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value={pulse}
-					bind:group={$answers.answer1_3_6}
-				/>
-				<span class="label-text">{pulse}</span>
-			</label>
-		</div>
-	{/each}
-	<div class="form-control">
-		<label class="cursor-pointer">
-			<input type="checkbox" class=" checkbox checkbox-sm" bind:checked={$answers.answer1_3_7} />
-			<span class="label-text">anderes</span>
-		</label>
-	</div>
-	{#if $answers.answer1_3_7}
-		<textarea
-			class="textarea"
-			bind:value={$answers.answer1_3_8}
-			placeholder="Bitte beschreiben Sie..."
-		/>
-	{/if}
-</fieldset>
+<CheckboxGroup
+	checkboxLabel="Wie fühlen Sie den Herzschlag?"
+	boxes={['sehr schnell', 'mässig schnell', 'regelmässig aufeinander folgend', 'unregelmässig']}
+	bind:checkboxGroup={$answers.answer1_3_7}
+	bind:checkboxCustomText={$answers.answer1_3_6}
+	checkboxPlaceholder="Bitte beschreiben Sie..."
+	checkboxHasCustom={true}
+/>
 
 <StepsButtons {prevPage} {nextPage} />

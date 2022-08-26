@@ -19,8 +19,8 @@
 		{/if}
 	{/each}
 
-	{#if $answers.answer1_2_4}
-		&nbsp;{$answers.answer1_2_5}
+	{#if $answers.answer1_2_5}
+		&nbsp;{$answers.answer1_2_5}.
 	{:else}{/if}
 {/if}
 

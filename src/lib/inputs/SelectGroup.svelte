@@ -1,28 +1,31 @@
 <script lang="ts">
 	import { answers } from '$lib/stores';
-	export let label: string = 'Wie häufig haben sie Herzrasen?';
-	export let options: string[];
-	export let placeholder: string = '';
-	export let value1: string;
-	export let value2: string;
-	export let name: string;
+	export let selectLabel: string = '';
+	export let selectOptions: string[];
+	export let selectPlaceholder: string = '';
+	export let selectValue: string;
+	export let selectCustomText: string;
+	export let selectName: string;
+	export let selectHasCustom: boolean;
 </script>
 
 <fieldset class="selectgroup">
 	<div class="form-control">
-		<label for="slct{name}" class="label">
-			<span class="label-text">{label}</span>
+		<label for="slct{selectName}" class="label">
+			<span class="label-text">{selectLabel}</span>
 		</label>
-		<select name="slct{name}" class="select" bind:value={value1}>
-			<option value="">Bitte wählen Sie...</option>
-			{#each options as option}
+		<select name="slct{selectName}" class="select" bind:value={selectValue}>
+			<option value="" disabled>Bitte wählen Sie...</option>
+			{#each selectOptions as option}
 				<option>{option}</option>
 			{/each}
-			<option value="custom">anderes</option>
+			{#if selectHasCustom}
+				<option value="custom">anderes</option>
+			{/if}
 		</select>
 	</div>
 
-	{#if value1 == 'custom'}
-		<textarea class="textarea" bind:value={value2} {placeholder} />
+	{#if selectValue == 'custom'}
+		<textarea class="textarea" bind:value={selectCustomText} placeholder={selectPlaceholder} />
 	{/if}
 </fieldset>
