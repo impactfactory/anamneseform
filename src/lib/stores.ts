@@ -24,7 +24,10 @@ export const answers = writable({
 	answer1_3_7: '',
 	answer1_3_8: '',
 	answer2_0: '',
+	answer2_1_1: '',
+	answer2_1_2: '',
+	answer2_1_3: '',
 	answer3_0: '',
 	answer4_0: '',
-	answer5_0: ''
+	answer5_0: '',
 });

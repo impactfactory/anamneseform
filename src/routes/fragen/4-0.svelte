@@ -3,11 +3,18 @@
 	import ChapterOpener from '$lib/inputs/ChapterOpener.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { answers } from '$lib/stores';
-	let prevPage: string = '3-0';
+	let prevPage: string = '';
 
 	let nextPartPage: string;
 	let nextChapterPage: string;
 	let openerGroup: string;
+
+	if ($answers.answer3_0 == '3-1') {
+		prevPage = '3-3';
+	}
+	if ($answers.answer3_0 == '4-0') {
+		prevPage = '3-0';
+	}
 </script>
 
 <Exit />

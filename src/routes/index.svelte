@@ -6,9 +6,11 @@
 
 <Exit {ExitButton} />
 
+<h2>Willkommen!</h2>
+
 <p>
-	<b>Willkommen!</b> Erstellen Sie mit unserer Online-Anamnese einen Text, den Sie unseren Ärzten zukommen
-	lassen können.
+	Erstellen Sie mit unserer Online-Anamnese einen Text, den Sie unseren Ärzten zukommen lassen
+	können.
 </p>
 
 <p>

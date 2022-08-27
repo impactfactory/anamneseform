@@ -1,9 +1,14 @@
 <script lang="ts">
 	import Exit from '$lib/Exit.svelte';
+	import ChapterOpener from '$lib/inputs/ChapterOpener.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { answers } from '$lib/stores';
+
 	let prevPage: string = '/';
-	let nextPage: string = '';
+
+	let nextPartPage: string;
+	let nextChapterPage: string;
+	let openerGroup: string;
 </script>
 
 <Exit />
@@ -16,19 +21,6 @@
 	auf der Brust begleitet.
 </p>
 
-<fieldset class="chapteropener">
-	<div class="form-control items-center">
-		<label class="label cursor-pointer py-4 w-24">
-			<span class="label-text font-bold">ja</span>
-			<input type="radio" class="radio radio-lg" bind:group={$answers.answer1_0} value="1-1" />
-		</label>
-	</div>
-	<div class="form-control items-center">
-		<label class="label cursor-pointer py-4 w-24">
-			<span class="label-text font-bold">nein</span>
-			<input type="radio" class="radio radio-lg" bind:group={$answers.answer1_0} value="2-0" />
-		</label>
-	</div>
-</fieldset>
+<ChapterOpener bind:openerGroup={$answers.answer1_0} nextPartPage="1-1" nextChapterPage="2-0" />
 
 <StepsButtons {prevPage} nextPage={$answers.answer1_0} />

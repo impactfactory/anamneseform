@@ -4,11 +4,18 @@
 	import ChapterOpener from '$lib/inputs/ChapterOpener.svelte';
 	import { answers } from '$lib/stores';
 
-	let prevPage: string = '/fragen/4-0';
+	let prevPage: string = '';
 
 	let nextPartPage: string;
 	let nextChapterPage: string;
 	let openerGroup: string;
+
+	if ($answers.answer4_0 == '4-1') {
+		prevPage = '4-3';
+	}
+	if ($answers.answer4_0 == '5-0') {
+		prevPage = '4-0';
+	}
 </script>
 
 <Exit />

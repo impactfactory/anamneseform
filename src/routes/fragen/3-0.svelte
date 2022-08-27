@@ -4,11 +4,18 @@
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { answers } from '$lib/stores';
 
-	let prevPage: string = '2-0';
+	let prevPage: string = '';
 
 	let nextPartPage: string;
 	let nextChapterPage: string;
 	let openerGroup: string;
+
+	if ($answers.answer2_0 == '2-1') {
+		prevPage = '2-3';
+	}
+	if ($answers.answer2_0 == '3-0') {
+		prevPage = '2-0';
+	}
 </script>
 
 <Exit />

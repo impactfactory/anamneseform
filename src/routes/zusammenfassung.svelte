@@ -8,8 +8,15 @@
 	import ClipboardJS from 'clipboard';
 	import { onMount } from 'svelte';
 
-	let prevPage: string = '/fragen/5-0';
+	let prevPage: string = '';
 	let nextPage: string = 'noshow';
+
+	if ($answers.answer5_0 == '5-1') {
+		prevPage = '5-3';
+	}
+	if ($answers.answer5_0 == '/zusammenfassung') {
+		prevPage = '/fragen/5-0';
+	}
 
 	let clip;
 
