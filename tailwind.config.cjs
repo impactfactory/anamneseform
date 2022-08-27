@@ -20,6 +20,7 @@ module.exports = {
 				"base-content": "#333",
 				"primary": "#81050c",
 				"primary-content": "#fff",
+				//"outline-color": "#81050c",
 				"secondary": "#c9e7e4", 
 				"info": "#fff"
 				/*

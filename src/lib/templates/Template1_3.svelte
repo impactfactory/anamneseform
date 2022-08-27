@@ -2,37 +2,40 @@
 	import { answers } from '$lib/stores';
 </script>
 
+<!-- Question 1 -->
 {#if $answers.answer1_3_1 == 'nein'}
-	Es ist kein Auslöser bekannt.&nbsp;
+	<span>Kein Auslöser bekannt</span>.&nbsp;
 {:else if $answers.answer1_3_1 == 'ja'}
 	Auslöser: {$answers.answer1_3_2}&nbsp;
 {/if}
 {#if $answers.answer1_3_3 == 'nein'}
-	Es ist keine Möglichkeit, das Herzrasen zu beenden, bekannt.&nbsp;
+	<span>Unbekannt, wie zu beenden</span>.&nbsp;
 {:else if $answers.answer1_3_3.length}
 	So kann das Herzrasen beendet werden: {$answers.answer1_3_4}.&nbsp;
 {/if}
 
+<!-- Question 2 -->
 {#if $answers.answer1_3_5.length}
-	Stand der Behandlung ist:
+	Stand der Behandlung:
 	{#each $answers.answer1_3_5 as answer, i}
 		{#if i == $answers.answer1_3_5.length - 2}
-			{answer} und&nbsp;
+			<span>{answer}</span> und&nbsp;
 		{:else if i == $answers.answer1_3_5.length - 1}
-			{answer}.
+			<span>{answer}</span>.
 		{:else}
-			{answer},&nbsp;
+			<span>{answer}</span>,&nbsp;
 		{/if}
 	{/each}
 {/if}
 
-{#if $answers.answer1_3_6.length}
+<!-- Question 3 -->
+{#if $answers.answer1_3_7.length}
 	Der Herzschlag fühlt sich {#if $answers.answer1_3_8} {$answers.answer1_3_8},{/if}
-	{#each $answers.answer1_3_6 as answer, i}
-		{#if i == $answers.answer1_3_6.length - 2}
-			{answer} und&nbsp;
-		{:else if i == $answers.answer1_3_6.length - 1}
-			{answer}
+	{#each $answers.answer1_3_7 as answer, i}
+		{#if i == $answers.answer1_3_7.length - 2}
+			<span>{answer}</span> und&nbsp;
+		{:else if i == $answers.answer1_3_7.length - 1}
+			<span>{answer}</span>
 		{:else}
 			{answer},&nbsp;
 		{/if}

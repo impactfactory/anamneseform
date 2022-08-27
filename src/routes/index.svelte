@@ -6,7 +6,7 @@
 
 <Exit {ExitButton} />
 
-<h2>Willkommen!</h2>
+<h2 class="font-semibold">Willkommen!</h2>
 
 <p>
 	Erstellen Sie mit unserer Online-Anamnese einen Text, den Sie unseren Ärzten zukommen lassen

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CopiedMessage from '$lib/CopiedMessage.svelte';
 	import Exit from '$lib/Exit.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { answers } from '$lib/stores';
@@ -19,6 +20,7 @@
 	}
 
 	let clip;
+	let clicked: number = 0;
 
 	onMount(() => {
 		clip = new ClipboardJS('.btn');
@@ -30,9 +32,10 @@
 <h2 class="font-medium">Herzlichen Dank! Ihre Zusammenfassung:</h2>
 
 <ol>
-	<li>Korrigieren und ergänzen Sie nach Belieben.</li>
 	<li>Kopieren Sie den generierten Text in Ihre Zwischenablage</li>
 	<li>Fügen Sie diesen in die verschlüsselte HIN-Kommunikation mit uns ein</li>
+	<li>korrigieren und ergänzen Sie Ihn dort nach Belieben</li>
+	<li>Abschicken!</li>
 </ol>
 
 <div id="txt" class="bg-white border rounded-md my-4 p-4 w-full" contenteditable>
@@ -41,12 +44,18 @@
 	<Template1_3 />
 </div>
 
-<button data-clipboard-target="#txt" class="btn btn-md btn-primary text-white">
-	Text in Zwischenablage kopieren
+<button
+	data-clipboard-target="#txt"
+	class="btn btn-md btn-primary text-white inline-block"
+	on:click={() => clicked++}
+>
+	Kopieren
 </button>
 
+<CopiedMessage {clicked} />
+
 <pre class="pt-40">
-    {JSON.stringify($answers, null, 4)}
+    {JSON.stringify($answers, null, 2)}
 </pre>
 
 <StepsButtons {prevPage} {nextPage} />

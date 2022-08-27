@@ -42,7 +42,7 @@
 
 <CheckboxGroup
 	checkboxLabel="Wurde dieses Herzrasen schon einmal behandelt?"
-	boxes={['ja (medikamentös)', 'ja (mit Herzkatheter)', 'nein (keine)']}
+	boxes={['medikamentös', 'mit Herzkatheter', 'unbehandelt']}
 	bind:checkboxGroup={$answers.answer1_3_5}
 	bind:checkboxCustomText={$answers.answer1_3_6}
 />
@@ -51,7 +51,7 @@
 	checkboxLabel="Wie fühlen Sie den Herzschlag?"
 	boxes={['sehr schnell', 'mässig schnell', 'regelmässig aufeinander folgend', 'unregelmässig']}
 	bind:checkboxGroup={$answers.answer1_3_7}
-	bind:checkboxCustomText={$answers.answer1_3_6}
+	bind:checkboxCustomText={$answers.answer1_3_8}
 	checkboxPlaceholder="Bitte beschreiben Sie..."
 	checkboxHasCustom={true}
 />

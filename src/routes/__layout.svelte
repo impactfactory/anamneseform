@@ -28,14 +28,37 @@
 	:root {
 		--bodycolor: #333;
 		--bordercolor: #bbb;
+		--primary: 129, 5, 12;
 		--inputbg: #fff;
 	}
 
+	/* Prosa */
 	:global(p),
-	:global(ul) {
+	:global(ul),
+	:global(ol),
+	:global(#txt) {
 		color: var(--bodycolor);
 	}
 
+	/* Template Rendered Text */
+	:global(#txt) {
+		/*font-size: 14px;*/
+		overflow-y: scroll;
+		max-height: 185px;
+	}
+
+	:global(#txt):focus {
+		outline-color: rgb(var(--primary), 0.4);
+	}
+	:global(#txt)::selection {
+		background: rgb(var(--primary), 0.2);
+	}
+
+	:global(#txt span) {
+		font-weight: 600;
+	}
+
+	/* Input Fields */
 	:global(.selectgroup) {
 		margin-top: 0.75rem;
 	}
