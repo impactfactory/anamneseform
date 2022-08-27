@@ -22,7 +22,7 @@
 
 	{#if $answers.answer1_2_5}
 		&nbsp;{$answers.answer1_2_5}.
-	{:else}{/if}
+	{/if}
 {/if}
 
 <!-- Question 3 -->

@@ -8,8 +8,10 @@
 	<a class="btn btn-primary" href={prevPage}>zurück</a>
 
 	{#if nextPage == ''}
-		<a class="btn btn-primary" disabled>weiter</a>
-	{:else if nextPage == 'noshow'}{:else}
+		<a class="btn btn-primary" href="" disabled>weiter</a>
+	{:else if nextPage == 'noshow'}
+		<!-- -->
+	{:else}
 		<a class="btn btn-primary" href={nextPage}>weiter</a>
 	{/if}
 </footer>
