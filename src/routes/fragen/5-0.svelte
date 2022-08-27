@@ -3,6 +3,7 @@
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import ChapterOpener from '$lib/inputs/ChapterOpener.svelte';
 	import { answers } from '$lib/stores';
+	import { fade } from 'svelte/transition';
 
 	let prevPage: string = '';
 
@@ -19,18 +20,18 @@
 </script>
 
 <Exit />
+<div in:fade={{ duration: 1500 }}>
+	<h2 class="font-medium">Haben Sie etwas anderes?</h2>
 
-<h2 class="font-medium">Haben Sie etwas anderes?</h2>
+	<p>
+		Falls alles nicht zugetroffen hat bisjetzt, helfen die Ihnen die folgenden Fragen, genauer zu
+		spezifizieren, was Sie erfahren.
+	</p>
 
-<p>
-	Falls alles nicht zugetroffen hat bisjetzt, helfen die Ihnen die folgenden Fragen, genauer zu
-	spezifizieren, was Sie erfahren.
-</p>
-
-<ChapterOpener
-	bind:openerGroup={$answers.answer5_0}
-	nextPartPage="5-1"
-	nextChapterPage="/zusammenfassung"
-/>
-
+	<ChapterOpener
+		bind:openerGroup={$answers.answer5_0}
+		nextPartPage="5-1"
+		nextChapterPage="/zusammenfassung"
+	/>
+</div>
 <StepsButtons {prevPage} nextPage={$answers.answer5_0} />

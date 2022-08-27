@@ -3,6 +3,8 @@
 	import ChapterOpener from '$lib/inputs/ChapterOpener.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { answers } from '$lib/stores';
+	import { fade } from 'svelte/transition';
+
 	let prevPage: string = '';
 
 	let nextPartPage: string;
@@ -18,11 +20,11 @@
 </script>
 
 <Exit />
+<div in:fade={{ duration: 1500 }}>
+	<h2 class="font-medium">Haben Sie unregelmässigen Herzschlag?</h2>
 
-<h2 class="font-medium">Haben Sie unregelmässigen Herzschlag?</h2>
+	<p>"Herzrhythmus-Störungen" bezeichnet die Erfahrung, dass....</p>
 
-<p>"Herzrhythmus-Störungen" bezeichnet die Erfahrung, dass....</p>
-
-<ChapterOpener bind:openerGroup={$answers.answer4_0} nextPartPage="4-1" nextChapterPage="5-0" />
-
+	<ChapterOpener bind:openerGroup={$answers.answer4_0} nextPartPage="4-1" nextChapterPage="5-0" />
+</div>
 <StepsButtons {prevPage} nextPage={$answers.answer4_0} />

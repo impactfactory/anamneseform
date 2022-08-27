@@ -16,7 +16,7 @@
 
 <!-- Question 2 -->
 {#if $answers.answer1_3_5.length}
-	Stand der Behandlung:
+	Erfolgte Behandlung:
 	{#each $answers.answer1_3_5 as answer, i}
 		{#if i == $answers.answer1_3_5.length - 2}
 			<span>{answer}</span> und&nbsp;

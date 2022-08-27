@@ -50,7 +50,8 @@
 	:global(#txt):focus {
 		outline-color: rgb(var(--primary), 0.4);
 	}
-	:global(#txt)::selection {
+	:global(#txt::selection),
+	:global(#txt::selection span) {
 		background: rgb(var(--primary), 0.2);
 	}
 

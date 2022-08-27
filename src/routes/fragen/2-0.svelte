@@ -3,6 +3,7 @@
 	import ChapterOpener from '$lib/inputs/ChapterOpener.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { answers } from '$lib/stores';
+	import { fade } from 'svelte/transition';
 
 	let prevPage: string = '';
 
@@ -20,14 +21,15 @@
 
 <Exit />
 
-<h2 class="font-medium">Haben Sie "Herzstolpern"?</h2>
+<div in:fade>
+	<h2 class="font-medium">Haben Sie "Herzstolpern"?</h2>
 
-<p>
-	"Herzstolpern" bezeichnet die Erfahrung, dass der Herzschlag zu früh schlägt oder pausiert und
-	dann heftiger klopft. Beklommenheitsgefühl, Angst- oder Panikzustände und Schweißausbrüche können
-	Begleiterscheinungen sein.
-</p>
+	<p>
+		"Herzstolpern" bezeichnet die Erfahrung, dass der Herzschlag zu früh schlägt oder pausiert und
+		dann heftiger klopft. Beklommenheitsgefühl, Angst- oder Panikzustände und Schweißausbrüche
+		können Begleiterscheinungen sein.
+	</p>
 
-<ChapterOpener bind:openerGroup={$answers.answer2_0} nextPartPage="2-1" nextChapterPage="3-0" />
-
+	<ChapterOpener bind:openerGroup={$answers.answer2_0} nextPartPage="2-1" nextChapterPage="3-0" />
+</div>
 <StepsButtons {prevPage} nextPage={$answers.answer2_0} />

@@ -6,8 +6,7 @@
 {#if $answers.answer1_2_1 && $answers.answer1_2_1 != 'custom'}
 	Es hört <span>{$answers.answer1_2_1}</span> auf.&nbsp;
 {:else}
-	{$answers.answer1_2_2}&nbsp;
-{/if}
+	{$answers.answer1_2_2}&nbsp;{/if}
 
 <!-- Question 2 -->
 {#if $answers.answer1_2_3.length || $answers.answer1_2_4}
