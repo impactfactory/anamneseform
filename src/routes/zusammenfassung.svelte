@@ -35,7 +35,7 @@
 	<ol>
 		<li>Kopieren Sie den generierten Text in Ihre Zwischenablage</li>
 		<li>Fügen Sie diesen in die verschlüsselte HIN-Kommunikation mit uns ein</li>
-		<li>korrigieren und ergänzen Sie Ihn dort nach Belieben</li>
+		<li>Korrigieren und ergänzen Sie Ihn dort nach Belieben</li>
 		<li>Abschicken!</li>
 	</ol>
 
