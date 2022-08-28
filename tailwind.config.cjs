@@ -20,11 +20,8 @@ module.exports = {
 				"base-content": "#333",
 				"primary": "#81050c",
 				"primary-content": "#fff",
-				//"outline-color": "#81050c",
 				"secondary": "#c9e7e4", 
 				"info": "#fff"
-				/*
-				"secondary": "#b7d9d5",*/
 			           }
 			},
             {
@@ -33,6 +30,8 @@ module.exports = {
 				 "base-100": "#222",
 				 "base-content": "#ededed",
 				 "primary": "#81050c",
+				 "secondary": "#50726e",
+				 "secondary-content": "#ededed"
 			          }
             }
 			],

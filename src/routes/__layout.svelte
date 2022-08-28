@@ -36,7 +36,8 @@
 	:global(p),
 	:global(ul),
 	:global(ol),
-	:global(#txt) {
+	:global(#txt),
+	:global(textarea) {
 		color: var(--bodycolor);
 	}
 
@@ -150,6 +151,10 @@
 		:global(.checkboxgroup legend),
 		:global(.radiogroup legend) {
 			color: var(--bodycolor);
+		}
+		:global(textarea),
+		:global(#txt) {
+			color: #333;
 		}
 	}
 </style>
