@@ -18,6 +18,9 @@
 
 <style>
 	footer {
-		opacity: 0.8;
+		opacity: 0.9;
+	}
+	a.btn {
+		opacity: 1;
 	}
 </style>

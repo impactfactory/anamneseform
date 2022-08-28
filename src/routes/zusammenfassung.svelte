@@ -30,16 +30,15 @@
 
 <Exit />
 <div in:fade={{ duration: 1500 }}>
-	<h2 class="font-medium">Herzlichen Dank! Ihre Zusammenfassung:</h2>
+	<h2 class="font-medium">Danke! Ihre Zusammenfassung:</h2>
 
 	<ol>
-		<li>Kopieren Sie den generierten Text in Ihre Zwischenablage</li>
-		<li>Fügen Sie diesen in die verschlüsselte HIN-Kommunikation mit uns ein</li>
-		<li>Korrigieren und ergänzen Sie Ihn dort nach Belieben</li>
-		<li>Abschicken!</li>
+		<li>Kopieren Sie den Text in Ihre Zwischenablage.</li>
+		<li>Fügen Sie diesen in die HIN-Kommunikation mit uns ein.</li>
+		<li>Korrigieren, ergänzen, abschicken!</li>
 	</ol>
 
-	<div id="txt" class="bg-white border rounded-md my-4 p-4 w-full" contenteditable>
+	<div id="txt" class="bg-white border rounded-md my-4 p-3 w-full" contenteditable>
 		<Template1_1 />
 		<Template1_2 />
 		<Template1_3 />
@@ -47,16 +46,25 @@
 
 	<button
 		data-clipboard-target="#txt"
-		class="btn btn-md btn-primary text-white inline-block"
+		class="btn btn-md btn-primary inline-block"
 		on:click={() => clicked++}
 	>
 		Kopieren
 	</button>
 
 	<CopiedMessage {clicked} />
+</div>
 
+<!-- 
 	<pre class="pt-40">
     {JSON.stringify($answers, null, 2)}
 </pre>
-</div>
+-->
+
 <StepsButtons {prevPage} {nextPage} />
+
+<style>
+	button {
+		opacity: 0.9;
+	}
+</style>

@@ -22,7 +22,8 @@
 <Exit />
 
 <YouAreHere {chapterName} />
-<div in:fade={{ duration: 1500 }}>
+
+<div in:fade={{ duration: 1000 }}>
 	<SelectGroup
 		selectName="1"
 		selectLabel="Wie häufig haben Sie Herzrasen?"

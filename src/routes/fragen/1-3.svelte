@@ -26,7 +26,7 @@
 <Exit />
 
 <YouAreHere {chapterName} />
-<div in:fade={{ duration: 1500 }}>
+<div in:fade={{ duration: 1000 }}>
 	<RadioGroup
 		radioLabel="Können Sie das Herzrasen durch etwas auslösen?"
 		bind:radioGroup={$answers.answer1_3_1}

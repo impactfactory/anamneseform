@@ -21,7 +21,7 @@
 
 <Exit />
 
-<div in:fade>
+<div in:fade={{ duration: 1000 }}>
 	<h2 class="font-medium">Haben Sie "Herzstolpern"?</h2>
 
 	<p>

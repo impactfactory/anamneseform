@@ -20,7 +20,7 @@
 </script>
 
 <Exit />
-<div in:fade={{ duration: 1500 }}>
+<div in:fade={{ duration: 1000 }}>
 	<h2 class="font-medium">Haben Sie unregelmässigen Herzschlag?</h2>
 
 	<p>"Herzrhythmus-Störungen" bezeichnet die Erfahrung, dass....</p>

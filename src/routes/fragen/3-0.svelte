@@ -20,7 +20,7 @@
 </script>
 
 <Exit />
-<div in:fade={{ duration: 1500 }}>
+<div in:fade={{ duration: 1000 }}>
 	<h2 class="font-medium">Haben Sie "Herzklopfen"?</h2>
 
 	<p>"Herzklopfen" bezeichnet die Erfahrung, dass das Herz ungewöhnlich stark klopft</p>
