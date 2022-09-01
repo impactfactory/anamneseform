@@ -5,9 +5,9 @@
 	import { answers } from '$lib/stores';
 	import { fade } from 'svelte/transition';
 
-	let chapterName: string = 'Herzstolpern';
-	let prevPage: string = '2-1';
-	let nextPage: string = '2-3';
+	let chapterName: string = 'unregelmässiger Herzschlag';
+	let prevPage: string = '2-3';
+	let nextPage: string = '3-2';
 </script>
 
 <Exit />

@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
 
 export const answers = writable({
+	answer0: '',
 	answer1_0: '',
 	answer1_1_1: '',
 	answer1_1_2: '',

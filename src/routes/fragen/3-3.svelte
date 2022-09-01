@@ -5,28 +5,20 @@
 	import { answers } from '$lib/stores';
 	import { fade } from 'svelte/transition';
 
-	let chapterName: string = 'Herzrasen';
-	let prevPage: string = '1-2';
+	let chapterName: string = 'unregelmässiger Herzschlag';
+	let prevPage: string = '3-2';
 	let nextPage: string = '';
 
 	// navigational logic: define next page url according choice of main symptoms
-	if (
-		!$answers.answer0.includes('3') &&
-		!$answers.answer0.includes('4') &&
-		!$answers.answer0.includes('5')
-	) {
+	if (!$answers.answer0.includes('4') && !$answers.answer0.includes('5')) {
 		nextPage = '/zusammenfassung';
 	}
 
-	if ($answers.answer0.includes('3')) {
-		nextPage = '3-1';
+	if ($answers.answer0.includes('4')) {
+		nextPage = '4-1';
 	} else {
-		if ($answers.answer0.includes('4')) {
-			nextPage = '4-1';
-		} else {
-			if ($answers.answer0.includes('5')) {
-				nextPage = '5-1';
-			}
+		if ($answers.answer0.includes('5')) {
+			nextPage = '5-1';
 		}
 	}
 </script>

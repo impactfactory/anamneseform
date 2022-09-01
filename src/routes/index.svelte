@@ -23,7 +23,7 @@
 	Fragen stellen.
 </p>
 
-<a class="my-4 btn btn-primary" href="/fragen/1-0">Beginnen</a>
+<a class="my-4 btn btn-primary" href="/fragen/0-0">Beginnen</a>
 
 <style>
 	a.btn {

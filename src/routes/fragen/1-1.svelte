@@ -7,8 +7,8 @@
 	import { fade } from 'svelte/transition';
 
 	let chapterName: string = 'Herzrasen';
-	let prevPage: string = '/fragen/1-0';
-	let nextPage: string = '/fragen/1-2';
+	let prevPage: string = '0-0';
+	let nextPage: string = '1-2';
 
 	let selectLabel: string;
 	let selectOptions: string[];

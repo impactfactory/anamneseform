@@ -9,7 +9,7 @@
 
 	let chapterName: string = 'Herzrasen';
 	let prevPage: string = '/fragen/1-2';
-	let nextPage: string = '/fragen/2-0';
+	let nextPage: string = '';
 
 	let radioLabel: string;
 	let radioGroup: string;
@@ -21,6 +21,32 @@
 	let boxes: string[];
 	let checkboxCustomText: string;
 	let checkboxHasCustom: boolean;
+
+	// navigational logic: define next page url according choice of main symptoms
+	if (
+		!$answers.answer0.includes('2') &&
+		!$answers.answer0.includes('3') &&
+		!$answers.answer0.includes('4') &&
+		!$answers.answer0.includes('5')
+	) {
+		nextPage = '/zusammenfassung';
+	}
+
+	if ($answers.answer0.includes('2')) {
+		nextPage = '2-1';
+	} else {
+		if ($answers.answer0.includes('3')) {
+			nextPage = '3-1';
+		} else {
+			if ($answers.answer0.includes('4')) {
+				nextPage = '4-1';
+			} else {
+				if ($answers.answer0.includes('5')) {
+					nextPage = '5-1';
+				}
+			}
+		}
+	}
 </script>
 
 <Exit />
