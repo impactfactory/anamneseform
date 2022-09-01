@@ -7,6 +7,7 @@
 	import { fade } from 'svelte/transition';
 
 	let chapterName: string = 'Herzrasen';
+	let startPage: string = 'noShow';
 	let prevPage: string = '0-0';
 	let nextPage: string = '1-2';
 

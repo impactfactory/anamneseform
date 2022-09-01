@@ -5,7 +5,8 @@
 	import { answers } from '$lib/stores';
 	import { beforeUpdate } from 'svelte';
 
-	let prevPage: string = '/';
+	let startPage: string = '/';
+	let prevPage: string = 'noShow';
 	let nextPage: string;
 
 	//check initial chapters choice
@@ -100,4 +101,4 @@
 	</fieldset>
 </div>
 
-<StepsButtons {prevPage} {nextPage} />
+<StepsButtons {prevPage} {nextPage} {startPage} />

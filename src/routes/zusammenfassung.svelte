@@ -11,7 +11,7 @@
 	import { onMount } from 'svelte';
 
 	let prevPage: string = '';
-	let nextPage: string = 'noshow';
+	let nextPage: string = 'noShow';
 
 	//backwards navigational logic
 	if ($answers.answer0.includes('5')) {
