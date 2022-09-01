@@ -6,8 +6,15 @@
 	import { fade } from 'svelte/transition';
 
 	let chapterName: string = 'Herzstolpern';
-	let prevPage: string = '1-3';
+	let prevPage: string = '';
 	let nextPage: string = '2-2';
+
+	//backwards navigational logic
+	if ($answers.answer0.includes('1')) {
+		prevPage = '1-3';
+	} else {
+		prevPage = '0-0';
+	}
 </script>
 
 <Exit />

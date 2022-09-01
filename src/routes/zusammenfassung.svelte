@@ -13,11 +13,23 @@
 	let prevPage: string = '';
 	let nextPage: string = 'noshow';
 
-	if ($answers.answer5_0 == '5-1') {
-		prevPage = '5-3';
-	}
-	if ($answers.answer5_0 == '/zusammenfassung') {
-		prevPage = '/fragen/5-0';
+	//backwards navigational logic
+	if ($answers.answer0.includes('5')) {
+		prevPage = '/fragen/5-3';
+	} else {
+		if ($answers.answer0.includes('4')) {
+			prevPage = '/fragen/4-3';
+		} else {
+			if ($answers.answer0.includes('3')) {
+				prevPage = '/fragen/3-3';
+			} else {
+				if ($answers.answer0.includes('2')) {
+					prevPage = '/fragen/2-3';
+				} else {
+					prevPage = '/fragen/1-3';
+				}
+			}
+		}
 	}
 
 	let clip;

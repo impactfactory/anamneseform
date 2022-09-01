@@ -6,8 +6,27 @@
 	import { fade } from 'svelte/transition';
 
 	let chapterName: string = 'andere Herzphänomene';
-	let prevPage: string = '4-3';
+	let prevPage: string = '';
 	let nextPage: string = '5-2';
+
+	//backwards navigational logic
+	if ($answers.answer0.includes('4')) {
+		prevPage = '4-3';
+	} else {
+		if ($answers.answer0.includes('3')) {
+			prevPage = '3-3';
+		} else {
+			if ($answers.answer0.includes('2')) {
+				prevPage = '2-3';
+			} else {
+				if ($answers.answer0.includes('1')) {
+					prevPage = '1-3';
+				} else {
+					prevPage = '0-0';
+				}
+			}
+		}
+	}
 </script>
 
 <Exit />

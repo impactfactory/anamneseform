@@ -7,7 +7,7 @@
 
 	let chapterName: string = 'andere Herzphänomene';
 	let prevPage: string = '5-2';
-	let nextPage: string = 'zusammenfassung';
+	let nextPage: string = '/zusammenfassung';
 </script>
 
 <Exit />

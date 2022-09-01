@@ -3,7 +3,7 @@
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { fade } from 'svelte/transition';
 	import { answers } from '$lib/stores';
-	import { beforeUpdate, afterUpdate } from 'svelte';
+	import { beforeUpdate } from 'svelte';
 
 	let prevPage: string = '/';
 	let nextPage: string;

@@ -6,8 +6,19 @@
 	import { fade } from 'svelte/transition';
 
 	let chapterName: string = 'unregelmässiger Herzschlag';
-	let prevPage: string = '2-3';
+	let prevPage: string = '';
 	let nextPage: string = '3-2';
+
+	//backwards navigational logic
+	if ($answers.answer0.includes('2')) {
+		prevPage = '2-3';
+	} else {
+		if ($answers.answer0.includes('1')) {
+			prevPage = '1-3';
+		} else {
+			prevPage = '0-0';
+		}
+	}
 </script>
 
 <Exit />
