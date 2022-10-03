@@ -27,6 +27,6 @@
 
 <YouAreHere {chapterName} />
 <div in:fade={{ duration: 1000 }}>
-	<p>Fragen über Fragen</p>
+	<p>nicht benötigt bisjetzt</p>
 </div>
 <StepsButtons {prevPage} {nextPage} />
