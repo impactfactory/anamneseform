@@ -62,7 +62,7 @@
 					value="2"
 					bind:group={$answers.answer0}
 				/>
-				<span class="label-text">Herzstolpern</span>
+				<span class="label-text">Brustschmerzen</span>
 			</label>
 		</div>
 		<div class="form-control">
@@ -73,7 +73,7 @@
 					value="3"
 					bind:group={$answers.answer0}
 				/>
-				<span class="label-text">unregelmässigen Herzschlag</span>
+				<span class="label-text">Atemnot</span>
 			</label>
 		</div>
 		<div class="form-control">

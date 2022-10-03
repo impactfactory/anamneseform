@@ -5,6 +5,7 @@
 	export let radioPlaceholder: string = '';
 	export let radioGroup: string;
 	export let radioCustomText: string;
+	export let radioHasCustom: boolean;
 </script>
 
 <fieldset class="radiogroup">
@@ -21,7 +22,9 @@
 			<span class="label-text">nein</span>
 		</label>
 	</div>
-	{#if radioGroup == 'ja'}
-		<textarea class="textarea" bind:value={radioCustomText} placeholder={radioPlaceholder} />
+	{#if radioHasCustom}
+		{#if radioGroup == 'ja'}
+			<textarea class="textarea" bind:value={radioCustomText} placeholder={radioPlaceholder} />
+		{/if}
 	{/if}
 </fieldset>
