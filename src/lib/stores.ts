@@ -95,6 +95,8 @@ export const answers = writable({
 	risk1_1: '',
 	risk1_2: '',
 	risk1_3: '',
+	risk1_4: '',
+	risk1_5: '',
 	risk2_1: '',
 	risk2_2: '',
 	risk2_3: '',
