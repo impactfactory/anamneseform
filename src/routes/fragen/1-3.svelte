@@ -15,12 +15,15 @@
 	let radioGroup: string;
 	let radioCustomText: string;
 	let radioPlaceholder: string;
+	let radioHasCustom: boolean;
 
 	let checkboxLabel: string;
 	let checkboxGroup: string;
 	let boxes: string[];
 	let checkboxCustomText: string;
 	let checkboxHasCustom: boolean;
+	let checkboxPlaceholder: string;
+	let custom: string;
 
 	// navigational logic: define next page url according choice of main symptoms
 	if (
@@ -58,6 +61,7 @@
 		bind:radioGroup={$answers.answer1_3_1}
 		bind:radioCustomText={$answers.answer1_3_2}
 		radioPlaceholder="Bitte beschreiben Sie, wie Sie es auslösen können..."
+		radioHasCustom={true}
 	/>
 
 	<RadioGroup
@@ -65,13 +69,17 @@
 		bind:radioGroup={$answers.answer1_3_3}
 		bind:radioCustomText={$answers.answer1_3_4}
 		radioPlaceholder="Bitte beschreiben Sie, wie Sie es beenden können..."
+		radioHasCustom={true}
 	/>
 
 	<CheckboxGroup
 		checkboxLabel="Wurde dieses Herzrasen schon einmal behandelt?"
 		boxes={['medikamentös', 'mit Herzkatheter', 'unbehandelt']}
 		bind:checkboxGroup={$answers.answer1_3_5}
-		bind:checkboxCustomText={$answers.answer1_3_6}
+		checkboxCustomText=""
+		checkboxPlaceholder="."
+		checkboxHasCustom={false}
+		custom=""
 	/>
 
 	<CheckboxGroup
@@ -81,6 +89,7 @@
 		bind:checkboxCustomText={$answers.answer1_3_8}
 		checkboxPlaceholder="Bitte beschreiben Sie..."
 		checkboxHasCustom={true}
+		custom=""
 	/>
 </div>
 <StepsButtons {prevPage} {nextPage} />

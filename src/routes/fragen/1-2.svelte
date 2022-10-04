@@ -24,6 +24,7 @@
 	let boxes: string[];
 	let checkboxCustomText: string;
 	let checkboxHasCustom: boolean;
+	let custom: string;
 </script>
 
 <Exit />
@@ -48,6 +49,7 @@
 		bind:checkboxCustomText={$answers.answer1_2_5}
 		checkboxPlaceholder="Welche?"
 		checkboxHasCustom={true}
+		custom=""
 	/>
 
 	<SelectGroup

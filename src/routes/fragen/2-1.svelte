@@ -47,6 +47,7 @@
 		bind:checkboxCustomText={$answers.answer2_1_2}
 		checkboxPlaceholder="Beschreiben Sie bitte die Art der Beschwerden!"
 		checkboxHasCustom={true}
+		custom=""
 	/>
 
 	<CheckboxGroup
@@ -65,6 +66,7 @@
 		bind:checkboxCustomText={$answers.answer2_1_4}
 		checkboxPlaceholder="Beschreiben sie die Lokalisation der Beschwerden!"
 		checkboxHasCustom={true}
+		custom=""
 	/>
 
 	<SelectGroup

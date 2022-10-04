@@ -84,7 +84,7 @@
 					value="4"
 					bind:group={$answers.answer0}
 				/>
-				<span class="label-text">ungewöhnlich starken Herzschlag</span>
+				<span class="label-text">Schwindel</span>
 			</label>
 		</div>
 		<div class="form-control">
@@ -95,7 +95,51 @@
 					value="5"
 					bind:group={$answers.answer0}
 				/>
-				<span class="label-text">anderes</span>
+				<span class="label-text">Herzstolpern</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="6"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Herzrhythmusstörungen</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="7"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Bewusstseinsverlust</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="8"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Leistungsschwächen</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="9"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">geschwollene Beine oder Füsse (Ödem)</span>
 			</label>
 		</div>
 	</fieldset>
