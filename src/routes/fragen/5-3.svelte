@@ -4,8 +4,9 @@
 	import YouAreHere from '$lib/YouAreHere.svelte';
 	import { answers } from '$lib/stores';
 	import { fade } from 'svelte/transition';
+	import RadioGroup from '$lib/inputs/RadioGroup.svelte';
 
-	let chapterName: string = 'andere Herzphänomene';
+	let chapterName: string = 'Herzstolpern';
 	let prevPage: string = '5-2';
 	let nextPage: string;
 
@@ -34,12 +35,32 @@
 			}
 		}
 	}
+
+	let radioLabel: string;
+	let radioGroup: string;
+	let radioCustomText: string;
+	let radioPlaceholder: string;
+	let radioHasCustom: boolean;
 </script>
 
 <Exit />
 
 <YouAreHere {chapterName} />
 <div in:fade={{ duration: 1000 }}>
-	<p>Fragen über Fragen</p>
+	<RadioGroup
+		radioLabel="Können Sie das Herzstolpern durch etwas auslösen?"
+		bind:radioGroup={$answers.answer5_3_1}
+		bind:radioCustomText={$answers.answer5_3_2}
+		radioPlaceholder="Bitte beschreiben Sie, wie Sie es auslösen können..."
+		radioHasCustom={true}
+	/>
+
+	<RadioGroup
+		radioLabel="Können Sie das Herzstolpern durch etwas beenden?"
+		bind:radioGroup={$answers.answer5_3_3}
+		bind:radioCustomText={$answers.answer5_3_4}
+		radioPlaceholder="Bitte beschreiben Sie, wie Sie es beenden können..."
+		radioHasCustom={true}
+	/>
 </div>
 <StepsButtons {prevPage} {nextPage} />
