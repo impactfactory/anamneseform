@@ -1,16 +1,13 @@
 <script lang="ts">
-	import CheckboxGroup from '$lib/inputs/CheckboxGroup.svelte';
-	import RadioGroup from '$lib/inputs/RadioGroup.svelte';
 	import RadioTriple from '$lib/inputs/RadioTriple.svelte';
-	import SelectGroup from '$lib/inputs/SelectGroup.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { answers } from '$lib/stores';
 	import YouAreHere from '$lib/YouAreHere.svelte';
 	import { fade } from 'svelte/transition';
 
 	let chapterName: string = 'Risikofaktoren';
-	let prevPage: string = 'risks_1';
-	let nextPage: string = 'risks_3';
+	let prevPage: string = 'risks_4';
+	let nextPage: string = 'risks_6';
 
 	let radioLabel: string;
 	let radioGroup: string;
@@ -22,23 +19,25 @@
 <YouAreHere {chapterName} />
 <div in:fade={{ duration: 1000 }}>
 	<RadioTriple
-		radioLabel="Hat jm. in Ihrer Verwandschaft Herzprobleme?"
-		bind:radioGroup={$answers.risk2_1}
-		bind:radioCustomText={$answers.risk2_2}
+		radioLabel="Haben Sie Schlaf-Apnoe?"
+		bind:radioGroup={$answers.risk5_1}
+		bind:radioCustomText={$answers.risk5_2}
 		radioPlaceholder="Bitte geben Sie Ihnen bekannte Details an:"
 		radioHasCustom={true}
 	/>
+
 	<RadioTriple
-		radioLabel="Haben Sie Bluthochdruck?"
-		bind:radioGroup={$answers.risk2_3}
-		bind:radioCustomText={$answers.risk2_4}
+		radioLabel="Haben Sie Stress?"
+		bind:radioGroup={$answers.risk5_3}
+		bind:radioCustomText={$answers.risk5_4}
 		radioPlaceholder="Bitte geben Sie Ihnen bekannte Details an:"
 		radioHasCustom={true}
 	/>
+
 	<RadioTriple
-		radioLabel="Haben Sie eine Fettstoffwechselstörung?"
-		bind:radioGroup={$answers.risk2_5}
-		bind:radioCustomText={$answers.risk2_6}
+		radioLabel="Haben Sie Rheuma?"
+		bind:radioGroup={$answers.risk5_5}
+		bind:radioCustomText={$answers.risk5_6}
 		radioPlaceholder="Bitte geben Sie Ihnen bekannte Details an:"
 		radioHasCustom={true}
 	/>

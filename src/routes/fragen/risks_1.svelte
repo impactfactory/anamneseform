@@ -1,59 +1,50 @@
 <script lang="ts">
 	import Bmi from '$lib/inputs/Bmi.svelte';
-	import CheckboxGroup from '$lib/inputs/CheckboxGroup.svelte';
-	import RadioGroup from '$lib/inputs/RadioGroup.svelte';
-	import SelectGroup from '$lib/inputs/SelectGroup.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { answers } from '$lib/stores';
 	import YouAreHere from '$lib/YouAreHere.svelte';
 	import { fade } from 'svelte/transition';
 
 	let chapterName: string = 'Risikofaktoren';
-	let prevPage: string = '3-2';
-	let nextPage: string = 'risks_1';
+	let prevPage: string;
+	let nextPage: string = 'risks_2';
 
-	let checkboxLabel: string;
-	let checkboxGroup: string;
-	let boxes: string[];
-	let checkboxCustomText: string;
-	let checkboxPlaceholder: string;
-	let checkboxHasCustom: boolean;
-	let custom: string;
+	//backwards navigational logic
+	if ($answers.answer0.includes('9')) {
+		prevPage = '9-3';
+	} else {
+		if ($answers.answer0.includes('8')) {
+			prevPage = '8-3';
+		} else {
+			if ($answers.answer0.includes('7')) {
+				prevPage = '7-3';
+			} else {
+				if ($answers.answer0.includes('6')) {
+					prevPage = '6-3';
+				} else {
+					prevPage = '0-0';
+				}
+			}
+		}
+	}
 
-	let selectLabel: string;
-	let selectOptions: string[];
-	let selectPlaceholder: string;
-	let selectValue: string;
-	let selectCustomText: string;
-	let selectName: string;
-	let selectHasCustom: boolean;
-
-	let radioLabel: string;
-	let radioGroup: string;
-	let radioCustomText: string;
-	let radioPlaceholder: string;
-	let radioHasCustom: boolean;
-
+	let gender: string;
 	let weight: number;
 	let height: number;
-	let hip: number;
-	let gender: string;
+	let pulse: string;
+	let pressure_sys: string;
+	let pressure_dia: string;
 </script>
 
 <YouAreHere {chapterName} />
 <div in:fade={{ duration: 1000 }}>
-	<!--
-	- Hat jm. in Ihrer Verwandtschaft Herzprobleme? - Haben Sie Bluthochdruck? - Haben Sie eine
-	Fettstoffwechselstörung? - Rauchen Sie? - Haben Sie Diabetes? - Wie aktiv ist ihr Lebensstil? -
-	Wie ernähren Sie sich? - Leiden Sie an einer Schlaf - Wie stressvoll ist Ihr Alltag - Leiden Sie
-	an einer rheumatischen Erkrankung - Leiden Sie an einer Niereninsuffizienz? --->
-
 	<Bmi
+		bind:gender={$answers.risk1_6}
 		bind:weight={$answers.risk1_1}
 		bind:height={$answers.risk1_2}
-		bind:taille={$answers.risk1_3}
-		bind:hip={$answers.risk1_4}
-		bind:gender={$answers.risk1_5}
+		bind:pulse={$answers.risk1_3}
+		bind:pressure_sys={$answers.risk1_4}
+		bind:pressure_dia={$answers.risk1_5}
 	/>
 </div>
 <StepsButtons {prevPage} {nextPage} />

@@ -144,7 +144,7 @@
 		</div>
 	</fieldset>
 	<p>
-		<br /><br />Direktlinks: <a href="risks_0">Risikofaktoren</a> |
+		<br /><br />Direktlinks: <a href="risks_1">Risikofaktoren</a> |
 		<a href="../zusammenfassung">Zusammenfassung</a>
 	</p>
 </div>

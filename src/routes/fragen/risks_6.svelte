@@ -1,5 +1,4 @@
 <script lang="ts">
-	import RadioGroup from '$lib/inputs/RadioGroup.svelte';
 	import RadioTriple from '$lib/inputs/RadioTriple.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { answers } from '$lib/stores';
@@ -7,8 +6,8 @@
 	import { fade } from 'svelte/transition';
 
 	let chapterName: string = 'Risikofaktoren';
-	let prevPage: string = 'risks_2';
-	let nextPage: string = 'risks_4';
+	let prevPage: string = 'risks_4';
+	let nextPage: string = '/zusammenfassung';
 
 	let radioLabel: string;
 	let radioGroup: string;
@@ -19,25 +18,10 @@
 
 <YouAreHere {chapterName} />
 <div in:fade={{ duration: 1000 }}>
-	<RadioGroup
-		radioLabel="Rauchen Sie?"
-		bind:radioGroup={$answers.risk3_1}
-		bind:radioCustomText={$answers.risk3_2}
-		radioPlaceholder="Seit wann und wieviel?"
-		radioHasCustom={true}
-	/>
-
 	<RadioTriple
-		radioLabel="Haben Sie Diabetes?"
-		bind:radioGroup={$answers.risk3_3}
-		bind:radioCustomText={$answers.risk3_4}
-		radioPlaceholder="Bitte geben Sie Ihnen bekannte Details an:"
-		radioHasCustom={true}
-	/>
-	<RadioTriple
-		radioLabel="Haben Sie Bluthochdruck?"
-		bind:radioGroup={$answers.risk3_5}
-		bind:radioCustomText={$answers.risk3_6}
+		radioLabel="Haben Sie eine Niereninsuffizienz?"
+		bind:radioGroup={$answers.risk6_1}
+		bind:radioCustomText={$answers.risk6_2}
 		radioPlaceholder="Bitte geben Sie Ihnen bekannte Details an:"
 		radioHasCustom={true}
 	/>
