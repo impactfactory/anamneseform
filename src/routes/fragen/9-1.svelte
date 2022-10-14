@@ -7,7 +7,7 @@
 	import YouAreHere from '$lib/YouAreHere.svelte';
 	import { fade } from 'svelte/transition';
 
-	let chapterName: string = 'Beinödeme';
+	let chapterName: string = 'Ödem';
 	let prevPage: string;
 	let nextPage: string = '9-2';
 
