@@ -2,7 +2,7 @@
 	import Exit from '$lib/Exit.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { fade } from 'svelte/transition';
-	import { answers } from '$lib/stores';
+	import { answers, chapters } from '$lib/stores';
 	import { beforeUpdate } from 'svelte';
 
 	let startPage: string = '/';
@@ -55,114 +55,28 @@
 <Exit />
 
 <h2 class="font-medium">Welche Symptome erfahren Sie?</h2>
+
 <div in:fade={{ duration: 1000 }}>
 	<fieldset class="checkboxgroup">
 		<legend>Wählen Sie bitte die Symptome aus, welche Ihrer Erfahrung entsprechen</legend>
 
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value="1"
-					bind:group={$answers.answer0}
-				/>
-				<span class="label-text">Herzrasen</span>
-			</label>
-		</div>
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value="2"
-					bind:group={$answers.answer0}
-				/>
-				<span class="label-text">Brustschmerzen</span>
-			</label>
-		</div>
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value="3"
-					bind:group={$answers.answer0}
-				/>
-				<span class="label-text">Atemnot</span>
-			</label>
-		</div>
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value="4"
-					bind:group={$answers.answer0}
-				/>
-				<span class="label-text">Schwindel</span>
-			</label>
-		</div>
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value="5"
-					bind:group={$answers.answer0}
-				/>
-				<span class="label-text">Herzstolpern</span>
-			</label>
-		</div>
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value="6"
-					bind:group={$answers.answer0}
-				/>
-				<span class="label-text">Herzrhythmusstörungen</span>
-			</label>
-		</div>
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value="7"
-					bind:group={$answers.answer0}
-				/>
-				<span class="label-text">Bewusstseinsverlust</span>
-			</label>
-		</div>
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value="8"
-					bind:group={$answers.answer0}
-				/>
-				<span class="label-text">Leistungsschwächen</span>
-			</label>
-		</div>
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value="9"
-					bind:group={$answers.answer0}
-				/>
-				<span class="label-text">geschwollene Beine oder Füsse (Ödem)</span>
-			</label>
-		</div>
+		{#each Object.values($chapters) as chapterName, index}
+			<div class="form-control">
+				<label class="cursor-pointer" for={chapterName}>
+					<input
+						type="checkbox"
+						class=" checkbox checkbox-sm"
+						name={chapterName}
+						value={index + 1}
+						bind:group={$answers.answer0}
+					/>
+					<span class="label-text">{chapterName}</span>
+				</label>
+			</div>
+		{/each}
 	</fieldset>
-	<p>
-		<br /><br />Direktlinks: <a href="risks_1">Risikofaktoren</a> |
-		<a href="../zusammenfassung">Zusammenfassung</a>
-	</p>
 </div>
+
+{$answers.answer0}
 
 <StepsButtons {prevPage} {nextPage} {startPage} />

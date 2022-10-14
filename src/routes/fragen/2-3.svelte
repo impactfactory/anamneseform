@@ -39,9 +39,7 @@
 			'ja, etwas häufiger',
 			'Die Beschwerden sind immer mehr oder weniger immer da.'
 		]}
-		selectPlaceholder=""
 		bind:selectValue={$answers.answer2_3_1}
-		bind:selectCustomText={$answers.answer2_3_2}
 		selectHasCustom={false}
 	/>
 
@@ -56,17 +54,13 @@
 			'Stunden',
 			'Die Beschwerden sind immer mehr oder weniger immer da'
 		]}
-		selectPlaceholder=""
 		bind:selectValue={$answers.answer2_3_3}
-		bind:selectCustomText={$answers.answer2_3_4}
 		selectHasCustom={false}
 	/>
 
 	<RadioGroup
 		radioLabel="Kommen die Beschwerden am Anfang der Belastung und verschwinden dann bei weiterer Anstrengung wieder?"
 		bind:radioGroup={$answers.answer2_3_5}
-		bind:radioCustomText={$answers.answer2_3_6}
-		radioPlaceholder=""
 		radioHasCustom={false}
 	/>
 </div>

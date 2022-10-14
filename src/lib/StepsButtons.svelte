@@ -7,6 +7,11 @@
 	export let nextPage: string = '';
 </script>
 
+<p>
+	<br /><br />Direktlinks: <a href="risks_1">Risikofaktoren</a> |
+	<a href="../zusammenfassung">Zusammenfassung</a>
+</p>
+
 <footer class="py-4 px-2 w-full flex justify-center gap-x-2 fixed bottom-0 left-0 bg-base-100">
 	<!-- Button to start again -->
 	{#if startPage == 'noShow'}

@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
 	import { answers } from '$lib/stores';
+	import Array from './Snippets/Array.svelte';
+	let value: string;
 </script>
 
 <!-- Question 1 -->
@@ -16,29 +18,11 @@
 
 <!-- Question 2 -->
 {#if $answers.answer1_3_5.length}
-	Erfolgte Behandlung:
-	{#each $answers.answer1_3_5 as answer, i}
-		{#if i == $answers.answer1_3_5.length - 2}
-			<span>{answer}</span> und&nbsp;
-		{:else if i == $answers.answer1_3_5.length - 1}
-			<span>{answer}</span>.
-		{:else}
-			<span>{answer}</span>,&nbsp;
-		{/if}
-	{/each}
+	Erfolgte Behandlung: <Array value={$answers.answer1_3_5} />
 {/if}
 
 <!-- Question 3 -->
 {#if $answers.answer1_3_7.length}
-	Der Herzschlag fühlt sich {#if $answers.answer1_3_8} {$answers.answer1_3_8},{/if}
-	{#each $answers.answer1_3_7 as answer, i}
-		{#if i == $answers.answer1_3_7.length - 2}
-			<span>{answer}</span> und&nbsp;
-		{:else if i == $answers.answer1_3_7.length - 1}
-			<span>{answer}</span>
-		{:else}
-			{answer},&nbsp;
-		{/if}
-	{/each}
-	an.
+	Der Herzschlag fühlt sich <Array value={$answers.answer1_3_7} /> an.
 {/if}
+{#if $answers.answer1_3_8}Freie Beschreibung zu Herzschlag: {$answers.answer1_3_8}.{/if}

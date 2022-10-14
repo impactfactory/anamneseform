@@ -1,5 +1,6 @@
 <script>
 	import { answers } from '$lib/stores';
+	import Array from './Snippets/Array.svelte';
 </script>
 
 <!-- Question 1 -->
@@ -10,18 +11,11 @@
 
 <!-- Question 2 -->
 {#if $answers.answer1_2_3.length || $answers.answer1_2_4}
-	Symptome: {#each $answers.answer1_2_3 as answer, i}
-		{#if i == $answers.answer1_2_3.length - 2}
-			{answer} und &nbsp;
-		{:else if i == $answers.answer1_2_3.length - 1}
-			{answer}.
-		{:else}
-			{answer},&nbsp;
-		{/if}
-	{/each}
-
+	Symptome: <Array value={$answers.answer1_2_3} />
 	{#if $answers.answer1_2_5}
-		&nbsp;{$answers.answer1_2_5}.
+		und <span>{$answers.answer1_2_5}</span>.
+	{:else}
+		.
 	{/if}
 {/if}
 

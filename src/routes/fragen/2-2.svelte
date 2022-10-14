@@ -49,10 +49,7 @@
 			'in Ruhe'
 		]}
 		bind:checkboxGroup={$answers.answer2_2_1}
-		bind:checkboxCustomText={$answers.answer2_2_2}
-		checkboxPlaceholder=""
 		checkboxHasCustom={false}
-		custom=""
 	/>
 
 	{#if $answers.answer2_2_1.includes('bei leichter körperlicher Anstrengung') || $answers.answer2_2_1.includes('bei deutlicher körperlicher Anstrengung')}

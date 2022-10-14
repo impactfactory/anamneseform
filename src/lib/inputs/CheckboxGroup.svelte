@@ -29,7 +29,7 @@
 		<div class="form-control">
 			<label class="cursor-pointer">
 				<input type="checkbox" class=" checkbox checkbox-sm" bind:checked={custom} />
-				<span class="label-text">anderes</span>
+				<span class="label-text">anders</span>
 			</label>
 		</div>
 	{/if}

@@ -1,0 +1,180 @@
+<script lang="ts">
+	import Exit from '$lib/Exit.svelte';
+	import StepsButtons from '$lib/StepsButtons.svelte';
+	import { fade } from 'svelte/transition';
+	import { answers } from '$lib/stores';
+	import { beforeUpdate } from 'svelte';
+
+	let startPage: string = '/';
+	let prevPage: string = 'noShow';
+	let nextPage: string;
+
+	//check initial chapters choice
+	beforeUpdate(() => {
+		if ($answers.answer0 == '') {
+			nextPage = 'disabled';
+		}
+		if ($answers.answer0.includes('1')) {
+			nextPage = '1-1';
+		} else {
+			if ($answers.answer0.includes('2')) {
+				nextPage = '2-1';
+			} else {
+				if ($answers.answer0.includes('3')) {
+					nextPage = '3-1';
+				} else {
+					if ($answers.answer0.includes('4')) {
+						nextPage = '4-1';
+					} else {
+						if ($answers.answer0.includes('5')) {
+							nextPage = '5-1';
+						} else {
+							if ($answers.answer0.includes('6')) {
+								nextPage = '6-1';
+							} else {
+								if ($answers.answer0.includes('7')) {
+									nextPage = '7-1';
+								} else {
+									if ($answers.answer0.includes('8')) {
+										nextPage = '8-1';
+									} else {
+										if ($answers.answer0.includes('9')) {
+											nextPage = '9-1';
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	});
+
+	let chapterboxes = {
+		1: 'Herzrasen',
+		2: 'Brustschmerzen',
+		3: 'Atemnot',
+		4: 'Schwindel',
+		5: 'Herzstolpern',
+		6: 'Herzrhythmusstörungen',
+		7: 'Bewusstseinsverlust',
+		8: 'Leistungsschwächen',
+		9: 'geschwollene Beine oder Füsse (Ödem)'
+	};
+</script>
+
+<Exit />
+
+<h2 class="font-medium">Welche Symptome erfahren Sie?</h2>
+<div in:fade={{ duration: 1000 }}>
+	<fieldset class="checkboxgroup">
+		<legend>Wählen Sie bitte die Symptome aus, welche Ihrer Erfahrung entsprechen</legend>
+
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="1"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Herzrasen</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="2"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Brustschmerzen</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="3"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Atemnot</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="4"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Schwindel</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="5"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Herzstolpern</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="6"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Herzrhythmusstörungen</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="7"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Bewusstseinsverlust</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="8"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">Leistungsschwächen</span>
+			</label>
+		</div>
+		<div class="form-control">
+			<label class="cursor-pointer">
+				<input
+					type="checkbox"
+					class=" checkbox checkbox-sm"
+					value="9"
+					bind:group={$answers.answer0}
+				/>
+				<span class="label-text">geschwollene Beine oder Füsse (Ödem)</span>
+			</label>
+		</div>
+	</fieldset>
+	<p>
+		<br /><br />Direktlinks: <a href="risks_1">Risikofaktoren</a> |
+		<a href="../zusammenfassung">Zusammenfassung</a>
+	</p>
+</div>
+
+<StepsButtons {prevPage} {nextPage} {startPage} />

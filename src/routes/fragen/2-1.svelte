@@ -75,7 +75,6 @@
 		selectOptions={['flächig', ' eher punktuell']}
 		selectPlaceholder=""
 		bind:selectValue={$answers.answer2_1_5}
-		bind:selectCustomText={$answers.answer2_1_6}
 		selectHasCustom={false}
 	/>
 </div>
