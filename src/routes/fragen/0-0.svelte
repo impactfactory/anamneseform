@@ -62,11 +62,10 @@
 
 		{#each Object.values($chapters) as chapterName, index}
 			<div class="form-control">
-				<label class="cursor-pointer" for={chapterName}>
+				<label class="cursor-pointer">
 					<input
 						type="checkbox"
 						class=" checkbox checkbox-sm"
-						name={chapterName}
 						value={index + 1}
 						bind:group={$answers.answer0}
 					/>

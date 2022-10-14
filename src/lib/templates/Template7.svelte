@@ -4,7 +4,7 @@
 	let value: string;
 </script>
 
-<h3 class="pb-0 mb-0">Details zur Atemnot</h3>
+<h3 class="pb-0 mb-0">Details zum Bewusstseinsverlust</h3>
 
-<!-- Question 3_1_1 -->
-<p>Template 3</p>
+<!-- Question 7_1_1 -->
+<p>Template 7</p>
