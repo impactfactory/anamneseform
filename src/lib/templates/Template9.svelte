@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { answers } from '$lib/stores';
-	import Array from './Snippets/Array.svelte';
+	import ProsaList from './Snippets/ProsaList.svelte';
 	let value: string;
 </script>
 

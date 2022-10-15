@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { answers } from '$lib/stores';
-	import Array from './Snippets/Array.svelte';
+	import ProsaList from './Snippets/ProsaList.svelte';
 	let value: string;
 </script>
 
@@ -11,7 +11,7 @@
 	{#if $answers.answer2_1_1 || $answers.answer2_1_2}
 		<span>Missempfindungen: </span>
 		{#if $answers.answer2_1_1.length}
-			<Array value={$answers.answer2_1_1} />.
+			<ProsaList value={$answers.answer2_1_1} />.
 		{/if}
 		{#if $answers.answer2_1_2}
 			{#if $answers.answer2_1_1}&nbsp;{/if}
@@ -23,7 +23,7 @@
 	{#if $answers.answer2_1_3 || $answers.answer2_1_4}
 		<span> Lokalisierung: </span>
 		{#if $answers.answer2_1_3.length}
-			<Array value={$answers.answer2_1_3} />.
+			<ProsaList value={$answers.answer2_1_3} />.
 		{/if}
 		{#if $answers.answer2_1_4}
 			{#if $answers.answer2_1_3}&nbsp;{/if}
@@ -43,7 +43,7 @@
 	{#if $answers.answer2_2_1}
 		<span>Tritt auf bei: </span>
 		{#if $answers.answer2_2_1.length}
-			<Array value={$answers.answer2_2_1} />.
+			<ProsaList value={$answers.answer2_2_1} />.
 		{/if}
 		{#if $answers.answer2_2_3}
 			&nbsp;Typische Belastung: {$answers.answer2_2_3}.

@@ -2,7 +2,8 @@
 	import Exit from '$lib/Exit.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	import { fade } from 'svelte/transition';
-	import { answers, chapters } from '$lib/stores';
+	import { answers } from '$lib/stores';
+	import { chapters } from '$lib/chapters';
 	import { beforeUpdate } from 'svelte';
 
 	let startPage: string = '/';
@@ -60,16 +61,16 @@
 	<fieldset class="checkboxgroup">
 		<legend>Wählen Sie bitte die Symptome aus, welche Ihrer Erfahrung entsprechen</legend>
 
-		{#each Object.values($chapters) as chapterName, index}
+		{#each Object.entries(chapters) as [value, name]}
 			<div class="form-control">
 				<label class="cursor-pointer">
 					<input
 						type="checkbox"
 						class=" checkbox checkbox-sm"
-						value={index + 1}
+						{value}
 						bind:group={$answers.answer0}
 					/>
-					<span class="label-text">{chapterName}</span>
+					<span class="label-text">{name}</span>
 				</label>
 			</div>
 		{/each}

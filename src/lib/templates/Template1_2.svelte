@@ -1,6 +1,6 @@
 <script>
 	import { answers } from '$lib/stores';
-	import Array from './Snippets/Array.svelte';
+	import ProsaList from './Snippets/ProsaList.svelte';
 </script>
 
 <!-- Question 1 -->
@@ -11,7 +11,7 @@
 
 <!-- Question 2 -->
 {#if $answers.answer1_2_3.length || $answers.answer1_2_4}
-	Symptome: <Array value={$answers.answer1_2_3} />
+	Symptome: <ProsaList value={$answers.answer1_2_3} />
 	{#if $answers.answer1_2_5}
 		und <span>{$answers.answer1_2_5}</span>.
 	{:else}

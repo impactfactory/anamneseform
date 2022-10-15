@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { answers } from '$lib/stores';
-	import Array from './Snippets/Array.svelte';
+	import ProsaList from './Snippets/ProsaList.svelte';
 	let value: string;
 </script>
 
@@ -18,11 +18,11 @@
 
 <!-- Question 2 -->
 {#if $answers.answer1_3_5.length}
-	Erfolgte Behandlung: <Array value={$answers.answer1_3_5} />
+	Erfolgte Behandlung: <ProsaList value={$answers.answer1_3_5} />
 {/if}
 
 <!-- Question 3 -->
 {#if $answers.answer1_3_7.length}
-	Der Herzschlag fühlt sich <Array value={$answers.answer1_3_7} /> an.
+	Der Herzschlag fühlt sich <ProsaList value={$answers.answer1_3_7} /> an.
 {/if}
 {#if $answers.answer1_3_8}Freie Beschreibung zu Herzschlag: {$answers.answer1_3_8}.{/if}
