@@ -10,37 +10,35 @@ export const data = {
 			questions: [
 				{
 					id: 1,
-					label: 'Welche Frage haben wird?',
+					label: 'Wie beginnt das Herzklopfen?',
 					type: 'radioGroup',
 					hasCustom: 'true',
 					options: ['plötzlich', 'langsam zunehmend', 'mal an, mal nicht'],
 					placeholder: '',
 					checked: 'checked',
 					output: {
-						pre: 'Das Herzklopfen nimmt ',
-						post: 'zu'
+						pre: 'Das Herzklopfen beginnt ',
+						post: '.'
 					},
 					child: {
-						conditions: ['langsam zunehmend', 'plötzlich'],
-						label: 'Welche Folgefrage haben wird?',
+						conditions: ['plötzlich', 'mal an, mal nicht'],
+						label: 'Wann nimmt es plötzlich zu?',
 						type: 'SelectGroup',
-						hasCustom: 'true',
-						options: ['gut', 'schlecht', 'übel'],
+						options: ['morgens', 'nachts', 'beim Sport'],
 						placeholder: '',
 						output: {
-							pre: 'Das Herzklopfen nimmt ',
-							post: 'zu'
+							pre: 'Es nimmt ',
+							post: ' plötzlich zu.'
 						},
 						child: {
-							conditions: ['übel'],
-							label: 'Was kann man als Drittes fragen?',
+							conditions: ['beim Sport'],
+							label: 'Welchen Sport machen Sie?',
 							type: 'TextArea',
-							hasCustom: 'true',
-							options: ['ja', 'nein', 'fraglich'],
-							placeholder: 'Bitte beschreiben Sie Ihre individuelle Antwort',
+							options: [],
+							placeholder: 'Bitte beschreiben Sie',
 							output: {
-								pre: 'Das Herzklopfen nimmt ',
-								post: 'zu'
+								pre: 'Sportart: ',
+								post: '.'
 							}
 						}
 					}
