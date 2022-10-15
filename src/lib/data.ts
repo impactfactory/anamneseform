@@ -4,9 +4,9 @@ export const data = {
 			id: 1,
 			name: 'Herzklopfen',
 			title: 'Ihre Details zu Herzklopfen',
-            output: {
-                title: 'Bekannte Symptome'
-            }
+			output: {
+				title: 'Bekannte Symptome'
+			},
 			questions: [
 				{
 					id: 1,
