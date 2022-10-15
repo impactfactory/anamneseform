@@ -20,28 +20,32 @@ export const data = {
 						pre: 'Das Herzklopfen beginnt ',
 						post: '.'
 					},
-					child: {
-						conditions: ['plötzlich', 'mal an, mal nicht'],
-						label: 'Wann nimmt es plötzlich zu?',
-						type: 'SelectGroup',
-						options: ['morgens', 'nachts', 'beim Sport'],
-						placeholder: '',
-						output: {
-							pre: 'Es nimmt ',
-							post: ' plötzlich zu.'
-						},
-						child: {
-							conditions: ['beim Sport'],
-							label: 'Welchen Sport machen Sie?',
-							type: 'TextArea',
-							options: [],
-							placeholder: 'Bitte beschreiben Sie',
+					children: [
+						{
+							conditions: ['plötzlich', 'mal an, mal nicht'],
+							label: 'Wann nimmt es plötzlich zu?',
+							type: 'SelectGroup',
+							options: ['morgens', 'nachts', 'beim Sport'],
+							placeholder: '',
 							output: {
-								pre: 'Sportart: ',
-								post: '.'
-							}
+								pre: 'Es nimmt ',
+								post: ' plötzlich zu.'
+							},
+							children: [
+								{
+									conditions: ['beim Sport'],
+									label: 'Welchen Sport machen Sie?',
+									type: 'TextArea',
+									options: [],
+									placeholder: 'Bitte beschreiben Sie',
+									output: {
+										pre: 'Sportart: ',
+										post: '.'
+									}
+								}
+							]
 						}
-					}
+					]
 				},
 				{ id: 2, label: 'Welche zweite Fragen haben wir?' }
 			]
