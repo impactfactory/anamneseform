@@ -1,8 +1,16 @@
-export const data = {
+import { app } from '$lib/data/app';
+
+export let content: any = {
+	app,
+	selectedChapters: [],
 	chapters: [
+		{ id: 1, name: 'Herzrasen', value: '' },
+		{ id: 2, name: 'Brustschmerzen', value: '' },
+		{ id: 3, name: 'Atemnot', value: '' },
 		{
-			id: 1,
-			name: 'Herzklopfen',
+			id: 4,
+			name: 'Schwindel',
+			value: '',
 			title: 'Ihre Details zu Herzklopfen',
 			output: {
 				title: 'Bekannte Symptome'
@@ -11,8 +19,9 @@ export const data = {
 				{
 					id: 1,
 					label: 'Wie beginnt das Herzklopfen?',
-					type: 'radioGroup',
+					component: 'SelectGroup',
 					hasCustom: 'true',
+					value: '',
 					options: ['plötzlich', 'langsam zunehmend', 'mal an, mal nicht'],
 					placeholder: '',
 					checked: 'checked',
@@ -47,15 +56,27 @@ export const data = {
 						}
 					]
 				},
-				{ id: 2, label: 'Welche zweite Fragen haben wir?' }
+				{
+					id: 2,
+					label: 'Welche zweite Fragen haben wir?',
+					component: 'SelectGroup',
+					value: '',
+					hasCustom: true,
+					placeholder: 'schreib mal!'
+				}
 			]
 		},
-		{ id: 2, name: 'Herzrasen' },
-		{ id: 3, name: 'Schwindel' }
-	],
-	pages: 'xx',
-	directlinks: '',
-	whatever: '',
-	favicon: '/assets/favicon.svg',
-	thanksto: 'Sascha Aeppli'
+		{
+			id: 5,
+			name: 'Herzstolpern',
+			value: '',
+			questions: [{ label: 'kap2frag1', value: '', component: 'Textarea' }]
+		},
+		{
+			id: 6,
+			name: 'Herzrhythmusstörungen',
+			value: '',
+			questions: [{ label: 'kap3,frag1', value: '', component: 'RadioGroup' }]
+		}
+	]
 };

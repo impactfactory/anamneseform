@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { answers } from '$lib/stores';
+	import { answers } from '$lib/data/stores';
 	export let openerGroup: string;
 	export let nextPartPage: string;
 	export let nextChapterPage: string;

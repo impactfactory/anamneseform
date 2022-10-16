@@ -1,15 +1,17 @@
 <script lang="ts">
 	//import { beforeUpdate } from 'svelte';
-	import { answers } from '$lib/stores';
+	import { data } from '$lib/data';
+	//import { answers } from '$lib/stores';
 
-	export let startPage: string = '/fragen/0-0';
+	export let startPage: string = '/symptome';
 	export let prevPage: string = '';
 	export let nextPage: string = '';
+	let routes = data.app.routes;
 </script>
 
 <p>
-	<br /><br />Direktlinks: <a href="risks_1">Risikofaktoren</a> |
-	<a href="../zusammenfassung">Zusammenfassung</a>
+	<br /><br />Direktlinks: <a href="/fragen/risks_1">Risikofaktoren</a> |
+	<a href={routes.generator}>Zusammenfassung</a>
 </p>
 
 <footer class="py-4 px-2 w-full flex justify-center gap-x-2 fixed bottom-0 left-0 bg-base-100">
@@ -17,19 +19,19 @@
 	{#if startPage == 'noShow'}
 		<!-- -->
 	{:else}
-		<a class="btn btn-primary" href={startPage}>zurück zum Anfang</a>
+		<a class="btn btn-primary" href={routes.config}>zurück zum Anfang</a>
 	{/if}
 
 	<!-- Button to go one step backwards -->
 	{#if prevPage == 'noShow'}
 		<!-- -->
 	{:else}
-		<a class="btn btn-primary" href={prevPage}>zurück</a>
+		<a class="btn btn-primary" href={routes.config}>zurück</a>
 	{/if}
 
 	<!-- Button to go one step forwards-->
 	{#if nextPage == 'disabled'}
-		<a class="btn btn-primary" href="/" disabled>weiter</a>
+		<a class="btn btn-primary" href={routes.index} disabled>weiter</a>
 	{:else if nextPage == 'noShow'}
 		<!-- -->
 	{:else}

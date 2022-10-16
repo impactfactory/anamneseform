@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { content } from '$lib/data/content';
 	export let ExitButton = false;
 </script>
 
 <header class="pt-4 w-full flex justify-between">
 	<h1 class="mb-1">
-		<a href="/" class="no-underline">Ihre Online-Anamnese</a>
+		<a href="/" class="no-underline">{content.app.name}</a>
 	</h1>
 	{#if ExitButton}
 		<a class="btn btn-sm btn-primary btn-square text-white" href="/">

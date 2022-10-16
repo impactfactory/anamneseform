@@ -1,6 +1,9 @@
 <script lang="ts">
 	import Exit from '$lib/Exit.svelte';
+	import { data } from '$lib/data';
 	import { fade } from 'svelte/transition';
+
+	let routes = data.app.routes;
 </script>
 
 <Exit />
@@ -12,6 +15,6 @@
 		gelöscht. ;(<br /><br />
 	</p>
 	<p>
-		<a class="btn btn-primary" href="/fragen/0-0">zum Anfang</a>
+		<a class="btn btn-primary" href={routes.config}>zum Anfang</a>
 	</p>
 </div>

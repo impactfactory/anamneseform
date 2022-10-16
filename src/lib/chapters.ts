@@ -1,4 +1,4 @@
-export const chapters = {
+export const xxxchapters = {
 	'1': 'Herzrasen',
 	'2': 'Brustschmerzen',
 	'3': 'Atemnot',

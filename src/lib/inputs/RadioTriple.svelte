@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { answers } from '$lib/stores';
+	import { answers } from '$lib/data/stores';
 
 	export let radioLabel: string = '';
 	export let radioPlaceholder: string = '';
