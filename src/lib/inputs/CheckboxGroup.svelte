@@ -1,40 +1,35 @@
 <script lang="ts">
-	import { answers } from '$lib/stores';
-	export let checkboxLabel: string = '';
-	export let boxes: string[];
-	export let checkboxGroup: string;
-	export let checkboxHasCustom: boolean = false;
-	export let custom: string;
-	export let checkboxCustomText: string;
-	export let checkboxPlaceholder: string;
+	import FreeText from './FreeText.svelte';
+
+	export let freeText: string;
+	export let label: string;
+	export let options = [] as string[];
+	export let placeholder: string;
+	export let value = [] as string[];
+	export let hasFreetext: boolean;
 </script>
 
 <fieldset class="checkboxgroup">
-	<legend>{checkboxLabel}</legend>
-	{#each boxes as box}
+	<legend>{label}</legend>
+	{#each options as option}
 		<div class="form-control">
 			<label class="cursor-pointer">
-				<input
-					type="checkbox"
-					class=" checkbox checkbox-sm"
-					value={box}
-					bind:group={checkboxGroup}
-				/>
-				<span class="label-text">{box}</span>
+				<input type="checkbox" class="checkbox checkbox-sm" bind:group={value} value={option} />
+				<span class="label-text">{option}</span>
 			</label>
 		</div>
 	{/each}
 
-	{#if checkboxHasCustom}
+	{#if hasFreetext}
 		<div class="form-control">
 			<label class="cursor-pointer">
-				<input type="checkbox" class=" checkbox checkbox-sm" bind:checked={custom} />
+				<input type="checkbox" class="checkbox checkbox-sm" bind:group={value} value="freetext" />
 				<span class="label-text">anders</span>
 			</label>
 		</div>
 	{/if}
 
-	{#if custom}
-		<textarea class="textarea" bind:value={checkboxCustomText} placeholder={checkboxPlaceholder} />
+	{#if value.includes('freetext')}
+		<FreeText bind:value={freeText} {placeholder} />
 	{/if}
 </fieldset>

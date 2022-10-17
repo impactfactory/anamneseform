@@ -1,27 +1,25 @@
 <script lang="ts">
-	export let radioGroup: string;
-	export let radioCustomText: string;
-
-	export let value: any;
+	import FreeText from './FreeText.svelte';
+	export let condition: string;
+	export let freeText: string;
+	export let label: string;
+	export let options = [] as string[];
+	export let placeholder: string;
+	export let value: string;
 </script>
 
 <fieldset class="radiogroup">
-	<legend>{q.label}</legend>
-	<div class="form-control">
-		<label>
-			<input type="radio" class="radio radio-sm" bind:group={radioGroup} value="ja" />
-			<span class="label-text">ja</span>
-		</label>
-	</div>
-	<div class="form-control">
-		<label>
-			<input type="radio" class="radio radio-sm" bind:group={radioGroup} value="nein" />
-			<span class="label-text">nein</span>
-		</label>
-	</div>
-	{#if q.hasCustom}
-		{#if radioGroup == 'ja'}
-			<textarea class="textarea" bind:value={radioCustomText} placeholder={q.placeholder} />
-		{/if}
+	<legend>{label}</legend>
+	{#each options as option}
+		<div class="form-control">
+			<label>
+				<input type="radio" class="radio radio-sm" bind:group={value} value={option} />
+				<span class="label-text">{option}</span>
+			</label>
+		</div>
+	{/each}
+
+	{#if value == condition}
+		<FreeText bind:value={freeText} {placeholder} />
 	{/if}
 </fieldset>

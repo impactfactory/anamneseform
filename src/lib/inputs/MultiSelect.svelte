@@ -1,6 +1,5 @@
 <script lang="ts">
 	export let options = [] as any[];
-	//let options = ['1', '2', '3'];
 	export let value = [] as any[];
 </script>
 

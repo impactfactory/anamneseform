@@ -6,5 +6,6 @@ export const app = {
 		config: '/symptome',
 		questions: 'questions',
 		generator: '/zusammenfassung'
-	}
+	},
+	version: '0.1'
 };
