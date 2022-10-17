@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { content } from '$lib/data/content';
 	import Generator from '$lib/Generator.svelte';
-	//import SelectGroup from '$lib/inputs/SelectGroup.svelte';
+	import MultiSelect from '$lib/inputs/MultiSelect.svelte';
 </script>
 
 <h2 class="font-medium">Welche Symptome erfahren Sie?</h2>
@@ -29,7 +29,12 @@
 			{#each chapter.questions as question}
 				{question.component}: {question.label}
 
-				<!-- <svelte:component this={question.component} bind:value={question.value} {...question} /> -->
+				<svelte:component
+					this={question.component}
+					bind:value={question.value}
+					options="['1', '2', '3']"
+					{...question}
+				/>
 			{/each}
 		{/if}
 	{/each}

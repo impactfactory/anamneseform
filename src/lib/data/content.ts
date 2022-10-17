@@ -9,23 +9,23 @@ export let content: any = {
 			name: 'Schwindel',
 			value: '',
 			questions: [
-				{ id: 1, component: 'SelectGroup', label: 'Was frage ich?', value: '' },
-				{ id: 2, component: 'SelectGroup', label: 'zweite Frage', value: '' }
+				{ id: 1, component: 'MultiSelect', label: 'Was frage ich?', value: '' },
+				{ id: 2, component: 'MultiSelect', label: 'zweite Frage', value: '' }
 			]
 		},
-		{ id: 2, name: 'Brustschmerzen', value: '', questions: [{ component: 'SelectGroup' }] },
-		{ id: 3, name: 'Atemnot', value: '', questions: [{ component: 'SelectGroup' }] },
+		{ id: 2, name: 'Brustschmerzen', value: '', questions: [{ component: 'MultiSelect' }] },
+		{ id: 3, name: 'Atemnot', value: '', questions: [{ component: 'MultiSelect' }] },
 		{
 			id: 5,
 			name: 'Herzstolpern',
 			value: '',
-			questions: [{ label: 'kap2frag1', value: '', component: 'SelectGroup' }]
+			questions: [{ label: 'kap2frag1', value: '', component: 'MultiSelect' }]
 		},
 		{
 			id: 6,
 			name: 'Herzrhythmusstörungen',
 			value: '',
-			questions: [{ label: 'kap3,frag1', value: '', component: 'SelectGroup' }]
+			questions: [{ label: 'kap3,frag1', value: '', component: 'MultiSelect' }]
 		}
 	]
 };
