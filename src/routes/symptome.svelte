@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { fields } from '$lib/data/fields';
-	import Generator from '$lib/Generator.svelte';
+	import Generator from '$lib/Generator/Generator.svelte';
 </script>
 
 <h2 class="font-medium">Welche Symptome erfahren Sie?</h2>
-<div class="choice">
+<fieldset class="checkboxgroup">
 	{#each fields.chapters as chapter}
 		<div class="form-control">
 			<label class="cursor-pointer">
@@ -18,7 +18,7 @@
 			</label>
 		</div>
 	{/each}
-</div>
+</fieldset>
 
 <div class="questions">
 	{#each fields.chapters as chapter}
@@ -30,8 +30,8 @@
 	{/each}
 </div>
 
-<div class="generator">
-	<Generator value={fields.selectedChapters} />
+<div class="generatedtext">
+	<Generator bind:selectedChapters={fields.selectedChapters} chapters={fields.chapters} />
 </div>
 
 <pre class="pt-40">

@@ -2,11 +2,12 @@
 	import { onMount } from 'svelte';
 	import ClipboardJS from 'clipboard';
 	import CopiedMessage from '$lib/CopiedMessage.svelte';
-	import ProsaList from '$lib/templates/Snippets/ProsaList.svelte';
+	import GeneratedText from './GeneratedText.svelte';
+	export let selectedChapters: any[];
+	export let chapters: any[];
 
 	let clip;
 	let clicked: number = 0;
-	export let value: any[];
 
 	onMount(() => {
 		clip = new ClipboardJS('.btn');
@@ -22,10 +23,7 @@
 		<li>Korrigieren, ergänzen, abschicken!</li>
 	</ol>
 
-	<div id="txt" class="bg-white border rounded-md my-4 p-3 w-full" contenteditable>
-		Die erfahrenen Symptome sind:
-		<ProsaList {value} />.
-	</div>
+	<GeneratedText bind:selectedChapters {chapters} />
 
 	<button
 		data-clipboard-target="#txt"

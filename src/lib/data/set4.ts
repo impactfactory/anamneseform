@@ -5,7 +5,7 @@ import RadioGroup from '$lib/inputs/RadioGroup.svelte';
 import SelectGroup from '$lib/inputs/SelectGroup.svelte';
 import TextField from '$lib/inputs/TextField.svelte';
 
-export const set1 = [
+export const set4 = [
 	{
 		conditions: [
 			{
@@ -27,7 +27,6 @@ export const set1 = [
 			'sehr selten',
 			'anderes'
 		],
-		template: 'Auftreten des Herzrasens: ',
 		type: CheckboxGroup,
 		value: ''
 	},
@@ -44,7 +43,6 @@ export const set1 = [
 		label: 'Haben sie begleitende Symptome in dieser Zeit?',
 		name: '2',
 		options: ['Schwindel', 'Brustenge', 'Brustschmerzen', 'Luftprobleme', 'anderes'],
-		template: 'Begleitende Symptome: ',
 		type: SelectGroup,
 		value: null
 	},
@@ -62,7 +60,6 @@ export const set1 = [
 		label: 'Können Sie das Herzrasen durch etwas beenden?',
 		name: '3',
 		options: ['ja', 'nein'],
-		template: null,
 		type: RadioGroup,
 		value: ''
 	},
