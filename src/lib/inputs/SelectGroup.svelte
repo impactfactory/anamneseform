@@ -1,13 +1,9 @@
 <script lang="ts">
-	import FreeText from './FreeText.svelte';
-
-	export let freeText: string;
+	export let conditions: any[];
 	export let name: string;
 	export let label: string;
 	export let options: any[];
-	export let placeholder: string;
 	export let value: string;
-	export let hasFreetext: boolean;
 </script>
 
 <fieldset class="selectgroup">
@@ -20,13 +16,12 @@
 			{#each options as option}
 				<option>{option}</option>
 			{/each}
-			{#if hasFreetext}
-				<option value="freetext">anderes</option>
-			{/if}
 		</select>
 	</div>
 
-	{#if value == 'freetext'}
-		<FreeText bind:value={freeText} {placeholder} />
-	{/if}
+	{#each conditions as condition}
+		{#if value == condition.key}
+			<svelte:component this={condition.type} bind:value={condition.value} {...condition} />
+		{/if}
+	{/each}
 </fieldset>

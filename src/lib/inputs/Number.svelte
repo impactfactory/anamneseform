@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { answers } from '$lib/data/stores';
-	export let name: string = '';
-	export let label: string = '';
+	export let name: string;
+	export let label: string;
 	export let number: number;
 </script>
 
@@ -9,6 +8,5 @@
 	<label for="number{name}" class="label">
 		<span class="label-text">{label}</span>
 	</label>
-	<input type="number" class="number" bind:value={number} />
-	<span>Minuten</span>
+	<input id="number{name}" type="number" class="number" bind:value={number} />
 </fieldset>

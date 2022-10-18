@@ -1,9 +1,7 @@
 <script lang="ts">
 	export let conditions: any[];
-	//export let conditionAnswer: string;
 	export let label: string;
 	export let options = [] as string[];
-	export let placeholder: string;
 	export let value = [] as string[];
 </script>
 
@@ -20,11 +18,7 @@
 
 	{#each conditions as condition}
 		{#if value.includes(condition.key)}
-			<svelte:component this={condition.component} bind:value={condition.value} {placeholder} />
+			<svelte:component this={condition.type} bind:value={condition.value} {...condition} />
 		{/if}
 	{/each}
 </fieldset>
-
-<!--
-	<FreeText bind:value={freeText} {placeholder} />
--->
