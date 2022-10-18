@@ -1,25 +1,35 @@
 import CheckboxGroup from '$lib/inputs/CheckboxGroup.svelte';
+import FreeText from '$lib/inputs/FreeText.svelte';
 import RadioGroup from '$lib/inputs/RadioGroup.svelte';
 import SelectGroup from '$lib/inputs/SelectGroup.svelte';
 import TextField from '$lib/inputs/TextField.svelte';
 
 export const set1 = [
 	{
-		name: '1',
-		label: 'Wie häufig haben Sie Herzrasen?',
-		value: '',
+		conditions: [
+			{
+				component: FreeText,
+				key: 'anderes',
+				questions: '',
+				value: ''
+			}
+		],
+		conditionAnswer: '',
 		freeText: '',
-		hasFreetext: true,
-		type: CheckboxGroup,
+		label: 'Wie häufig haben Sie Herzrasen?',
+		name: '1',
 		options: [
 			'mehrmals täglich',
 			'einmal täglich',
 			'alle paar Monate',
 			'sehr unterschiedlich',
 			'mal häufig, dann lange Zeit nichts',
-			'sehr selten'
+			'sehr selten',
+			'anderes'
 		],
-		placeholder: 'Beschreiben Sie wie häufig...'
+		placeholder: 'Beschreiben Sie wie häufig...',
+		type: CheckboxGroup,
+		value: ''
 	},
 	{
 		freeText: '',

@@ -24,7 +24,7 @@
 	{#each fields.chapters as chapter}
 		{#if fields.selectedChapters.includes(chapter.name)}
 			{#each chapter.questions as q}
-				<svelte:component this={q.type} bind:value={q.value} bind:freeText={q.freeText} {...q} />
+				<svelte:component this={q.type} bind:value={q.value} {...q} />
 			{/each}
 		{/if}
 	{/each}

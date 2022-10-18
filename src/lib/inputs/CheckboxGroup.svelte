@@ -1,12 +1,10 @@
 <script lang="ts">
-	import FreeText from './FreeText.svelte';
-
-	export let freeText: string;
+	export let conditions: any[];
+	//export let conditionAnswer: string;
 	export let label: string;
 	export let options = [] as string[];
 	export let placeholder: string;
 	export let value = [] as string[];
-	export let hasFreetext: boolean;
 </script>
 
 <fieldset class="checkboxgroup">
@@ -20,16 +18,13 @@
 		</div>
 	{/each}
 
-	{#if hasFreetext}
-		<div class="form-control">
-			<label class="cursor-pointer">
-				<input type="checkbox" class="checkbox checkbox-sm" bind:group={value} value="freetext" />
-				<span class="label-text">anders</span>
-			</label>
-		</div>
-	{/if}
-
-	{#if value.includes('freetext')}
-		<FreeText bind:value={freeText} {placeholder} />
-	{/if}
+	{#each conditions as condition}
+		{#if value.includes(condition.key)}
+			<svelte:component this={condition.component} bind:value={condition.value} {placeholder} />
+		{/if}
+	{/each}
 </fieldset>
+
+<!--
+	<FreeText bind:value={freeText} {placeholder} />
+-->
