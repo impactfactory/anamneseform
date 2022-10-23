@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { data } from '$lib/data';
+	//import { data } from '$lib/data';
 	import Exit from '$lib/Exit.svelte';
 	import StepsButtons from '$lib/StepsButtons.svelte';
-	import { answers } from '$lib/stores';
+	//import { answers } from '$lib/stores';
 	import YouAreHere from '$lib/YouAreHere.svelte';
 	import { fade } from 'svelte/transition';
 

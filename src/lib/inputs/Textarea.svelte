@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { answers } from '$lib/data/stores';
 	export let name: string = '';
 	export let label: string = '';
 	export let customText: string;

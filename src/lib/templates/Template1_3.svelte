@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { answers } from '$lib/stores';
+	//import { answers } from '$lib/stores';
 	import ProsaList from './Snippets/ProsaList.svelte';
 	let value: string;
 </script>

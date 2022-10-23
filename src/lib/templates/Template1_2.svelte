@@ -1,5 +1,5 @@
 <script>
-	import { answers } from '$lib/data/stores';
+	//import { answers } from '$lib/data/stores';
 	import ProsaList from './Snippets/ProsaList.svelte';
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-	import { answers } from '$lib/stores';
+	//import { answers } from '$lib/stores';
 </script>
 
 <!-- Question 1 -->

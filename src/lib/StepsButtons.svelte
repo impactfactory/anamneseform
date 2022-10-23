@@ -1,6 +1,5 @@
 <script lang="ts">
 	//import { beforeUpdate } from 'svelte';
-	import { data } from '$lib/data';
 	//import { answers } from '$lib/stores';
 
 	export let startPage: string = '/symptome';

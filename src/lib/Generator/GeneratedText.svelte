@@ -10,7 +10,7 @@
 
 	{#each chapters as chapter}
 		{#if selectedChapters.includes(chapter.name)}
-			<h4 class="mb-0">Details {chapter.name}</h4>
+			<h4 class="mb-0">{chapter.template}{chapter.name}</h4>
 			<p>
 				{#each chapter.questions as q}
 					{#if q.value}
