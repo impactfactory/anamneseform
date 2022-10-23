@@ -1,6 +1,6 @@
 import { app } from '$lib/data/app';
-import { set1 } from '$lib/data/set1';
-import { set2 } from '$lib/data/set2';
+//import { set1 } from '$lib/data/set1';
+//import { set2 } from '$lib/data/set2';
 
 
 export const fields = {
@@ -9,13 +9,13 @@ export const fields = {
 		{
 			id: 1,
 			name: 'Herzrasen',
-			questions: set1,
+			questions: null,
 			template: 'Details zum '
 		},
 		{
 			id: 2,
 			name: 'Brustschmerzen',
-			questions: set2,
+			questions: null,
 			template: 'Details zu den '
 		},
 		{

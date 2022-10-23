@@ -20,9 +20,10 @@
 	{/each}
 </fieldset>
 
+<!--  
 <div class="questions">
 	{#each fields.chapters as chapter}
-		{#if fields.selectedChapters.includes(chapter.name)}
+		{#if fields.selectedChapters.includes(chapter.name)}		
 			{#each chapter.questions as q}
 				<svelte:component this={q.type} bind:value={q.value} {...q} />
 			{/each}
@@ -30,10 +31,11 @@
 	{/each}
 </div>
 
+-->
+
+
 <div class="generatedtext">
-	<Generator bind:selectedChapters={fields.selectedChapters} chapters={fields.chapters} />
+	<Generator selectedChapters={fields.selectedChapters} chapters={fields.chapters} />
 </div>
 
-<pre class="pt-40">
-{JSON.stringify(fields, null, 2)}
-</pre>
+

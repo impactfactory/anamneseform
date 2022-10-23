@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import ClipboardJS from 'clipboard';
-	import CopiedMessage from '$lib/CopiedMessage.svelte';
-	import GeneratedText from './GeneratedText.svelte';
+	import CopiedMessage from '$lib/Generator/CopiedMessage.svelte';
+	import GeneratedText from '$lib/Generator/GeneratedText.svelte';
 	export let selectedChapters: any[];
 	export let chapters: any[];
 
@@ -16,14 +16,16 @@
 
 <div>
 	<h2 class="font-medium">Danke! Ihre Zusammenfassung:</h2>
-
+	
 	<ol>
 		<li>Kopieren Sie den Text in Ihre Zwischenablage.</li>
 		<li>Fügen Sie diesen in die HIN-Kommunikation mit uns ein.</li>
 		<li>Korrigieren, ergänzen, abschicken!</li>
 	</ol>
 
-	<GeneratedText bind:selectedChapters {chapters} />
+	
+
+	<GeneratedText {selectedChapters} {chapters} />
 
 	<button
 		data-clipboard-target="#txt"

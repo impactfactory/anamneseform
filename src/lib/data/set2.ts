@@ -27,7 +27,8 @@ export const set2 = [
 		template: null,
 		type: CheckboxGroup,
 		value: null
-	},
+	}
+	/*,
 	{
 		conditions: [
 			{
@@ -326,6 +327,6 @@ export const set2 = [
 		template: null,
 		type: SelectGroup,
 		value: null
-	}
+	}*/
 ];
 

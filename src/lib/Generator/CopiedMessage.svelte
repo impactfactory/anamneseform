@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
-	import Checked from './icons/Checked.svelte';
+	import Checked from '$lib/icons/Checked.svelte';
 
 	export let clicked: number = 0;
 </script>
