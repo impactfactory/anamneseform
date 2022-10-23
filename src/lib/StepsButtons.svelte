@@ -1,53 +1,21 @@
 <script lang="ts">
-	//import { beforeUpdate } from 'svelte';
-	//import { answers } from '$lib/stores';
+	import {fields} from '$lib/data/fields';
+	let start: number = fields.app.states.start;
+	let end : number = fields.app.states.end;
+    let grouping: number = fields.app.states.grouping;
 
-	export let startPage: string = '/symptome';
-	export let prevPage: string = '';
-	export let nextPage: string = '';
-	let routes = data.app.routes;
+    function next(x: number,y: number){ 
+        start = x + grouping;
+        end = y + grouping;
+    }
+
+    function back(x: number,y: number){ 
+        fields.app.states.start = x - grouping;
+        end = y - grouping;
+    }
 </script>
 
-<p>
-	<br /><br />Direktlinks: <a href="/fragen/risks_1">Risikofaktoren</a> |
-	<a href={routes.generator}>Zusammenfassung</a>
-</p>
-
-<footer class="py-4 px-2 w-full flex justify-center gap-x-2 fixed bottom-0 left-0 bg-base-100">
-	<!-- Button to start again -->
-	{#if startPage == 'noShow'}
-		<!-- -->
-	{:else}
-		<a class="btn btn-primary" href={routes.config}>zurück zum Anfang</a>
-	{/if}
-
-	<!-- Button to go one step backwards -->
-	{#if prevPage == 'noShow'}
-		<!-- -->
-	{:else}
-		<a class="btn btn-primary" href={routes.config}>zurück</a>
-	{/if}
-
-	<!-- Button to go one step forwards-->
-	{#if nextPage == 'disabled'}
-		<a class="btn btn-primary" href={routes.index} disabled>weiter</a>
-	{:else if nextPage == 'noShow'}
-		<!-- -->
-	{:else}
-		<a class="btn btn-primary" href={nextPage}>weiter</a>
-	{/if}
-</footer>
-
-<!--
-	<pre>
-	{JSON.stringify($answers, null, 2)}
-</pre>
--->
-<style>
-	footer {
-		opacity: 0.9;
-	}
-	a.btn {
-		opacity: 1;
-	}
-</style>
+<div class="pt-3">
+    <a class="btn btn-primary" href="#" on:click={back(start,end)}>zurück</a>
+    <a class="btn btn-primary" href="#" on:click={next(start,end)}>weiter</a>
+</div>
