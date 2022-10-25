@@ -1,7 +1,12 @@
 <script lang="ts">
+	import StepsButtons from "./StepsButtons.svelte";
+
 	export let fields: any[];
+	export let state: string;
+
 </script>
 
+{#if state == 'config'}
 <div class="config">
 <h2 class="font-medium">Welche Symptome erfahren Sie?</h2>
 <fieldset class="checkboxgroup">
@@ -20,3 +25,10 @@
 	{/each}
 </fieldset>
 </div>
+
+<StepsButtons bind:state />
+<pre>
+	{JSON.stringify(fields, null, 2)}
+</pre>
+
+{/if}

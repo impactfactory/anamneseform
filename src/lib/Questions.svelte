@@ -1,40 +1,44 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	import StepsButtons from '$lib/StepsButtons.svelte';
 	export let fields: any[];
-    let start = 0;
-	let end = 3;
-    let grouping = 3; 
+    export let state: string;
+    export let start: number;
+    export let end: number;
+    let backButton: string;
+
+    function showGenerator() {
+		state = 'generator';
+	}
+
+    function BackButton(x:number){
+        if (x == 0) { backButton = 'noShow'}
+        else { backButton = 'show'}
+    }
+
     
 
-    function next(x: number,y: number){ 
-        start = x + grouping;
-        end = y + grouping;
-    }
-
-    function back(x: number,y: number){ 
-        start = x - grouping;
-        end = y - grouping;
-    }
-
 </script>
-{#if fields.app.state == 'questions'}
-<div class="questions">
-	{#each fields.chapters as chapter}
-		{#if fields.selectedChapters.includes(chapter.name)}
-			{#if chapter.questions}
-            {#each chapter.questions.slice(start,end) as q}
-            <div in:fade={{ duration: 1000 }}>
-                <svelte:component this={q.type} bind:value={q.value} {...q} />
-            </div>
+
+
+{#if state == 'questions'}
+    <div class="questions">
+        {#each fields.chapters as chapter, i}
+            {#if fields.selectedChapters.includes(chapter.name)}
+                {#if chapter.questions}
+                    {#each chapter.questions.slice(start,end) as q}
+                        <div in:fade={{ duration: 1000 }}>
+                            <svelte:component this={q.type} bind:value={q.value} {...q} />  
+                        </div>
+                        {BackButton(start) || ''}                   
+                    {/each}
+                {/if}
+                {i == fields.selectedChapters.length - 1 && end > chapter.questions.length + 1 ? showGenerator() : '' }
+            {/if}
         {/each}
-			{/if}
-		{/if}
-	{/each}
-</div>
-
-
-<div class="pt-3">
-    <a class="btn btn-primary" href="#" on:click={back(start,end)}>zurück</a>
-    <a class="btn btn-primary" href="#" on:click={next(start,end)}>weiter</a>
-</div>
+    </div>
+    <StepsButtons bind:state bind:start bind:end {backButton}/>
+    <pre>
+        {JSON.stringify(fields, null, 2)}
+    </pre>
 {/if}

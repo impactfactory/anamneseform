@@ -1,32 +1,28 @@
-<script>
-	import Exit from '$lib/Exit.svelte';
+<script lang="ts">
+	import { fields } from "$lib/data/fields";
+	import Config from '$lib/Config.svelte';
+	import Generator from '$lib/Generator/Generator.svelte';
+	import Header from "$lib/Header.svelte";
+	import Questions from "$lib/Questions.svelte";
+	import Intro from "$lib/Intro.svelte";
+	
+	let state: string;
 
-	let ExitButton = false;
 </script>
 
-<Exit {ExitButton} />
+{fields.app.state}
 
-<h2 class="font-semibold">Willkommen!</h2>
+<Header title={fields.app.title} />
 
-<p>
-	Erstellen Sie mit unserer Online-Anamnese einen Text, den Sie unseren Ärzten zukommen lassen
-	können.
-</p>
+<Intro bind:state={fields.app.state}/>
 
-<p>
-	Je detailierter unsere Ärzte wissen, welche Symptome Sie erfahren, desto besser und effizienter
-	können Sie Ihnen helfen.
-</p>
+<Config bind:state={fields.app.state} {fields}/>
 
-<p>
-	Ihr Arzt wird diesen als Grundlage für Ihre erste Konsultation bei uns nutzen und Ihnen weitere
-	Fragen stellen.
-</p>
+<Questions bind:state={fields.app.state} fields={fields} />
 
-<a class="my-4 btn btn-primary" href="/symptome">Beginnen</a>
+<Generator bind:state={fields.app.state} selectedChapters={fields.selectedChapters} chapters={fields.chapters} />
 
-<style>
-	a.btn {
-		opacity: 0.9;
-	}
-</style>
+
+
+
+

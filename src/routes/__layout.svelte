@@ -20,7 +20,7 @@
 	});
 </script>
 
-<div class="prose pb-32">
+<div class="prose pb-32" style="max-width: 400px;">
 	<slot />
 </div>
 

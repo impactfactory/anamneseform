@@ -97,7 +97,7 @@ export const set1 = [
 		template: null,
 		type: SelectGroup,
 		value: null
-	},
+	}/*,
 	{
 		conditions: [
 			{
@@ -206,5 +206,5 @@ export const set1 = [
 		template: '',
 		type: CheckboxGroup,
 		value: ''
-	}
+	}*/
 ];
