@@ -4,11 +4,14 @@
 	export let chapters: any[];
 </script>
 
-
-
 <div id="txt" class="bg-white border rounded-md my-4 p-3 w-full" contenteditable>
-
-	<p>Die erfahrenen Symptome sind: <ProsaList value={selectedChapters} />.</p>
+	<p>
+		{#if selectedChapters.length > 1}
+			Die erfahrenen Symptome sind: <ProsaList value={selectedChapters} />
+		{:else}
+			Das erfahrene Symptom ist {selectedChapters}.
+		{/if}
+	</p>
 
 	{#each chapters as chapter}
 		{#if selectedChapters.includes(chapter.name)}
@@ -17,12 +20,16 @@
 				{#if chapter.questions}
 					{#each chapter.questions as q}
 						{#if q.value}
-							{q.template} <ProsaList value={q.value} />
+							{q.template}
+							{#if Array.isArray(q.value)}
+								<ProsaList value={q.value} />
+							{:else}
+								{q.value}.&nbsp;
+							{/if}
 						{/if}
-					{/each} 
+					{/each}
 				{/if}
 			</p>
 		{/if}
 	{/each}
 </div>
-

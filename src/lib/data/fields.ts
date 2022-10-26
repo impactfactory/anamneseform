@@ -1,6 +1,8 @@
 import { app } from '$lib/data/app';
 import { set1 } from '$lib/data/set1';
 import { set2 } from '$lib/data/set2';
+import { set3 } from '$lib/data/set3';
+import { set4 } from '$lib/data/set4';
 
 
 export const fields = {
@@ -21,13 +23,13 @@ export const fields = {
 		{
 			id: 3,
 			name: 'Atemnot',
-			questions: null,
+			questions: set3,
 			template: 'Details zur '
 		},
 		{
 			id: 4,
 			name: 'Schwindel',
-			questions: null,
+			questions: set4,
 			template: 'Details zum '
 		},
 		{

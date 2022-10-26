@@ -7,15 +7,8 @@
 	export let selectedChapters: any[];
 	export let chapters: any[];
 	export let state: string;
-
-	function showConfig() {
-		state = 'config';
-	}
-
-	function showQuestions() {
-		state = 'questions';
-	}
-
+	export let start: number;
+	export let end: number;
 	let clip;
 	let clicked: number = 0;
 
@@ -25,37 +18,28 @@
 </script>
 
 {#if state == 'generator'}
-<div class="generatedtext">
+	<div class="generatedtext">
+		<h2 class="font-medium">Ihre Zusammenfassung:</h2>
 
-	<h2 class="font-medium">Ihre Zusammenfassung:</h2>
-	
-	<ol>
-		<li>Kopieren Sie den Text in Ihre Zwischenablage.</li>
-		<li>Fügen Sie diesen in die HIN-Kommunikation mit uns ein.</li>
-		<li>Korrigieren, ergänzen, abschicken!</li>
-	</ol>
+		<ol>
+			<li>Kopieren Sie den Text in Ihre Zwischenablage.</li>
+			<li>Fügen Sie diesen in die HIN-Kommunikation mit uns ein.</li>
+			<li>Korrigieren, ergänzen, abschicken!</li>
+		</ol>
 
-	<GeneratedText {selectedChapters} {chapters} />
+		<GeneratedText {selectedChapters} {chapters} />
 
-	<button
-		data-clipboard-target="#txt"
-		class="btn btn-md btn-primary inline-block"
-		on:click={() => clicked++}
-	>
-		Kopieren
-	</button>
+		<button
+			data-clipboard-target="#txt"
+			class="btn btn-md btn-primary inline-block"
+			on:click={() => clicked++}
+		>
+			Kopieren
+		</button>
 
-	<CopiedMessage {clicked} />
-</div>
-
-<StepsButtons bind:state />
-
-<!-- 
-<div class="pt-3">
-    <button class="btn btn-primary" on:click={showConfig}>Anfang</button>
-    <button class="btn btn-primary" on:click={showQuestions}>zurück</button>
-</div>
--->
+		<CopiedMessage {clicked} />
+	</div>
+	<StepsButtons bind:state bind:start bind:end />
 {/if}
 
 <style>

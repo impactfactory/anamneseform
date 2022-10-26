@@ -45,7 +45,7 @@
 	:global(#txt) {
 		/*font-size: 14px;*/
 		overflow-y: scroll;
-		max-height: 180px;
+		max-height: 300px;
 	}
 
 	:global(#txt):focus {

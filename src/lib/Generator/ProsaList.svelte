@@ -8,7 +8,7 @@
 	{#if i == value.length - 2}
 		{item} und&nbsp;
 	{:else if i == value.length - 1}
-		{item}{value.includes(freeTextKey) ? ':' : '.'}
+		{item}{value.includes(freeTextKey) ? ':' : '. '}
 	{:else}
 		{item},&nbsp;
 	{/if}

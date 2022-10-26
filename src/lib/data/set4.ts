@@ -9,23 +9,19 @@ export const set4 = [
 	{
 		conditions: [
 			{
-				key: '',
-				placeholder: '',
+				key: 'überhaupt',
+				placeholder: 'Behaupten Sie was',
 				questions: '',
 				type: FreeText,
 				value: ''
 			}
 		],
-		label: '',
+		label: 'eine Frage',
 		name: '1',
 		options: [
-			'',
-			'',
-			'',
-			'',
-			'',
-			'',
-			'anderes'
+			'ja',
+			'nein',
+			'überhaupt'
 		],
 		template: '',
 		type: CheckboxGroup,

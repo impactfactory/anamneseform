@@ -9,14 +9,14 @@ export const setx = [
 	{
 		conditions: [
 			{
-				key: null
-				placeholder: null
+				key: '',
+				placeholder: '',
 				questions: null,
 				type: FreeText,
-				value: null
+				value: ''
 			}
 		],
-		label: ''
+		label: '',
 		name: '1',
 		options: [
 			'',

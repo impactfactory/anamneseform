@@ -1,6 +1,6 @@
 export const app = {
 	favicon: '/assets/favicon.svg',
 	title: 'Ihre Online-Anamnese',
-	state: 'intro',
+	state: 'config',
 	version: '0.1'
 };

@@ -25,7 +25,7 @@ export const set1 = [
 			'sehr selten',
 			'anderes'
 		],
-		template: 'Auftreten des Herzrasens: ',
+		template: 'Auftreten: ',
 		type: CheckboxGroup,
 		value: ''
 	},
@@ -50,7 +50,7 @@ export const set1 = [
 			'mal nur kurz für Minuten mal Stunden',
 			'anderes'
 		],
-		template: '',
+		template: 'Dauer: ',
 		type: SelectGroup,
 		value: ''
 	},
@@ -72,7 +72,7 @@ export const set1 = [
 			'weiss nicht genau',
 			'anderes'
 		],
-		template: '',
+		template: 'Beginn: ',
 		type: SelectGroup,
 		value: ''
 	},
@@ -94,10 +94,10 @@ export const set1 = [
 			'weiss nicht genau',
 			'anderes'
 		],
-		template: null,
+		template: 'Ende: ',
 		type: SelectGroup,
 		value: null
-	}/*,
+	},
 	{
 		conditions: [
 			{
@@ -105,7 +105,7 @@ export const set1 = [
 				placeholder: 'Welche?',
 				questions: null,
 				type: FreeText,
-				value: null
+				value: ''
 			}
 		],
 		label: 'Haben sie begleitende Symptome in dieser Zeit?',
@@ -117,7 +117,7 @@ export const set1 = [
 			'Luftprobleme',
 			'anderes'
 		],
-		template: '',
+		template: 'Begleitende Symptome: ',
 		type: CheckboxGroup,
 		value: ''
 	},
@@ -128,7 +128,7 @@ export const set1 = [
 				placeholder: 'Bitte beschreiben Sie, wie Sie es auslösen können...',
 				questions: null,
 				type: FreeText,
-				value: null
+				value: ''
 			}
 		],
 		label: 'Können Sie das Herzrasen durch etwas auslösen?',
@@ -138,7 +138,7 @@ export const set1 = [
 			'nein',
 			'ich weiss nicht'
 		],
-		template: '',
+		template: 'Auslösbar: ',
 		type: RadioGroup,
 		value: ''
 	},
@@ -159,7 +159,7 @@ export const set1 = [
 			'nein',
 			'ich weiss nicht'
 		],
-		template: '',
+		template: 'Terminierbar: ',
 		type: RadioGroup,
 		value: ''
 	},
@@ -180,7 +180,7 @@ export const set1 = [
 			'mit Herzkatheter', 
 			'unbehandelt'
 		],
-		template: '',
+		template: 'Behandelt: ',
 		type: CheckboxGroup,
 		value: ''
 	},
@@ -203,8 +203,8 @@ export const set1 = [
 			'unregelmässig',
 			'anderes'
 		],
-		template: '',
+		template: 'Der Herzschlag ist ',
 		type: CheckboxGroup,
 		value: ''
-	}*/
+	}
 ];
