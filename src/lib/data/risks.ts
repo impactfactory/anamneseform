@@ -1,11 +1,8 @@
-import CheckboxGroup from '$lib/inputs/CheckboxGroup.svelte';
 import FreeText from '$lib/inputs/FreeText.svelte';
 import RadioGroup from '$lib/inputs/RadioGroup.svelte';
-import SelectGroup from '$lib/inputs/SelectGroup.svelte';
-import TextArea from '$lib/inputs/TextArea.svelte';
 
 export const risks = {
-	title: 'Risiken',
+	title: 'Risikofaktoren',
 	questions: [
 		{
 		conditions: [

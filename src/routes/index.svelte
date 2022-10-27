@@ -28,4 +28,5 @@
 	bind:state={fields.app.state}
 	selectedChapters={fields.selectedChapters}
 	chapters={fields.chapters}
+	risks={fields.risks}
 />

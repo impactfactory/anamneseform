@@ -107,5 +107,6 @@
 </div>
 
 <div class="pt-4">
-	Developer-Link: <a href="" on:click={showGenerator}>Zusammenfassung</a>
+	DevLinks: <a href="" on:click={showGenerator}>State Generator</a> |
+	<a href="" on:click={showRisks}>State Risks</a>
 </div>

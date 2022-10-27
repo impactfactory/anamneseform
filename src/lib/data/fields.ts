@@ -8,6 +8,7 @@ import { set6 } from '$lib/data/set6';
 import { set7 } from '$lib/data/set7';
 import { set8 } from '$lib/data/set8';
 import { set9 } from '$lib/data/set9';
+import { risks } from '$lib/data/risks';
 
 
 export const fields = {
@@ -68,5 +69,6 @@ export const fields = {
 			template: 'Details zu '
 		}
 	],
+	risks,
 	app
 };

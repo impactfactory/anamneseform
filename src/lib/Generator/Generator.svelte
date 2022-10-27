@@ -6,6 +6,7 @@
 	import StepsButtons from '$lib/StepsButtons.svelte';
 	export let selectedChapters: any[];
 	export let chapters: any[];
+	export let risks: any[];
 	export let state: string;
 	export let start: number;
 	export let end: number;
@@ -27,7 +28,7 @@
 			<li>Korrigieren, ergänzen, abschicken!</li>
 		</ol>
 
-		<GeneratedText {selectedChapters} {chapters} />
+		<GeneratedText {selectedChapters} {chapters} {risks} />
 
 		<button
 			data-clipboard-target="#txt"
