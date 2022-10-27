@@ -74,6 +74,7 @@
 
 	:global(.selectgroup .label-text) {
 		font-weight: bold;
+		font-size: 18px;
 	}
 
 	:global([type='checkbox']),
