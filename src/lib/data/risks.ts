@@ -222,6 +222,28 @@ export const risks = {
 		template: 'Rheuma: ',
 		type: RadioGroup,
 		value: ''
+	},
+	{
+		conditions: [
+			{
+				key: 'ja',
+				placeholder: 'Bitte geben Sie Ihnen bekannte Details an:',
+				questions: null,
+				template: '',
+				type: FreeText,
+				value: ''
+			}
+		],
+		label: 'Haben Sie eine Niereninsuffizienz?',
+		name: '11',
+		options: [
+			'ja',
+			'nein',
+			'unbekannt'
+		],
+		template: 'Niereninsuffizienz: ',
+		type: RadioGroup,
+		value: ''
 	}
 	]
 };

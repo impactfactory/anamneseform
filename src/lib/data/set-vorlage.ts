@@ -30,5 +30,55 @@ export const setx = [
 		template: '',
 		type: CheckboxGroup,
 		value: ''
+	},
+	{
+		conditions: [
+			{
+				key: '',
+				placeholder: '',
+				questions: null,
+				type: FreeText,
+				value: ''
+			}
+		],
+		label: '',
+		name: '1',
+		options: [
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'anderes'
+		],
+		template: '',
+		type: CheckboxGroup,
+		value: ''
+	},
+	{
+		conditions: [
+			{
+				key: '',
+				placeholder: '',
+				questions: null,
+				type: FreeText,
+				value: ''
+			}
+		],
+		label: '',
+		name: '1',
+		options: [
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'anderes'
+		],
+		template: '',
+		type: CheckboxGroup,
+		value: ''
 	}
 ];
