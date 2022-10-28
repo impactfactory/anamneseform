@@ -1,7 +1,7 @@
 import Number from '$lib/inputs/Number.svelte';
 import RadioGroup from '$lib/inputs/RadioGroup.svelte';
 import SelectGroup from '$lib/inputs/SelectGroup.svelte';
-import TextArea from '$lib/inputs/TextArea.svelte';
+import FreeText from '$lib/inputs/FreeText.svelte';
 
 export const set3 = [
 	{
@@ -9,6 +9,7 @@ export const set3 = [
 			{
 				key: 'ja, in Ruhe und bei Anstrengung',
 				label: 'Treten die Atemprobleme anfallsartig auf?',
+				name: '1a',
 				options: ['ja', 'nein', 'ich weiss nicht'],
 				conditions: [{
 					key: 'ja',
@@ -21,24 +22,10 @@ export const set3 = [
 				value: ''
 			},
 			{
-				key: 'ja, nur bei Anstrengung',
-				label: 'Bei welchen Anstrengungsniveau treten die Atemprobleme ungefähr auf?',
-				name: '1a',
-				options: [
-						'bei geringsten Belastung',
-						'bei leichter Belastung',
-						'bei mittlerer Belastung',
-						'bei hoher Belastung'
-				],
-				template: 'Auftreten: ',
-				type: SelectGroup,
-				value: ''
-			},
-			{
 				conditions: [{
 					key: 'anderes',
 					label: 'Bitte Beschreiben Sie die Tätigkeit',
-					type: TextArea,
+					type: FreeText,
 					value: ''
 				}],
 				key: 'ja, nur bei Anstrengung',
@@ -70,7 +57,7 @@ export const set3 = [
 			{
 				key: 'ja, nur bei Anstrengung',
 				label: 'Wenn sie die die Anstrengung stoppen, wie schnell verschwinden die Atemprobleme?',
-				name: '4',
+				name: '1d',
 				options: [
 						'innerhalb einer Minute',
 						'innerhalb von ein paar Minuten',

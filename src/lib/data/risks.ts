@@ -3,6 +3,7 @@ import RadioGroup from '$lib/inputs/RadioGroup.svelte';
 
 export const risks = {
 	title: 'Risikofaktoren',
+	template: 'Abklärung ',
 	questions: [
 		{
 		conditions: [

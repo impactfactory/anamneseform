@@ -106,11 +106,8 @@
 	:global(.checkboxgroup .label-text),
 	:global(.radiogroup .label-text) {
 		margin-left: 2rem;
-	}
-
-	:global(.checkboxgroup .label-text),
-	:global(.radiogroup .label-text) {
-		margin-left: 2rem;
+		font-size: 16px;
+		font-weight: normal;
 	}
 
 	:global(.chapteropener) {

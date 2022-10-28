@@ -75,7 +75,7 @@ export const set1 = [
 		template: 'Beginn: ',
 		type: SelectGroup,
 		value: ''
-	},
+	}/*,
 	{
 		conditions: [
 			{
@@ -206,5 +206,5 @@ export const set1 = [
 		template: 'Der Herzschlag ist ',
 		type: CheckboxGroup,
 		value: ''
-	}
+	}*/
 ];

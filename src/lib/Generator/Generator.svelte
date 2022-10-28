@@ -3,7 +3,7 @@
 	import ClipboardJS from 'clipboard';
 	import CopiedMessage from '$lib/Generator/CopiedMessage.svelte';
 	import GeneratedText from '$lib/Generator/GeneratedText.svelte';
-	import StepsButtons from '$lib/StepsButtons.svelte';
+	import StepsButtons from '$lib/Navigation/StepsButtons.svelte';
 	export let selectedChapters: any[];
 	export let chapters: any[];
 	export let risks: any[];
@@ -20,7 +20,7 @@
 
 {#if state == 'generator'}
 	<div class="generatedtext">
-		<h2 class="font-medium">Ihre Zusammenfassung:</h2>
+		<h2>Ihre Zusammenfassung:</h2>
 
 		<ol>
 			<li>Kopieren Sie den Text in Ihre Zwischenablage.</li>

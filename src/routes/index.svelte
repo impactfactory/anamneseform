@@ -20,6 +20,7 @@
 	bind:state={fields.app.state}
 	selectedChapters={fields.selectedChapters}
 	chapters={fields.chapters}
+	app={fields.app}
 />
 
 <Risks bind:state={fields.app.state} {fields} />

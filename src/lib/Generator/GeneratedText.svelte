@@ -36,7 +36,7 @@
 		{/if}
 	{/each}
 
-	<h4 class="mb-0">{risks.title}</h4>
+	<h4 class="mb-0">{risks.template}{risks.title}</h4>
 	<p>
 		{#each risks.questions as q}
 			{#if q.value}

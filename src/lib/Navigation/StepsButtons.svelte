@@ -1,18 +1,32 @@
 <script lang="ts">
-	export let state: string;
+	/* geht nicht
+	import {
+		showConfig,
+		showGenerator,
+		showIntro,
+		showQuestions,
+		showRisks,
+		nextChapter,
+		nextQuestions,
+		lastQuestions
+	} from '$lib/Navigation/functions'; */
 	export let backButton: string;
-	export let nextButton: string;
-	export let startChapter = 0;
-	export let endChapter = 1;
-	export let start = 0;
+	export let chaptersGrouping: number;
 	export let end = 2;
+	export let endChapter = 1;
+	export let nextButton: string;
+	export let memory: '';
+	export let questionsGrouping: number;
+	export let start = 0;
+	export let startChapter = 0;
+	export let state: string;
 
 	function showConfig() {
 		state = 'config';
-		start = 0;
-		end = 2;
-		startChapter = '';
-		endChapter = '';
+		end = questionsGrouping;
+		start = end - questionsGrouping;
+		endChapter = chaptersGrouping;
+		startChapter = endChapter - startChapter;
 	}
 	function showGenerator() {
 		state = 'generator';
@@ -22,10 +36,11 @@
 		state = 'intro';
 	}
 
+	//Risks and Questions Navi
 	function showQuestions() {
 		state = 'questions';
 		start = 0;
-		end = 2;
+		end = questionsGrouping;
 		startChapter = '';
 		endChapter = '';
 	}
@@ -34,60 +49,70 @@
 		state = 'risks';
 	}
 
-	function lastRisks() {
+	/*function lastRisks() {
 		state = 'questions';
 		start = '10';
 		end = '12';
-	}
+	}*/
 
-	//Risks and Questions Navi
+	function lastChapterEnd(x: number, y: number) {
+		startChapter = x - chaptersGrouping;
+		endChapter = y - chaptersGrouping;
+		memory = 'cameBackwards';
+	}
 
 	function nextChapter(x: number, y: number) {
 		start = 0;
-		end = 2;
-		startChapter = x + 1;
-		endChapter = y + 1;
+		end = questionsGrouping;
+		startChapter = x + chaptersGrouping;
+		endChapter = y + chaptersGrouping;
 	}
 
 	function nextQuestions(x: number, y: number) {
-		start = x + 2;
-		end = y + 2;
+		start = x + questionsGrouping;
+		end = y + questionsGrouping;
 	}
 
 	function lastQuestions(x: number, y: number) {
-		start = x - 2;
-		end = y - 2;
+		start = x - questionsGrouping;
+		end = y - questionsGrouping;
 	}
 </script>
 
 <div class="pt-3">
 	{#if state == 'intro'}
 		<button class="btn btn-primary" on:click={showConfig}>weiter</button>
-		<!-- Config -->
+		<!-- Config --------------------------------------------------------->
 	{:else if state == 'config'}
 		<button class="btn btn-primary" on:click={showIntro}>zurück</button>
 		<button class="btn btn-primary" on:click={showQuestions}>weiter</button>
-		<!-- Questions -->
+		<!---->
+		<!-- Questions ------------------------------------------------------->
+		<!---->
 	{:else if state == 'questions'}
+		<!-- Start Again Button -->
 		<button class="btn btn-primary" on:click={showConfig}>Anfang</button>
+		<!-- Back Button -->
 		{#if backButton == 'show'}
 			<button class="btn btn-primary" on:click={lastQuestions(start, end)}>zurück</button>
+		{:else if backButton == 'lastChapterEnd'}
+			<button class="btn btn-primary" on:click={lastChapterEnd(startChapter, endChapter)}
+				>zurück (F-1)</button
+			>
 		{/if}
-		{#if nextButton == 'nextChapter'}
+		<!-- Forward Button-->
+		{#if nextButton == 'nextQuestions'}
+			<button class="btn btn-primary" on:click={nextQuestions(start, end)}>weiter (F)</button>
+		{:else if nextButton == 'nextChapter'}
 			<button class="btn btn-primary" on:click={nextChapter(startChapter, endChapter)}
 				>weiter (K)</button
 			>
 		{:else if nextButton == 'showRisks'}
 			<button class="btn btn-primary" on:click={showRisks}>weiter (R)</button>
-		{:else if nextButton == 'nextQuestions'}
-			<button class="btn btn-primary" on:click={nextQuestions(start, end)}>weiter (F)</button>
 		{/if}
-
-		<!--<button class="btn btn-primary" on:click={nextChapter(startChapter, endChapter)}
-			>nächstes Kapitel</button
-		>
-		<button class="btn btn-primary" on:click={showGenerator}>Zusammenfassung</button>-->
-		<!-- Risks -->
+		<!---->
+		<!-- Risks --------------------------------------------------------->
+		<!---->
 	{:else if state == 'risks'}
 		<button class="btn btn-primary" on:click={showConfig}>Anfang</button>
 		{#if backButton == 'show'}
@@ -100,6 +125,9 @@
 		{:else if nextButton == 'nextQuestions'}
 			<button class="btn btn-primary" on:click={nextQuestions(start, end)}>weiter (R)</button>
 		{/if}
+		<!-- -->
+		<!-- Generator ------------------------------------------------------>
+		<!---->
 	{:else if state == 'generator'}
 		<button class="btn btn-primary" on:click={showConfig}>Anfang</button>
 		<button class="btn btn-primary" on:click={showRisks}>zurück</button>
@@ -107,6 +135,7 @@
 </div>
 
 <div class="pt-4">
-	DevLinks: <a href="" on:click={showGenerator}>State Generator</a> |
-	<a href="" on:click={showRisks}>State Risks</a>
+	DevLinks: <u on:click={showGenerator}>State Generator</u>
+	|
+	<u on:click={showRisks}>State Risks</u>
 </div>

@@ -19,9 +19,10 @@
 		</select>
 	</div>
 
-	{#each conditions as condition}
+	{#each conditions as condition (condition.name)}
 		{#if value == condition.key}
 			<svelte:component this={condition.type} bind:value={condition.value} {...condition} />
+			<!-- {condition.label}  funktioniert bei kapitel 3 wie gewünscht, <svelte:component /> hingegen nicht. Wird nur einmal ausgegeben statt 3x-->
 		{/if}
 	{/each}
 </fieldset>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import StepsButtons from './StepsButtons.svelte';
+	import StepsButtons from '$lib/Navigation/StepsButtons.svelte';
 	export let fields: any[];
 	export let state: string;
 </script>

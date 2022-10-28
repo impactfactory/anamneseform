@@ -17,11 +17,7 @@ export const set2 = [
 		],
 		label: 'Welche Art Missempfindungen oder Beschwerden in der Brust sind es?',
 		name: '1',
-		options: [
-			'Druck oder Brennen',
-			'Stechen in der Brust',
-			'anderes'
-		],
+		options: ['Druck oder Brennen', 'Stechen in der Brust', 'anderes'],
 		template: 'Beschwerden: ',
 		type: CheckboxGroup,
 		value: ''
@@ -63,16 +59,14 @@ export const set2 = [
 				value: ''
 			}
 		],
-		label: 'Sind die Beschwerden oder Missempfindungen eher flächig oder lassen sie sich eher punktuell mit dem Finger zeigen?',
+		label:
+			'Sind die Beschwerden oder Missempfindungen eher flächig oder lassen sie sich eher punktuell mit dem Finger zeigen?',
 		name: '4',
-		options: [
-			'flächig', 
-			'eher punktuell'
-		],
+		options: ['flächig', 'eher punktuell'],
 		template: 'Art: ',
 		type: SelectGroup,
 		value: ''
-	},
+	} /*,
 	{
 		conditions: [
 			{
@@ -298,5 +292,5 @@ export const set2 = [
 		template: 'Zuletzt aufgetreten: ',
 		type: SelectGroup,
 		value: ''
-	}
+	}*/
 ];

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import { risks } from '$lib/data/risks';
-	import StepsButtons from '$lib/StepsButtons.svelte';
+	import StepsButtons from '$lib/Navigation/StepsButtons.svelte';
 	export let state: string;
 	export let start: number;
 	export let end: number;
@@ -29,6 +29,7 @@
 
 {#if state == 'risks'}
 	<div class="risks" in:fade={{ duration: 1000 }}>
+		<h2>{risks.template}{risks.title}</h2>
 		{#each risks.questions.slice(start, end) as q}
 			<svelte:component this={q.type} bind:value={q.value} {...q} />
 			{BackButton(start) || ''}
@@ -38,7 +39,8 @@
 
 	<StepsButtons bind:state bind:start bind:end {backButton} {nextButton} />
 
-	<pre>
+	<!--
+		<pre>
     {JSON.stringify(risks, null, 2)}
-</pre>
+</pre>-->
 {/if}
