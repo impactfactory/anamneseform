@@ -50,19 +50,12 @@
 		endChapter = chaptersGrouping;
 	}
 
-	/* -- Risks and Questions Navigation / Backwards - Forwards Logic ---------- */
+	/* -- Risks and Questions Navigation / Backwards - Forwards ---------- */
 
 	function lastChaptersEnd(x: number, y: number) {
 		startChapter = x - chaptersGrouping;
 		endChapter = y - chaptersGrouping;
 		memory = 'cameBackwards';
-	}
-
-	function lastChaptersEndFromRisks() {
-		state = 'questions';
-		endChapter = selectedChapters.length;
-		memory = 'cameBackwards';
-		startChapter = selectedChapters.length - chaptersGrouping;
 	}
 
 	function nextChapter(x: number, y: number) {
@@ -80,6 +73,24 @@
 	function lastQuestions(x: number, y: number) {
 		start = x - questionsGrouping;
 		end = y - questionsGrouping;
+	}
+
+	/* -- Risks Navigation / Backwards to the last Chapters Questions Slice ---------- */
+
+	function lastChaptersEndFromRisks() {
+		state = 'questions';
+		endChapter = selectedChapters.length;
+		memory = 'cameBackwards';
+		startChapter = selectedChapters.length - chaptersGrouping;
+	}
+
+	/* -- Generator Navigation / Backwards to last Risks Slice ---------- */
+
+	function showLastRisksSlice() {
+		state = 'risks';
+		endChapter = risks.questions.length;
+		memory = 'cameBackwards';
+		startChapter = risks.questions.length - chaptersGrouping;
 	}
 </script>
 
@@ -134,7 +145,7 @@
 		<!---->
 	{:else if state == 'generator'}
 		<button class="btn btn-primary" on:click={showConfig}>Anfang</button>
-		<button class="btn btn-primary" on:click={showRisks}>zurück</button>
+		<button class="btn btn-primary" on:click={showLastRisksSlice}>zurück (R)</button>
 	{/if}
 </div>
 

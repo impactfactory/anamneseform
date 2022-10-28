@@ -40,7 +40,7 @@
 
 		<CopiedMessage {clicked} />
 	</div>
-	<StepsButtons bind:state bind:start bind:end />
+	<StepsButtons bind:state bind:start bind:end selected={risks.questions} />
 {/if}
 
 <style>
