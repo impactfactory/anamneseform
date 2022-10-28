@@ -23,7 +23,7 @@
 	app={fields.app}
 />
 
-<Risks bind:state={fields.app.state} {fields} />
+<Risks bind:state={fields.app.state} app={fields.app} selectedChapters={fields.selectedChapters} />
 
 <Generator
 	bind:state={fields.app.state}

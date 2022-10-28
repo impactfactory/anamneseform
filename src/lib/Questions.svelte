@@ -23,7 +23,7 @@
 		if (questionsSliceStart == 0 && chaptersSliceStart == 0) {
 			backButton = 'noShow';
 		} else if (chaptersSliceEnd != 1 && questionsSliceStart == 0) {
-			backButton = 'lastChapterEnd';
+			backButton = 'lastChaptersEnd';
 		} else {
 			backButton = 'show';
 		}

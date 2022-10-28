@@ -17,10 +17,12 @@
 	export let nextButton: string;
 	export let memory: '';
 	export let questionsGrouping: number;
+	export let selectedChapters: string[];
 	export let start = 0;
 	export let startChapter = 0;
 	export let state: string;
 
+	/* -- Simple States Togglers --------------------------------------------- */
 	function showConfig() {
 		state = 'config';
 		end = questionsGrouping;
@@ -36,29 +38,31 @@
 		state = 'intro';
 	}
 
-	//Risks and Questions Navi
-	function showQuestions() {
-		state = 'questions';
-		start = 0;
-		end = questionsGrouping;
-		startChapter = '';
-		endChapter = '';
-	}
-
 	function showRisks() {
 		state = 'risks';
 	}
 
-	/*function lastRisks() {
+	function showQuestions() {
 		state = 'questions';
-		start = '10';
-		end = '12';
-	}*/
+		start = 0;
+		end = questionsGrouping;
+		startChapter = 0;
+		endChapter = chaptersGrouping;
+	}
 
-	function lastChapterEnd(x: number, y: number) {
+	/* -- Risks and Questions Navigation / Backwards - Forwards Logic ---------- */
+
+	function lastChaptersEnd(x: number, y: number) {
 		startChapter = x - chaptersGrouping;
 		endChapter = y - chaptersGrouping;
 		memory = 'cameBackwards';
+	}
+
+	function lastChaptersEndFromRisks() {
+		state = 'questions';
+		endChapter = selectedChapters.length;
+		memory = 'cameBackwards';
+		startChapter = selectedChapters.length - chaptersGrouping;
 	}
 
 	function nextChapter(x: number, y: number) {
@@ -95,8 +99,8 @@
 		<!-- Back Button -->
 		{#if backButton == 'show'}
 			<button class="btn btn-primary" on:click={lastQuestions(start, end)}>zurück</button>
-		{:else if backButton == 'lastChapterEnd'}
-			<button class="btn btn-primary" on:click={lastChapterEnd(startChapter, endChapter)}
+		{:else if backButton == 'lastChaptersEnd'}
+			<button class="btn btn-primary" on:click={lastChaptersEnd(startChapter, endChapter)}
 				>zurück (F-1)</button
 			>
 		{/if}
@@ -115,12 +119,12 @@
 		<!---->
 	{:else if state == 'risks'}
 		<button class="btn btn-primary" on:click={showConfig}>Anfang</button>
-		{#if backButton == 'show'}
+		{#if backButton == 'showLastRisks'}
 			<button class="btn btn-primary" on:click={lastQuestions(start, end)}>zurück (R)</button>
-		{:else if backButton == 'lastQuestions'}
-			<button class="btn btn-primary" on:click={showQuestions}>zurück (F)</button>
+		{:else if backButton == 'showLastChaptersEnd'}
+			<button class="btn btn-primary" on:click={lastChaptersEndFromRisks}>zurück (F)</button>
 		{/if}
-		{#if nextButton == 'nextChapter'}
+		{#if nextButton == 'showGenerator'}
 			<button class="btn btn-primary" on:click={showGenerator}>weiter (Z)</button>
 		{:else if nextButton == 'nextQuestions'}
 			<button class="btn btn-primary" on:click={nextQuestions(start, end)}>weiter (R)</button>
